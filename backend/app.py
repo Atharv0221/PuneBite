@@ -59,8 +59,7 @@ def r2(x):
 
 
 def with_trust(doc):
-    """Placeholder until Phase 8 defines the trust-adjusted rating."""
-    doc.setdefault("trust_rating", None)
+    """Expose the precomputed trust score loaded with each restaurant."""
     return doc
 
 
@@ -218,14 +217,15 @@ def locality_report(name):
 # ------------------------------------------------------------- hidden gems
 @app.get("/api/hidden-gems")
 def hidden_gems():
-    """PROVISIONAL (Phase 8 will replace this with the trust-adjusted score):
-    rating >= 4.0 but only 20-150 votes."""
-    q = {"rating": {"$gte": 4.0}, "votes": {"$gte": 20, "$lte": 150}}
+    """Return top-locality trust scorers with limited review visibility."""
+    q = {"hidden_gem": True, "votes": {"$gte": 20, "$lte": 200}}
     if request.args.get("locality"):
         q["locality"] = exact_ci(request.args["locality"])
     limit = min(max(to_int(request.args.get("limit"), 20), 1), 100)
-    docs = col().find(q, HIDE_ID).sort([("rating", -1), ("votes", -1)]).limit(limit)
-    return jsonify(provisional=True, items=[with_trust(d) for d in docs])
+    docs = col().find(q, HIDE_ID).sort(
+        [("trust_rating", -1), ("votes", 1)]
+    ).limit(limit)
+    return jsonify(provisional=False, items=[with_trust(d) for d in docs])
 
 
 # ---------------------------------------------------------------- overview
