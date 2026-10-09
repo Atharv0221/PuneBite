@@ -78,7 +78,8 @@ punebite-analyzer/
 │   ├── 05_regression.ipynb
 │   ├── 06_feature_selection_pca.ipynb
 │   ├── 07_clustering.ipynb
-│   └── 08_association_rules.ipynb
+│   ├── 08_association_rules.ipynb
+│   └── 09_trust_hidden_gems.ipynb
 ├── ml/
 │   ├── cleaning.py          # reusable cleaning functions
 │   ├── features.py          # builds model inputs (used by notebooks AND the API)
@@ -148,15 +149,15 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - [x] Phase 2 EDA (`02_eda.ipynb`)
 - [x] Phase 3 Statistics (`03_statistics.ipynb`)
 - [x] Phase 4 Classification + Regression (`04_classification.ipynb`, `05_regression.ipynb`)
-- [ ] Phase 5 Feature selection / Clustering / Apriori (06 feature selection + PCA DONE; 07 clustering and 08 Apriori pending)
-- [ ] Phase 6 MongoDB + API
-- [ ] Phase 7 React dashboard
-- [ ] Phase 8 Hidden Gems
+- [x] Phase 5 Feature selection / Clustering / Apriori (`06`, `07_clustering`, `08_association_rules`; run 08 once with mlxtend to fill its outputs)
+- [x] Phase 6 MongoDB + API
+- [x] Phase 7 React dashboard
+- [x] Phase 8 Trust-adjusted rating + Hidden Gems (`ml/scoring.py`, `09_trust_hidden_gems.ipynb`; re-run `python backend/load_data.py` to load it into MongoDB)
 - [ ] Phase 9 Chatbot
 - [ ] Phase 10 Report / PPT
 
-**Last completed:** Phases 0-4, plus `06_feature_selection_pca.ipynb`
-**Next task:** `07_clustering.ipynb`, or Phase 6 (MongoDB + API) in parallel
+**Last completed:** Phases 0-8 (clustering, Apriori, trust rating, hidden gems)
+**Next task:** Phase 9 chatbot (optional, rank results by `trust_rating`), then Phase 10 report/PPT/viva
 **Decisions / notes:**
 - Rating 0.0 = placeholder for no reviews (all have 0 votes) -> NaN. 7,669 rated restaurants.
 - Votes strongly tied to rating (Spearman ~0.73; <5 votes avg 3.04, 500+ votes avg 4.07). Define `popular` = votes >= 50 (3,012 rows) for robustness checks.
@@ -164,6 +165,9 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - Classification (target rating >= 4.0, 11.2% positive): Random Forest best. Scenario A (with votes) test AUC ~0.94, F1 ~0.67. Scenario B (no votes, for Opening Advisor) AUC ~0.82, F1 ~0.50. Saved: `ml/models/high_rating_classifier.joblib` + `_meta.json` (Scenario B, includes feature spec and threshold ~0.5). The API must build inputs with `ml/features.py` `make_features(df, spec)`.
 - Regression (target rating): Scenario A R2 ~0.55, RMSE ~0.28; Scenario B (no votes) R2 ~0.28, RMSE ~0.36 (baseline 0.43). Regularisation made little difference (large n, few features); Lasso zeroed 27 of 95 encoded features. Saved: `ml/models/rating_regressor.joblib` + `_meta.json` (Scenario B, Polynomial deg2 + Ridge). Residuals show regression to the mean (over-predicts low, under-predicts high ratings).
 - Feature selection (06): 14 consensus features (price, n_amenities, n_cuisines, accepts_cards, table_booking_recommended, full_bar_available, brunch, valet_parking_available, live_music, smoking_are, cuisines desserts/continental/italian, type Quick Bites) saved to `ml/models/selected_features.json`. More features = higher AUC (0.74 @5, 0.77 @20, 0.825 @150), so selection is for interpretation, not accuracy. PCA: 24 comps = 90% of amenity variance; ~50 comps on all features matches raw AUC.
+- Clustering (07): 7,648 restaurants (rated, votes > 0). K-Means k=5 (silhouette 0.235; k=2 is higher at 0.315 but too coarse). Segments: Premium and popular (712, Rs 1,300, 55% rated 4+), Solid mainstream (2,061), Polarising (1,705, 47% polarisation), Budget everyday (1,116, Rs 200), New or unproven (2,054, median 11 votes). Hierarchical (ARI 0.32) and GMM (ARI 0.39) agree only partly; DBSCAN finds one dense blob + 8% outliers; no hidden-gem cluster exists. Saved `data/processed/restaurants_clusters.csv`, merged into MongoDB (`cluster_name`) and exposed at `GET /api/clusters`.
+- Association rules (08): cuisines (support 0.01): 79 itemsets, 126 rules (lift >= 1.2). Continental <-> Italian lift ~9; Malwani/Seafood/Mughlai -> Chinese + North Indian. Amenities + type (support 0.02): 254 itemsets, 1,318 rules; nightlife -> full_bar (lift 10.7). Some top rules are definitional (delivery_only <-> TYPE=Delivery). `data/processed/association_rules.csv` was produced with an equivalent implementation because mlxtend could not be installed in the sandbox; re-running the notebook regenerates it.
+- Trust rating (Phase 8): `trust = v/(v+m)*R + m/(v+m)*C`, m=50, C=3.436. Hidden gem = top 15% trust in its locality (>= 10 rated places), 20-200 votes, trust >= 3.7 -> 231 gems in 61 localities. `GET /api/hidden-gems` now uses the stored `is_hidden_gem` flag; `trust_rating` is stored on every rated restaurant. Limitation: shrinking to the global mean raises very-low-vote low ratings (they average ~3.0), so use it for ranking the top, not for repairing weak ratings.
 - Modelling caution: votes is a very strong predictor but partly reflects popularity; compare models with and without votes.
 
 ## 12. Starter prompt for a new chat

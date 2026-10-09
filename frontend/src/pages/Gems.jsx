@@ -10,7 +10,7 @@ export default function Gems() {
   return (
     <>
       <h2>Hidden gems</h2>
-      <p className="note">Places rated 4.0+ with only 20 to 150 votes. This is a provisional rule until the trust-adjusted score (Phase 8) replaces it.</p>
+      <p className="note">Restaurants in the top 15% of their locality by <b>trust-adjusted rating</b> (a rating pulled towards the average when there are few votes), with only 20 to 200 votes, so they are good but not yet well known.</p>
       <form className="filters" onSubmit={(e) => { e.preventDefault(); setApplied(loc); }}>
         <input placeholder="Locality (optional)" value={loc} onChange={(e) => setLoc(e.target.value)} />
         <button className="primary">Find gems</button>
@@ -21,7 +21,7 @@ export default function Gems() {
           <article className="panel gem" key={r.url ?? i}>
             <h3>{r.url ? <a href={r.url} target="_blank" rel="noreferrer">{r.name}</a> : r.name}</h3>
             <p>{r.locality} · {r.establishment_type}</p>
-            <p><b>{fmtRating(r.rating)}</b> from {r.votes ?? 0} votes · {fmtCost(r.cost_for_two)} for two</p>
+            <p><b>{fmtRating(r.rating)}</b> from {r.votes ?? 0} votes · trust {fmtRating(r.trust_rating)} · {fmtCost(r.cost_for_two)} for two</p>
             <p className="note">{(r.cuisines || []).slice(0, 4).join(", ")}</p>
           </article>
         ))}

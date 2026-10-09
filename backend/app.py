@@ -27,7 +27,7 @@ app = Flask(__name__)
 CORS(app)
 
 HIDE_ID = {"_id": 0}
-SORT_FIELDS = {"rating": "rating", "votes": "votes", "cost": "cost_capped", "name": "name"}
+SORT_FIELDS = {"rating": "rating", "trust": "trust_rating", "votes": "votes", "cost": "cost_capped", "name": "name"}
 
 
 # ----------------------------------------------------------------- helpers
@@ -59,7 +59,7 @@ def r2(x):
 
 
 def with_trust(doc):
-    """Placeholder until Phase 8 defines the trust-adjusted rating."""
+    """trust_rating is stored by backend/load_data.py (ml/scoring.py); keep the key present."""
     doc.setdefault("trust_rating", None)
     return doc
 
@@ -197,8 +197,8 @@ def locality_report(name):
     for d in col().find({**q, "rating": {"$ne": None}}, {"rating": 1, "_id": 0}):
         hist[int(d["rating"] * 2) / 2] += 1
 
-    best = list(col().find({**q, "rating": {"$ne": None}, "votes": {"$gte": 20}}, HIDE_ID)
-                .sort([("rating", -1), ("votes", -1)]).limit(5))
+    best = list(col().find({**q, "trust_rating": {"$ne": None}, "votes": {"$gte": 20}}, HIDE_ID)
+                .sort([("trust_rating", -1), ("votes", -1)]).limit(5))
 
     return jsonify(
         name=name,
@@ -218,14 +218,30 @@ def locality_report(name):
 # ------------------------------------------------------------- hidden gems
 @app.get("/api/hidden-gems")
 def hidden_gems():
-    """PROVISIONAL (Phase 8 will replace this with the trust-adjusted score):
-    rating >= 4.0 but only 20-150 votes."""
-    q = {"rating": {"$gte": 4.0}, "votes": {"$gte": 20, "$lte": 150}}
+    """Restaurants flagged by ml/scoring.py: top 15% trust-adjusted rating in their
+    locality, 20-200 votes, trust rating >= 3.7. Optional: ?locality=&limit="""
+    q = {"is_hidden_gem": True}
     if request.args.get("locality"):
         q["locality"] = exact_ci(request.args["locality"])
     limit = min(max(to_int(request.args.get("limit"), 20), 1), 100)
-    docs = col().find(q, HIDE_ID).sort([("rating", -1), ("votes", -1)]).limit(limit)
-    return jsonify(provisional=True, items=[with_trust(d) for d in docs])
+    docs = col().find(q, HIDE_ID).sort([("trust_rating", -1), ("votes", -1)]).limit(limit)
+    return jsonify(rule="top 15% trust rating in locality, 20-200 votes, trust >= 3.7",
+                   items=[with_trust(d) for d in docs])
+
+
+# ---------------------------------------------------------------- clusters
+@app.get("/api/clusters")
+def clusters():
+    """Restaurant segments from notebook 07 (K-Means, k=5)."""
+    rows = col().aggregate([
+        {"$match": {"cluster_name": {"$ne": None}}},
+        {"$group": {"_id": "$cluster_name", "count": {"$sum": 1}, "avg_rating": {"$avg": "$rating"},
+                    "avg_votes": {"$avg": "$votes"}, "avg_cost": {"$avg": "$cost_capped"}}},
+        {"$sort": {"count": -1}},
+    ])
+    return jsonify([{"name": r["_id"], "count": r["count"], "avg_rating": r2(r["avg_rating"]),
+                     "avg_votes": None if r["avg_votes"] is None else round(r["avg_votes"]),
+                     "avg_cost": None if r["avg_cost"] is None else round(r["avg_cost"])} for r in rows])
 
 
 # ---------------------------------------------------------------- overview

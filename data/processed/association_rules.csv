@@ -1,0 +1,1445 @@
+basket,antecedents,consequents,antecedent support,consequent support,support,confidence,lift,leverage,conviction
+cuisines,Continental,"Italian, North Indian",0.0467,0.0192,0.0108,0.231,12.032,0.0099,1.2755
+cuisines,"Italian, North Indian",Continental,0.0192,0.0467,0.0108,0.5622,12.032,0.0099,2.1776
+cuisines,Italian,Continental,0.0387,0.0467,0.0166,0.4286,9.1716,0.0148,1.6682
+cuisines,Continental,Italian,0.0467,0.0387,0.0166,0.3545,9.1716,0.0148,1.4893
+cuisines,"Continental, North Indian",Italian,0.034,0.0387,0.0108,0.318,8.2263,0.0095,1.4095
+cuisines,Italian,"Continental, North Indian",0.0387,0.034,0.0108,0.2793,8.2263,0.0095,1.3405
+cuisines,Desserts,Bakery,0.0554,0.0365,0.0158,0.2857,7.8259,0.0138,1.3489
+cuisines,Bakery,Desserts,0.0365,0.0554,0.0158,0.4334,7.8259,0.0138,1.6672
+cuisines,"Chinese, South Indian","Fast Food, North Indian",0.0452,0.067,0.0157,0.3479,5.1925,0.0127,1.4308
+cuisines,"Fast Food, North Indian","Chinese, South Indian",0.067,0.0452,0.0157,0.2349,5.1925,0.0127,1.2479
+cuisines,"North Indian, South Indian","Chinese, Fast Food",0.0602,0.056,0.0157,0.2613,4.6693,0.0124,1.278
+cuisines,"Chinese, Fast Food","North Indian, South Indian",0.056,0.0602,0.0157,0.2813,4.6693,0.0124,1.3076
+cuisines,South Indian,"Chinese, Fast Food, North Indian",0.0982,0.0372,0.0157,0.1604,4.3147,0.0121,1.1467
+cuisines,"Chinese, Fast Food, North Indian",South Indian,0.0372,0.0982,0.0157,0.4235,4.3147,0.0121,1.5644
+cuisines,South Indian,"Chinese, Fast Food",0.0982,0.056,0.0178,0.1814,3.241,0.0123,1.1532
+cuisines,"Chinese, Fast Food",South Indian,0.056,0.0982,0.0178,0.3181,3.241,0.0123,1.3226
+cuisines,"Fast Food, North Indian",South Indian,0.067,0.0982,0.0209,0.3124,3.183,0.0144,1.3116
+cuisines,South Indian,"Fast Food, North Indian",0.0982,0.067,0.0209,0.2133,3.183,0.0144,1.1859
+cuisines,Beverages,Desserts,0.0882,0.0554,0.0138,0.157,2.835,0.009,1.1206
+cuisines,Desserts,Beverages,0.0554,0.0882,0.0138,0.25,2.835,0.009,1.2158
+cuisines,Fast Food,Burger,0.2463,0.0158,0.0102,0.0415,2.6227,0.0063,1.0268
+cuisines,Burger,Fast Food,0.0158,0.2463,0.0102,0.6458,2.6227,0.0063,2.1282
+cuisines,"Chinese, North Indian",Malwani,0.2597,0.018,0.0117,0.0451,2.4969,0.007,1.0283
+cuisines,Malwani,"Chinese, North Indian",0.018,0.2597,0.0117,0.6484,2.4969,0.007,2.1056
+cuisines,Pizza,Fast Food,0.0228,0.2463,0.0135,0.5921,2.4043,0.0079,1.8477
+cuisines,Fast Food,Pizza,0.2463,0.0228,0.0135,0.0549,2.4043,0.0079,1.0339
+cuisines,Beverages,Fast Food,0.0882,0.2463,0.0521,0.5907,2.3986,0.0304,1.8414
+cuisines,Fast Food,Beverages,0.2463,0.0882,0.0521,0.2115,2.3986,0.0304,1.1564
+cuisines,Seafood,"Chinese, North Indian",0.0378,0.2597,0.0231,0.61,2.3491,0.0133,1.8984
+cuisines,"Chinese, North Indian",Seafood,0.2597,0.0378,0.0231,0.0889,2.3491,0.0133,1.056
+cuisines,"Chinese, North Indian",Mughlai,0.2597,0.0569,0.0342,0.1317,2.3161,0.0194,1.0862
+cuisines,Mughlai,"Chinese, North Indian",0.0569,0.2597,0.0342,0.6014,2.3161,0.0194,1.8575
+cuisines,"North Indian, Seafood",Chinese,0.0296,0.3471,0.0231,0.7799,2.2469,0.0128,2.9669
+cuisines,Chinese,"North Indian, Seafood",0.3471,0.0296,0.0231,0.0665,2.2469,0.0128,1.0395
+cuisines,Mughlai,Biryani,0.0569,0.0881,0.0112,0.1971,2.2373,0.0062,1.1358
+cuisines,Biryani,Mughlai,0.0881,0.0569,0.0112,0.1272,2.2373,0.0062,1.0806
+cuisines,Chinese,"Malwani, North Indian",0.3471,0.0152,0.0117,0.0337,2.2232,0.0064,1.0192
+cuisines,"Malwani, North Indian",Chinese,0.0152,0.3471,0.0117,0.7717,2.2232,0.0064,2.8602
+cuisines,"Fast Food, North Indian, South Indian",Chinese,0.0209,0.3471,0.0157,0.752,2.1663,0.0085,2.6322
+cuisines,Chinese,"Fast Food, North Indian, South Indian",0.3471,0.0209,0.0157,0.0453,2.1663,0.0085,1.0256
+cuisines,"Chinese, Malwani",North Indian,0.0118,0.4715,0.0117,0.993,2.1061,0.0061,75.5776
+cuisines,North Indian,"Chinese, Malwani",0.4715,0.0118,0.0117,0.0248,2.1061,0.0061,1.0134
+cuisines,North Indian,"Chinese, Mughlai",0.4715,0.0356,0.0342,0.0725,2.0375,0.0174,1.0398
+cuisines,"Chinese, Mughlai",North Indian,0.0356,0.4715,0.0342,0.9606,2.0375,0.0174,13.4305
+cuisines,Chinese,"Mughlai, North Indian",0.3471,0.0499,0.0342,0.0985,1.9761,0.0169,1.054
+cuisines,"Mughlai, North Indian",Chinese,0.0499,0.3471,0.0342,0.686,1.9761,0.0169,2.0789
+cuisines,"Chinese, North Indian","Fast Food, South Indian",0.2597,0.0309,0.0157,0.0606,1.9614,0.0077,1.0316
+cuisines,"Fast Food, South Indian","Chinese, North Indian",0.0309,0.2597,0.0157,0.5093,1.9614,0.0077,1.5088
+cuisines,North Indian,"Chinese, Seafood",0.4715,0.0251,0.0231,0.0489,1.9535,0.0113,1.0251
+cuisines,"Chinese, Seafood",North Indian,0.0251,0.4715,0.0231,0.9211,1.9535,0.0113,6.6945
+cuisines,Chinese,"North Indian, South Indian",0.3471,0.0602,0.0407,0.1173,1.9468,0.0198,1.0646
+cuisines,"North Indian, South Indian",Chinese,0.0602,0.3471,0.0407,0.6758,1.9468,0.0198,2.0137
+cuisines,"Chinese, Continental",North Indian,0.0216,0.4715,0.0194,0.9008,1.9105,0.0093,5.3258
+cuisines,North Indian,"Chinese, Continental",0.4715,0.0216,0.0194,0.0413,1.9105,0.0093,1.0205
+cuisines,North Indian,"Chinese, South Indian",0.4715,0.0452,0.0407,0.0863,1.9085,0.0194,1.045
+cuisines,"Chinese, South Indian",North Indian,0.0452,0.4715,0.0407,0.8998,1.9085,0.0194,5.2755
+cuisines,Seafood,Chinese,0.0378,0.3471,0.0251,0.6623,1.908,0.0119,1.9334
+cuisines,Chinese,Seafood,0.3471,0.0378,0.0251,0.0722,1.908,0.0119,1.037
+cuisines,Chinese,Malwani,0.3471,0.018,0.0118,0.034,1.8811,0.0055,1.0165
+cuisines,Malwani,Chinese,0.018,0.3471,0.0118,0.653,1.8811,0.0055,1.8813
+cuisines,North Indian,"Chinese, Fast Food, South Indian",0.4715,0.0178,0.0157,0.0334,1.8755,0.0073,1.0161
+cuisines,"Chinese, Fast Food, South Indian",North Indian,0.0178,0.4715,0.0157,0.8843,1.8755,0.0073,4.5664
+cuisines,North Indian,Mughlai,0.4715,0.0569,0.0499,0.1058,1.8597,0.023,1.0547
+cuisines,Mughlai,North Indian,0.0569,0.4715,0.0499,0.8768,1.8597,0.023,4.2903
+cuisines,Fast Food,Cafe,0.2463,0.0334,0.0149,0.0606,1.8149,0.0067,1.029
+cuisines,Cafe,Fast Food,0.0334,0.2463,0.0149,0.4469,1.8149,0.0067,1.3628
+cuisines,Chinese,Mughlai,0.3471,0.0569,0.0356,0.1026,1.8036,0.0159,1.0509
+cuisines,Mughlai,Chinese,0.0569,0.3471,0.0356,0.6261,1.8036,0.0159,1.7461
+cuisines,North Indian,Malwani,0.4715,0.018,0.0152,0.0322,1.782,0.0067,1.0146
+cuisines,Malwani,North Indian,0.018,0.4715,0.0152,0.8402,1.782,0.0067,3.307
+cuisines,North Indian,"Chinese, Maharashtrian",0.4715,0.0297,0.0249,0.0528,1.7792,0.0109,1.0244
+cuisines,"Chinese, Maharashtrian",North Indian,0.0297,0.4715,0.0249,0.8389,1.7792,0.0109,3.2804
+cuisines,Street Food,South Indian,0.1026,0.0982,0.0179,0.1743,1.7758,0.0078,1.0922
+cuisines,South Indian,Street Food,0.0982,0.1026,0.0179,0.1822,1.7758,0.0078,1.0973
+cuisines,Chinese,"Beverages, North Indian",0.3471,0.0202,0.0123,0.0354,1.752,0.0053,1.0157
+cuisines,"Beverages, North Indian",Chinese,0.0202,0.3471,0.0123,0.6082,1.752,0.0053,1.6662
+cuisines,"Biryani, Chinese",North Indian,0.0283,0.4715,0.0228,0.8076,1.7128,0.0095,2.7467
+cuisines,North Indian,"Biryani, Chinese",0.4715,0.0283,0.0228,0.0484,1.7128,0.0095,1.0212
+cuisines,"Fast Food, South Indian",Chinese,0.0309,0.3471,0.0178,0.576,1.6594,0.0071,1.5398
+cuisines,Chinese,"Fast Food, South Indian",0.3471,0.0309,0.0178,0.0513,1.6594,0.0071,1.0215
+cuisines,North Indian,Seafood,0.4715,0.0378,0.0296,0.0628,1.6589,0.0118,1.0266
+cuisines,Seafood,North Indian,0.0378,0.4715,0.0296,0.7821,1.6589,0.0118,2.4259
+cuisines,Chinese,"Continental, North Indian",0.3471,0.034,0.0194,0.056,1.6502,0.0077,1.0234
+cuisines,"Continental, North Indian",Chinese,0.034,0.3471,0.0194,0.5728,1.6502,0.0077,1.5283
+cuisines,"Chinese, North Indian",Continental,0.2597,0.0467,0.0194,0.0749,1.6028,0.0073,1.0304
+cuisines,Continental,"Chinese, North Indian",0.0467,0.2597,0.0194,0.4162,1.6028,0.0073,1.2682
+cuisines,"Fast Food, North Indian",Chinese,0.067,0.3471,0.0372,0.5547,1.5981,0.0139,1.4663
+cuisines,Chinese,"Fast Food, North Indian",0.3471,0.067,0.0372,0.1071,1.5981,0.0139,1.0449
+cuisines,"Chinese, South Indian",Fast Food,0.0452,0.2463,0.0178,0.3934,1.5977,0.0067,1.2427
+cuisines,Fast Food,"Chinese, South Indian",0.2463,0.0452,0.0178,0.0723,1.5977,0.0067,1.0292
+cuisines,"Chinese, North Indian",South Indian,0.2597,0.0982,0.0407,0.1568,1.5972,0.0152,1.0695
+cuisines,South Indian,"Chinese, North Indian",0.0982,0.2597,0.0407,0.4148,1.5972,0.0152,1.265
+cuisines,North Indian,Chinese,0.4715,0.3471,0.2597,0.5508,1.5867,0.096,1.4533
+cuisines,Chinese,North Indian,0.3471,0.4715,0.2597,0.7481,1.5867,0.096,2.0981
+cuisines,"Beverages, Chinese",North Indian,0.0165,0.4715,0.0123,0.745,1.5801,0.0045,2.0726
+cuisines,North Indian,"Beverages, Chinese",0.4715,0.0165,0.0123,0.026,1.5801,0.0045,1.0098
+cuisines,"Chinese, North Indian, South Indian",Fast Food,0.0407,0.2463,0.0157,0.3866,1.5701,0.0057,1.2289
+cuisines,Fast Food,"Chinese, North Indian, South Indian",0.2463,0.0407,0.0157,0.0639,1.5701,0.0057,1.0248
+cuisines,North Indian,Continental,0.4715,0.0467,0.034,0.072,1.5412,0.0119,1.0272
+cuisines,Continental,North Indian,0.0467,0.4715,0.034,0.7266,1.5412,0.0119,1.9333
+cuisines,Kebab,North Indian,0.0173,0.4715,0.0124,0.719,1.5251,0.0043,1.8812
+cuisines,North Indian,Kebab,0.4715,0.0173,0.0124,0.0264,1.5251,0.0043,1.0093
+cuisines,North Indian,"Chinese, Street Food",0.4715,0.0149,0.0105,0.0224,1.4999,0.0035,1.0076
+cuisines,"Chinese, Street Food",North Indian,0.0149,0.4715,0.0105,0.7072,1.4999,0.0035,1.8049
+cuisines,"Fast Food, South Indian",North Indian,0.0309,0.4715,0.0209,0.6773,1.4366,0.0064,1.638
+cuisines,North Indian,"Fast Food, South Indian",0.4715,0.0309,0.0209,0.0444,1.4366,0.0064,1.0141
+cuisines,Fast Food,"North Indian, South Indian",0.2463,0.0602,0.0209,0.085,1.411,0.0061,1.0271
+cuisines,"North Indian, South Indian",Fast Food,0.0602,0.2463,0.0209,0.3475,1.411,0.0061,1.1551
+cuisines,North Indian,"Chinese, Fast Food",0.4715,0.056,0.0372,0.0788,1.4088,0.0108,1.0248
+cuisines,"Chinese, Fast Food",North Indian,0.056,0.4715,0.0372,0.6642,1.4088,0.0108,1.574
+cuisines,"Continental, Italian",North Indian,0.0166,0.4715,0.0108,0.6517,1.3823,0.003,1.5176
+cuisines,North Indian,"Continental, Italian",0.4715,0.0166,0.0108,0.0229,1.3823,0.003,1.0065
+cuisines,Chinese,"Biryani, North Indian",0.3471,0.0483,0.0228,0.0658,1.3618,0.0061,1.0187
+cuisines,"Biryani, North Indian",Chinese,0.0483,0.3471,0.0228,0.4727,1.3618,0.0061,1.2381
+cuisines,Continental,Chinese,0.0467,0.3471,0.0216,0.4621,1.3312,0.0054,1.2137
+cuisines,Chinese,Continental,0.3471,0.0467,0.0216,0.0622,1.3312,0.0054,1.0165
+cuisines,Chinese,South Indian,0.3471,0.0982,0.0452,0.1303,1.3279,0.0112,1.037
+cuisines,South Indian,Chinese,0.0982,0.3471,0.0452,0.461,1.3279,0.0112,1.2112
+cuisines,North Indian,South Indian,0.4715,0.0982,0.0602,0.1278,1.3018,0.014,1.034
+cuisines,South Indian,North Indian,0.0982,0.4715,0.0602,0.6138,1.3018,0.014,1.3684
+cuisines,Fast Food,South Indian,0.2463,0.0982,0.0309,0.1255,1.2786,0.0067,1.0313
+cuisines,South Indian,Fast Food,0.0982,0.2463,0.0309,0.3149,1.2786,0.0067,1.1001
+cuisines,Chinese,"Maharashtrian, North Indian",0.3471,0.0571,0.0249,0.0717,1.2554,0.0051,1.0157
+cuisines,"Maharashtrian, North Indian",Chinese,0.0571,0.3471,0.0249,0.4358,1.2554,0.0051,1.1571
+cuisines,Street Food,Beverages,0.1026,0.0882,0.011,0.1076,1.2206,0.002,1.0218
+cuisines,Beverages,Street Food,0.0882,0.1026,0.011,0.1252,1.2206,0.002,1.0259
+amenities+type,delivery_only,TYPE=Delivery,0.0804,0.0746,0.0746,0.9273,12.4324,0.0686,12.7212
+amenities+type,TYPE=Delivery,delivery_only,0.0746,0.0804,0.0746,1.0,12.4324,0.0686,
+amenities+type,desserts_and_bakes,TYPE=Bakery,0.0845,0.0266,0.0261,0.3093,11.6181,0.0239,1.4092
+amenities+type,TYPE=Bakery,desserts_and_bakes,0.0266,0.0845,0.0261,0.9814,11.6181,0.0239,49.2858
+amenities+type,TYPE=Dessert Parlor,desserts_and_bakes,0.0246,0.0845,0.0241,0.9799,11.6005,0.0221,45.6237
+amenities+type,desserts_and_bakes,TYPE=Dessert Parlor,0.0845,0.0246,0.0241,0.2859,11.6005,0.0221,1.3658
+amenities+type,nightlife,full_bar_available,0.0204,0.0932,0.0204,1.0,10.7286,0.0185,
+amenities+type,full_bar_available,nightlife,0.0932,0.0204,0.0204,0.2184,10.7286,0.0185,1.2534
+amenities+type,"TYPE=Casual Dining, smoking_are","full_bar_available, home_delivery, outdoor_seating",0.0578,0.036,0.0207,0.3581,9.9421,0.0186,1.5017
+amenities+type,"full_bar_available, home_delivery, outdoor_seating","TYPE=Casual Dining, smoking_are",0.036,0.0578,0.0207,0.5744,9.9421,0.0186,2.2137
+amenities+type,"TYPE=Casual Dining, smoking_are","full_bar_available, indoor_seating, outdoor_seating",0.0578,0.0543,0.0299,0.5178,9.5347,0.0268,1.9613
+amenities+type,"full_bar_available, indoor_seating, outdoor_seating","TYPE=Casual Dining, smoking_are",0.0543,0.0578,0.0299,0.5508,9.5347,0.0268,2.0977
+amenities+type,"smoking_are, table_booking_recommended","full_bar_available, indoor_seating",0.025,0.0885,0.0208,0.8317,9.3963,0.0186,5.4153
+amenities+type,"full_bar_available, indoor_seating","smoking_are, table_booking_recommended",0.0885,0.025,0.0208,0.2346,9.3963,0.0186,1.2739
+amenities+type,"smoking_are, table_booking_recommended",full_bar_available,0.025,0.0932,0.0218,0.8713,9.3477,0.0194,7.0451
+amenities+type,full_bar_available,"smoking_are, table_booking_recommended",0.0932,0.025,0.0218,0.2334,9.3477,0.0194,1.2719
+amenities+type,full_bar_available,"indoor_seating, smoking_are, table_booking_recommended",0.0932,0.0239,0.0208,0.2228,9.3227,0.0185,1.2559
+amenities+type,"indoor_seating, smoking_are, table_booking_recommended",full_bar_available,0.0239,0.0932,0.0208,0.869,9.3227,0.0185,6.9202
+amenities+type,"TYPE=Casual Dining, smoking_are","full_bar_available, outdoor_seating",0.0578,0.0587,0.0312,0.5407,9.2139,0.0278,2.0493
+amenities+type,"full_bar_available, outdoor_seating","TYPE=Casual Dining, smoking_are",0.0587,0.0578,0.0312,0.5323,9.2139,0.0278,2.0146
+amenities+type,"full_bar_available, outdoor_seating","TYPE=Casual Dining, indoor_seating, smoking_are",0.0587,0.0558,0.0299,0.5098,9.1378,0.0266,1.9263
+amenities+type,"TYPE=Casual Dining, indoor_seating, smoking_are","full_bar_available, outdoor_seating",0.0558,0.0587,0.0299,0.5362,9.1378,0.0266,2.0295
+amenities+type,live_sports_screening,smoking_are,0.0244,0.0911,0.0203,0.8311,9.1178,0.0181,5.3804
+amenities+type,smoking_are,live_sports_screening,0.0911,0.0244,0.0203,0.2224,9.1178,0.0181,1.2547
+amenities+type,"full_bar_available, outdoor_seating","TYPE=Casual Dining, home_delivery, smoking_are",0.0587,0.0388,0.0207,0.3525,9.0819,0.0184,1.4845
+amenities+type,"TYPE=Casual Dining, home_delivery, smoking_are","full_bar_available, outdoor_seating",0.0388,0.0587,0.0207,0.5329,9.0819,0.0184,2.0153
+amenities+type,smoking_are,"full_bar_available, indoor_seating, outdoor_seating",0.0911,0.0543,0.0444,0.4873,8.9733,0.0395,1.8447
+amenities+type,"full_bar_available, indoor_seating, outdoor_seating",smoking_are,0.0543,0.0911,0.0444,0.8179,8.9733,0.0395,4.9911
+amenities+type,smoking_are,"full_bar_available, home_delivery, indoor_seating, outdoor_seating",0.0911,0.0341,0.0279,0.3056,8.9571,0.0247,1.391
+amenities+type,"full_bar_available, home_delivery, indoor_seating, outdoor_seating",smoking_are,0.0341,0.0911,0.0279,0.8164,8.9571,0.0247,4.9508
+amenities+type,"indoor_seating, smoking_are","full_bar_available, home_delivery, outdoor_seating",0.0869,0.036,0.0279,0.3204,8.8958,0.0247,1.4184
+amenities+type,"full_bar_available, home_delivery, outdoor_seating","indoor_seating, smoking_are",0.036,0.0869,0.0279,0.7735,8.8958,0.0247,4.0304
+amenities+type,"full_bar_available, home_delivery, outdoor_seating",smoking_are,0.036,0.0911,0.0291,0.8078,8.8622,0.0258,4.7282
+amenities+type,smoking_are,"full_bar_available, home_delivery, outdoor_seating",0.0911,0.036,0.0291,0.3192,8.8622,0.0258,1.4159
+amenities+type,live_sports_screening,full_bar_available,0.0244,0.0932,0.02,0.8209,8.8076,0.0178,5.0643
+amenities+type,full_bar_available,live_sports_screening,0.0932,0.0244,0.02,0.2149,8.8076,0.0178,1.2426
+amenities+type,smoking_are,"full_bar_available, outdoor_seating",0.0911,0.0587,0.0466,0.5118,8.7214,0.0413,1.928
+amenities+type,"full_bar_available, outdoor_seating",smoking_are,0.0587,0.0911,0.0466,0.7949,8.7214,0.0413,4.4322
+amenities+type,"full_bar_available, outdoor_seating","indoor_seating, smoking_are",0.0587,0.0869,0.0444,0.757,8.7068,0.0393,3.7578
+amenities+type,"indoor_seating, smoking_are","full_bar_available, outdoor_seating",0.0869,0.0587,0.0444,0.5109,8.7068,0.0393,1.9246
+amenities+type,full_bar_available,valet_parking_available,0.0932,0.0255,0.0206,0.221,8.6801,0.0182,1.2511
+amenities+type,valet_parking_available,full_bar_available,0.0255,0.0932,0.0206,0.8091,8.6801,0.0182,4.7491
+amenities+type,"full_bar_available, indoor_seating, outdoor_seating","home_delivery, smoking_are",0.0543,0.0592,0.0279,0.5129,8.6678,0.0246,1.9315
+amenities+type,"home_delivery, smoking_are","full_bar_available, indoor_seating, outdoor_seating",0.0592,0.0543,0.0279,0.4708,8.6678,0.0246,1.7869
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available, indoor_seating, outdoor_seating",0.0911,0.0381,0.0299,0.3282,8.6201,0.0264,1.4319
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating, outdoor_seating",smoking_are,0.0381,0.0911,0.0299,0.7857,8.6201,0.0264,4.2413
+amenities+type,"TYPE=Casual Dining, outdoor_seating, smoking_are","full_bar_available, home_delivery",0.0433,0.0556,0.0207,0.4772,8.578,0.0183,1.8063
+amenities+type,"full_bar_available, home_delivery","TYPE=Casual Dining, outdoor_seating, smoking_are",0.0556,0.0433,0.0207,0.3719,8.578,0.0183,1.523
+amenities+type,"TYPE=Casual Dining, smoking_are","full_bar_available, home_delivery, indoor_seating",0.0578,0.0536,0.0265,0.4579,8.5483,0.0234,1.7459
+amenities+type,"full_bar_available, home_delivery, indoor_seating","TYPE=Casual Dining, smoking_are",0.0536,0.0578,0.0265,0.4938,8.5483,0.0234,1.8615
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available, home_delivery, outdoor_seating",0.0911,0.0266,0.0207,0.2269,8.5255,0.0183,1.2591
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery, outdoor_seating",smoking_are,0.0266,0.0911,0.0207,0.7771,8.5255,0.0183,4.0772
+amenities+type,"full_bar_available, home_delivery","TYPE=Casual Dining, indoor_seating, smoking_are",0.0556,0.0558,0.0265,0.4756,8.5235,0.0234,1.8004
+amenities+type,"TYPE=Casual Dining, indoor_seating, smoking_are","full_bar_available, home_delivery",0.0558,0.0556,0.0265,0.4742,8.5235,0.0234,1.7959
+amenities+type,"full_bar_available, home_delivery","TYPE=Casual Dining, smoking_are",0.0556,0.0578,0.0273,0.4904,8.4881,0.0241,1.8488
+amenities+type,"TYPE=Casual Dining, smoking_are","full_bar_available, home_delivery",0.0578,0.0556,0.0273,0.4722,8.4881,0.0241,1.7892
+amenities+type,"home_delivery, smoking_are","TYPE=Casual Dining, full_bar_available, outdoor_seating",0.0592,0.0412,0.0207,0.3496,8.4837,0.0182,1.4741
+amenities+type,"TYPE=Casual Dining, full_bar_available, outdoor_seating","home_delivery, smoking_are",0.0412,0.0592,0.0207,0.502,8.4837,0.0182,1.8892
+amenities+type,"full_bar_available, outdoor_seating","home_delivery, indoor_seating, smoking_are",0.0587,0.0565,0.0279,0.4747,8.3969,0.0245,1.7961
+amenities+type,"home_delivery, indoor_seating, smoking_are","full_bar_available, outdoor_seating",0.0565,0.0587,0.0279,0.4927,8.3969,0.0245,1.8556
+amenities+type,"full_bar_available, outdoor_seating","home_delivery, smoking_are",0.0587,0.0592,0.0291,0.4958,8.3787,0.0256,1.8659
+amenities+type,"home_delivery, smoking_are","full_bar_available, outdoor_seating",0.0592,0.0587,0.0291,0.4916,8.3787,0.0256,1.8517
+amenities+type,"TYPE=Casual Dining, full_bar_available, outdoor_seating","indoor_seating, smoking_are",0.0412,0.0869,0.0299,0.726,8.35,0.0263,3.3323
+amenities+type,"indoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available, outdoor_seating",0.0869,0.0412,0.0299,0.3441,8.35,0.0263,1.4617
+amenities+type,"TYPE=Casual Dining, full_bar_available, outdoor_seating",smoking_are,0.0412,0.0911,0.0312,0.758,8.3161,0.0275,3.7556
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available, outdoor_seating",0.0911,0.0412,0.0312,0.3427,8.3161,0.0275,1.4586
+amenities+type,"full_bar_available, table_booking_recommended","indoor_seating, smoking_are",0.0296,0.0869,0.0208,0.7019,8.0734,0.0182,3.0634
+amenities+type,"indoor_seating, smoking_are","full_bar_available, table_booking_recommended",0.0869,0.0296,0.0208,0.2389,8.0734,0.0182,1.275
+amenities+type,"full_bar_available, table_booking_recommended",smoking_are,0.0296,0.0911,0.0218,0.7354,8.0679,0.0191,3.4345
+amenities+type,smoking_are,"full_bar_available, table_booking_recommended",0.0911,0.0296,0.0218,0.2387,8.0679,0.0191,1.2747
+amenities+type,"full_bar_available, indoor_seating, table_booking_recommended",smoking_are,0.0283,0.0911,0.0208,0.7347,8.0604,0.0182,3.4257
+amenities+type,smoking_are,"full_bar_available, indoor_seating, table_booking_recommended",0.0911,0.0283,0.0208,0.2278,8.0604,0.0182,1.2585
+amenities+type,"full_bar_available, home_delivery","indoor_seating, outdoor_seating, smoking_are",0.0556,0.0641,0.0279,0.5007,7.8098,0.0243,1.8745
+amenities+type,"indoor_seating, outdoor_seating, smoking_are","full_bar_available, home_delivery",0.0641,0.0556,0.0279,0.4344,7.8098,0.0243,1.6698
+amenities+type,"TYPE=Casual Dining, outdoor_seating, smoking_are","full_bar_available, indoor_seating",0.0433,0.0885,0.0299,0.6901,7.7969,0.0261,2.9414
+amenities+type,"full_bar_available, indoor_seating","TYPE=Casual Dining, outdoor_seating, smoking_are",0.0885,0.0433,0.0299,0.338,7.7969,0.0261,1.4451
+amenities+type,"indoor_seating, smoking_are","full_bar_available, home_delivery",0.0869,0.0556,0.0376,0.4322,7.7698,0.0327,1.6633
+amenities+type,"full_bar_available, home_delivery","indoor_seating, smoking_are",0.0556,0.0869,0.0376,0.6756,7.7698,0.0327,2.8142
+amenities+type,"TYPE=Casual Dining, smoking_are","full_bar_available, indoor_seating",0.0578,0.0885,0.0396,0.6862,7.7522,0.0345,2.9043
+amenities+type,"full_bar_available, indoor_seating","TYPE=Casual Dining, smoking_are",0.0885,0.0578,0.0396,0.4479,7.7522,0.0345,1.7065
+amenities+type,full_bar_available,"TYPE=Casual Dining, outdoor_seating, smoking_are",0.0932,0.0433,0.0312,0.3351,7.7303,0.0272,1.4388
+amenities+type,"TYPE=Casual Dining, outdoor_seating, smoking_are",full_bar_available,0.0433,0.0932,0.0312,0.7205,7.7303,0.0272,3.2447
+amenities+type,"TYPE=Casual Dining, indoor_seating, outdoor_seating, smoking_are",full_bar_available,0.0415,0.0932,0.0299,0.7202,7.7271,0.026,3.2413
+amenities+type,full_bar_available,"TYPE=Casual Dining, indoor_seating, outdoor_seating, smoking_are",0.0932,0.0415,0.0299,0.321,7.7271,0.026,1.4115
+amenities+type,"full_bar_available, home_delivery","outdoor_seating, smoking_are",0.0556,0.0679,0.0291,0.523,7.701,0.0253,1.9539
+amenities+type,"outdoor_seating, smoking_are","full_bar_available, home_delivery",0.0679,0.0556,0.0291,0.4284,7.701,0.0253,1.6521
+amenities+type,"TYPE=Casual Dining, home_delivery, smoking_are","full_bar_available, indoor_seating",0.0388,0.0885,0.0265,0.6815,7.6999,0.023,2.8621
+amenities+type,"full_bar_available, indoor_seating","TYPE=Casual Dining, home_delivery, smoking_are",0.0885,0.0388,0.0265,0.2989,7.6999,0.023,1.3709
+amenities+type,"full_bar_available, home_delivery, indoor_seating",smoking_are,0.0536,0.0911,0.0376,0.7015,7.6966,0.0327,3.0451
+amenities+type,smoking_are,"full_bar_available, home_delivery, indoor_seating",0.0911,0.0536,0.0376,0.4123,7.6966,0.0327,1.6104
+amenities+type,"full_bar_available, home_delivery",smoking_are,0.0556,0.0911,0.039,0.7007,7.6879,0.0339,3.037
+amenities+type,smoking_are,"full_bar_available, home_delivery",0.0911,0.0556,0.039,0.4277,7.6879,0.0339,1.65
+amenities+type,"full_bar_available, home_delivery, indoor_seating","outdoor_seating, smoking_are",0.0536,0.0679,0.0279,0.52,7.6574,0.0242,1.9419
+amenities+type,"outdoor_seating, smoking_are","full_bar_available, home_delivery, indoor_seating",0.0679,0.0536,0.0279,0.4102,7.6574,0.0242,1.6046
+amenities+type,"TYPE=Casual Dining, indoor_seating, smoking_are",full_bar_available,0.0558,0.0932,0.0396,0.7105,7.6225,0.0344,3.1321
+amenities+type,full_bar_available,"TYPE=Casual Dining, indoor_seating, smoking_are",0.0932,0.0558,0.0396,0.4253,7.6225,0.0344,1.6429
+amenities+type,full_bar_available,"TYPE=Casual Dining, smoking_are",0.0932,0.0578,0.041,0.4403,7.6217,0.0357,1.6835
+amenities+type,"TYPE=Casual Dining, smoking_are",full_bar_available,0.0578,0.0932,0.041,0.7104,7.6217,0.0357,3.1313
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating, smoking_are",full_bar_available,0.0292,0.0932,0.0207,0.709,7.607,0.018,3.1165
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery, outdoor_seating, smoking_are",0.0932,0.0292,0.0207,0.2219,7.607,0.018,1.2477
+amenities+type,smoking_are,"full_bar_available, indoor_seating",0.0911,0.0885,0.0612,0.6709,7.5796,0.0531,2.7695
+amenities+type,"full_bar_available, indoor_seating",smoking_are,0.0885,0.0911,0.0612,0.6909,7.5796,0.0531,2.9401
+amenities+type,full_bar_available,"indoor_seating, smoking_are",0.0932,0.0869,0.0612,0.6561,7.5456,0.053,2.6547
+amenities+type,"indoor_seating, smoking_are",full_bar_available,0.0869,0.0932,0.0612,0.7033,7.5456,0.053,3.0564
+amenities+type,"TYPE=Casual Dining, home_delivery, smoking_are",full_bar_available,0.0388,0.0932,0.0273,0.7028,7.5396,0.0237,3.0507
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery, smoking_are",0.0932,0.0388,0.0273,0.2927,7.5396,0.0237,1.3589
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery, indoor_seating, smoking_are",0.0932,0.0377,0.0265,0.2838,7.5358,0.0229,1.3437
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating, smoking_are",full_bar_available,0.0377,0.0932,0.0265,0.7024,7.5358,0.0229,3.0471
+amenities+type,smoking_are,full_bar_available,0.0911,0.0932,0.0636,0.698,7.4887,0.0551,3.0027
+amenities+type,full_bar_available,smoking_are,0.0932,0.0911,0.0636,0.6826,7.4887,0.0551,2.8633
+amenities+type,full_bar_available,"indoor_seating, outdoor_seating, smoking_are",0.0932,0.0641,0.0444,0.4766,7.4328,0.0384,1.788
+amenities+type,"indoor_seating, outdoor_seating, smoking_are",full_bar_available,0.0641,0.0932,0.0444,0.6928,7.4328,0.0384,2.9518
+amenities+type,"full_bar_available, indoor_seating","outdoor_seating, smoking_are",0.0885,0.0679,0.0444,0.5019,7.3903,0.0384,1.8712
+amenities+type,"outdoor_seating, smoking_are","full_bar_available, indoor_seating",0.0679,0.0885,0.0444,0.6541,7.3903,0.0384,2.6353
+amenities+type,full_bar_available,"outdoor_seating, smoking_are",0.0932,0.0679,0.0466,0.5004,7.3694,0.0403,1.8658
+amenities+type,"outdoor_seating, smoking_are",full_bar_available,0.0679,0.0932,0.0466,0.6869,7.3694,0.0403,2.8961
+amenities+type,"outdoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available, home_delivery",0.0679,0.0415,0.0207,0.3046,7.3482,0.0179,1.3784
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery","outdoor_seating, smoking_are",0.0415,0.0679,0.0207,0.499,7.3482,0.0179,1.8605
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery","indoor_seating, smoking_are",0.0415,0.0869,0.0265,0.6382,7.3399,0.0229,2.5234
+amenities+type,"indoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available, home_delivery",0.0869,0.0415,0.0265,0.3043,7.3399,0.0229,1.3777
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating","home_delivery, smoking_are",0.0613,0.0592,0.0265,0.4315,7.2914,0.0228,1.6548
+amenities+type,"home_delivery, smoking_are","TYPE=Casual Dining, full_bar_available, indoor_seating",0.0592,0.0613,0.0265,0.4471,7.2914,0.0228,1.6977
+amenities+type,"home_delivery, indoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available",0.0565,0.0645,0.0265,0.4679,7.2514,0.0228,1.7582
+amenities+type,"TYPE=Casual Dining, full_bar_available","home_delivery, indoor_seating, smoking_are",0.0645,0.0565,0.0265,0.41,7.2514,0.0228,1.599
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery, indoor_seating",smoking_are,0.0401,0.0911,0.0265,0.6605,7.2463,0.0228,2.677
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available, home_delivery, indoor_seating",0.0911,0.0401,0.0265,0.2902,7.2463,0.0228,1.3525
+amenities+type,"TYPE=Casual Dining, full_bar_available","indoor_seating, outdoor_seating, smoking_are",0.0645,0.0641,0.0299,0.4636,7.2305,0.0258,1.7448
+amenities+type,"indoor_seating, outdoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available",0.0641,0.0645,0.0299,0.4666,7.2305,0.0258,1.7537
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery",smoking_are,0.0415,0.0911,0.0273,0.6581,7.2195,0.0235,2.6579
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available, home_delivery",0.0911,0.0415,0.0273,0.2993,7.2195,0.0235,1.3679
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating","outdoor_seating, smoking_are",0.0613,0.0679,0.0299,0.4879,7.1847,0.0258,1.8201
+amenities+type,"outdoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available, indoor_seating",0.0679,0.0613,0.0299,0.4405,7.1847,0.0258,1.6778
+amenities+type,"home_delivery, smoking_are","full_bar_available, indoor_seating",0.0592,0.0885,0.0376,0.6351,7.1753,0.0323,2.4979
+amenities+type,"full_bar_available, indoor_seating","home_delivery, smoking_are",0.0885,0.0592,0.0376,0.4246,7.1753,0.0323,1.635
+amenities+type,"home_delivery, smoking_are","TYPE=Casual Dining, full_bar_available",0.0592,0.0645,0.0273,0.461,7.1441,0.0235,1.7356
+amenities+type,"TYPE=Casual Dining, full_bar_available","home_delivery, smoking_are",0.0645,0.0592,0.0273,0.4227,7.1441,0.0235,1.6298
+amenities+type,"TYPE=Casual Dining, full_bar_available","home_delivery, outdoor_seating, smoking_are",0.0645,0.0449,0.0207,0.3206,7.1371,0.0178,1.4057
+amenities+type,"home_delivery, outdoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available",0.0449,0.0645,0.0207,0.4606,7.1371,0.0178,1.7341
+amenities+type,full_bar_available,"home_delivery, indoor_seating, smoking_are",0.0932,0.0565,0.0376,0.4032,7.1315,0.0323,1.5808
+amenities+type,"home_delivery, indoor_seating, smoking_are",full_bar_available,0.0565,0.0932,0.0376,0.6647,7.1315,0.0323,2.7046
+amenities+type,"outdoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available",0.0679,0.0645,0.0312,0.46,7.1278,0.0269,1.7322
+amenities+type,"TYPE=Casual Dining, full_bar_available","outdoor_seating, smoking_are",0.0645,0.0679,0.0312,0.484,7.1278,0.0269,1.8065
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating",smoking_are,0.0613,0.0911,0.0396,0.6465,7.0929,0.0341,2.571
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available, indoor_seating",0.0911,0.0613,0.0396,0.4349,7.0929,0.0341,1.6611
+amenities+type,"home_delivery, smoking_are",full_bar_available,0.0592,0.0932,0.039,0.6588,7.0677,0.0335,2.6575
+amenities+type,full_bar_available,"home_delivery, smoking_are",0.0932,0.0592,0.039,0.4182,7.0677,0.0335,1.6171
+amenities+type,"indoor_seating, smoking_are","TYPE=Casual Dining, full_bar_available",0.0869,0.0645,0.0396,0.4559,7.0654,0.034,1.7194
+amenities+type,"TYPE=Casual Dining, full_bar_available","indoor_seating, smoking_are",0.0645,0.0869,0.0396,0.6143,7.0654,0.034,2.3673
+amenities+type,"indoor_seating, table_booking_recommended","full_bar_available, smoking_are",0.0462,0.0636,0.0208,0.4492,7.0603,0.0178,1.7
+amenities+type,"full_bar_available, smoking_are","indoor_seating, table_booking_recommended",0.0636,0.0462,0.0208,0.3264,7.0603,0.0178,1.416
+amenities+type,"full_bar_available, smoking_are",table_booking_recommended,0.0636,0.0485,0.0218,0.342,7.0569,0.0187,1.446
+amenities+type,table_booking_recommended,"full_bar_available, smoking_are",0.0485,0.0636,0.0218,0.449,7.0569,0.0187,1.6994
+amenities+type,"home_delivery, indoor_seating, outdoor_seating, smoking_are",full_bar_available,0.0424,0.0932,0.0279,0.6563,7.0413,0.0239,2.6384
+amenities+type,full_bar_available,"home_delivery, indoor_seating, outdoor_seating, smoking_are",0.0932,0.0424,0.0279,0.2989,7.0413,0.0239,1.3657
+amenities+type,"full_bar_available, indoor_seating, smoking_are",table_booking_recommended,0.0612,0.0485,0.0208,0.3396,7.0085,0.0178,1.4409
+amenities+type,table_booking_recommended,"full_bar_available, indoor_seating, smoking_are",0.0485,0.0612,0.0208,0.4286,7.0085,0.0178,1.643
+amenities+type,"home_delivery, outdoor_seating, smoking_are","full_bar_available, indoor_seating",0.0449,0.0885,0.0279,0.6202,7.0068,0.0239,2.3998
+amenities+type,"full_bar_available, indoor_seating","home_delivery, outdoor_seating, smoking_are",0.0885,0.0449,0.0279,0.3147,7.0068,0.0239,1.3937
+amenities+type,smoking_are,"TYPE=Casual Dining, full_bar_available",0.0911,0.0645,0.041,0.4503,6.9778,0.0352,1.7017
+amenities+type,"TYPE=Casual Dining, full_bar_available",smoking_are,0.0645,0.0911,0.041,0.636,6.9778,0.0352,2.4969
+amenities+type,full_bar_available,"home_delivery, outdoor_seating, smoking_are",0.0932,0.0449,0.0291,0.3121,6.949,0.0249,1.3884
+amenities+type,"home_delivery, outdoor_seating, smoking_are",full_bar_available,0.0449,0.0932,0.0291,0.6477,6.949,0.0249,2.574
+amenities+type,"full_bar_available, indoor_seating",table_booking_recommended,0.0885,0.0485,0.0283,0.3194,6.5905,0.024,1.398
+amenities+type,table_booking_recommended,"full_bar_available, indoor_seating",0.0485,0.0885,0.0283,0.5833,6.5905,0.024,2.1876
+amenities+type,"indoor_seating, table_booking_recommended",full_bar_available,0.0462,0.0932,0.0283,0.6114,6.5595,0.024,2.3335
+amenities+type,full_bar_available,"indoor_seating, table_booking_recommended",0.0932,0.0462,0.0283,0.3033,6.5595,0.024,1.3689
+amenities+type,full_bar_available,table_booking_recommended,0.0932,0.0485,0.0296,0.3174,6.5503,0.0251,1.394
+amenities+type,table_booking_recommended,full_bar_available,0.0485,0.0932,0.0296,0.6105,6.5503,0.0251,2.3284
+amenities+type,"indoor_seating, smoking_are",table_booking_recommended,0.0869,0.0485,0.0239,0.2749,5.6725,0.0197,1.3123
+amenities+type,table_booking_recommended,"indoor_seating, smoking_are",0.0485,0.0869,0.0239,0.4932,5.6725,0.0197,1.8016
+amenities+type,smoking_are,"indoor_seating, table_booking_recommended",0.0911,0.0462,0.0239,0.2622,5.6713,0.0197,1.2927
+amenities+type,"indoor_seating, table_booking_recommended",smoking_are,0.0462,0.0911,0.0239,0.5169,5.6713,0.0197,1.8814
+amenities+type,smoking_are,table_booking_recommended,0.0911,0.0485,0.025,0.274,5.6535,0.0206,1.3106
+amenities+type,table_booking_recommended,smoking_are,0.0485,0.0911,0.025,0.5153,5.6535,0.0206,1.8751
+amenities+type,desserts_and_bakes,seating_not_available,0.0845,0.0527,0.0213,0.2527,4.7907,0.0169,1.2675
+amenities+type,seating_not_available,desserts_and_bakes,0.0527,0.0845,0.0213,0.4047,4.7907,0.0169,1.5379
+amenities+type,table_reservation_not_required,no_alcohol_available,0.0499,0.0877,0.0209,0.4182,4.769,0.0165,1.568
+amenities+type,no_alcohol_available,table_reservation_not_required,0.0877,0.0499,0.0209,0.2378,4.769,0.0165,1.2465
+amenities+type,"TYPE=Casual Dining, outdoor_seating","full_bar_available, home_delivery, smoking_are",0.1138,0.039,0.0207,0.1818,4.6625,0.0162,1.1745
+amenities+type,"full_bar_available, home_delivery, smoking_are","TYPE=Casual Dining, outdoor_seating",0.039,0.1138,0.0207,0.5307,4.6625,0.0162,1.8881
+amenities+type,"TYPE=Casual Dining, indoor_seating, outdoor_seating","home_delivery, smoking_are",0.1033,0.0592,0.0281,0.2721,4.5992,0.022,1.2926
+amenities+type,"home_delivery, smoking_are","TYPE=Casual Dining, indoor_seating, outdoor_seating",0.0592,0.1033,0.0281,0.4749,4.5992,0.022,1.7078
+amenities+type,"TYPE=Casual Dining, indoor_seating, outdoor_seating","full_bar_available, smoking_are",0.1033,0.0636,0.0299,0.2897,4.5535,0.0233,1.3183
+amenities+type,"full_bar_available, smoking_are","TYPE=Casual Dining, indoor_seating, outdoor_seating",0.0636,0.1033,0.0299,0.4702,4.5535,0.0233,1.6926
+amenities+type,smoking_are,"TYPE=Casual Dining, indoor_seating, outdoor_seating",0.0911,0.1033,0.0415,0.4557,4.4129,0.0321,1.6475
+amenities+type,"TYPE=Casual Dining, indoor_seating, outdoor_seating",smoking_are,0.1033,0.0911,0.0415,0.4022,4.4129,0.0321,1.5204
+amenities+type,"TYPE=Casual Dining, indoor_seating, outdoor_seating","full_bar_available, home_delivery",0.1033,0.0556,0.0253,0.245,4.4044,0.0196,1.2508
+amenities+type,"full_bar_available, home_delivery","TYPE=Casual Dining, indoor_seating, outdoor_seating",0.0556,0.1033,0.0253,0.4548,4.4044,0.0196,1.6448
+amenities+type,"TYPE=Casual Dining, outdoor_seating","home_delivery, indoor_seating, smoking_are",0.1138,0.0565,0.0281,0.2469,4.3676,0.0217,1.2528
+amenities+type,"home_delivery, indoor_seating, smoking_are","TYPE=Casual Dining, outdoor_seating",0.0565,0.1138,0.0281,0.4971,4.3676,0.0217,1.7621
+amenities+type,"home_delivery, smoking_are","TYPE=Casual Dining, outdoor_seating",0.0592,0.1138,0.0292,0.493,4.332,0.0224,1.748
+amenities+type,"TYPE=Casual Dining, outdoor_seating","home_delivery, smoking_are",0.1138,0.0592,0.0292,0.2563,4.332,0.0224,1.2651
+amenities+type,"TYPE=Casual Dining, outdoor_seating","full_bar_available, smoking_are",0.1138,0.0636,0.0312,0.2744,4.3135,0.024,1.2906
+amenities+type,"full_bar_available, smoking_are","TYPE=Casual Dining, outdoor_seating",0.0636,0.1138,0.0312,0.4909,4.3135,0.024,1.7408
+amenities+type,"TYPE=Casual Dining, outdoor_seating","full_bar_available, indoor_seating, smoking_are",0.1138,0.0612,0.0299,0.2629,4.2985,0.023,1.2736
+amenities+type,"full_bar_available, indoor_seating, smoking_are","TYPE=Casual Dining, outdoor_seating",0.0612,0.1138,0.0299,0.4892,4.2985,0.023,1.735
+amenities+type,"TYPE=Casual Dining, outdoor_seating","full_bar_available, home_delivery",0.1138,0.0556,0.0266,0.2339,4.2044,0.0203,1.2327
+amenities+type,"full_bar_available, home_delivery","TYPE=Casual Dining, outdoor_seating",0.0556,0.1138,0.0266,0.4785,4.2044,0.0203,1.6994
+amenities+type,"TYPE=Casual Dining, outdoor_seating","indoor_seating, smoking_are",0.1138,0.0869,0.0415,0.365,4.1975,0.0316,1.4378
+amenities+type,"indoor_seating, smoking_are","TYPE=Casual Dining, outdoor_seating",0.0869,0.1138,0.0415,0.4777,4.1975,0.0316,1.6968
+amenities+type,smoking_are,"TYPE=Casual Dining, outdoor_seating",0.0911,0.1138,0.0433,0.4756,4.1787,0.033,1.6899
+amenities+type,"TYPE=Casual Dining, outdoor_seating",smoking_are,0.1138,0.0911,0.0433,0.3809,4.1787,0.033,1.468
+amenities+type,"full_bar_available, home_delivery, indoor_seating","TYPE=Casual Dining, outdoor_seating",0.0536,0.1138,0.0253,0.4723,4.1499,0.0192,1.6794
+amenities+type,"TYPE=Casual Dining, outdoor_seating","full_bar_available, home_delivery, indoor_seating",0.1138,0.0536,0.0253,0.2223,4.1499,0.0192,1.217
+amenities+type,smoking_are,"TYPE=Casual Dining, home_delivery, indoor_seating, outdoor_seating",0.0911,0.0748,0.0281,0.3083,4.1202,0.0213,1.3376
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating, outdoor_seating",smoking_are,0.0748,0.0911,0.0281,0.3756,4.1202,0.0213,1.4554
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating","full_bar_available, smoking_are",0.0813,0.0636,0.0207,0.2543,3.9971,0.0155,1.2557
+amenities+type,"full_bar_available, smoking_are","TYPE=Casual Dining, home_delivery, outdoor_seating",0.0636,0.0813,0.0207,0.3251,3.9971,0.0155,1.3612
+amenities+type,"TYPE=Quick Bites, vegetarian_only","breakfast, free_parking",0.1011,0.0517,0.0209,0.2062,3.9904,0.0156,1.1947
+amenities+type,"breakfast, free_parking","TYPE=Quick Bites, vegetarian_only",0.0517,0.1011,0.0209,0.4035,3.9904,0.0156,1.5069
+amenities+type,"indoor_seating, smoking_are","TYPE=Casual Dining, home_delivery, outdoor_seating",0.0869,0.0813,0.0281,0.3232,3.9736,0.021,1.3574
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating","indoor_seating, smoking_are",0.0813,0.0869,0.0281,0.3455,3.9736,0.021,1.395
+amenities+type,full_bar_available,"TYPE=Casual Dining, indoor_seating, outdoor_seating",0.0932,0.1033,0.0381,0.4085,3.9558,0.0284,1.516
+amenities+type,"TYPE=Casual Dining, indoor_seating, outdoor_seating",full_bar_available,0.1033,0.0932,0.0381,0.3687,3.9558,0.0284,1.4364
+amenities+type,smoking_are,"TYPE=Casual Dining, home_delivery, outdoor_seating",0.0911,0.0813,0.0292,0.3201,3.9349,0.0218,1.3511
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating",smoking_are,0.0813,0.0911,0.0292,0.3587,3.9349,0.0218,1.4171
+amenities+type,"TYPE=Casual Dining, outdoor_seating",full_bar_available,0.1138,0.0932,0.0412,0.3621,3.8843,0.0306,1.4214
+amenities+type,full_bar_available,"TYPE=Casual Dining, outdoor_seating",0.0932,0.1138,0.0412,0.4421,3.8843,0.0306,1.5884
+amenities+type,"TYPE=Casual Dining, outdoor_seating","full_bar_available, indoor_seating",0.1138,0.0885,0.0381,0.3345,3.7796,0.028,1.3697
+amenities+type,"full_bar_available, indoor_seating","TYPE=Casual Dining, outdoor_seating",0.0885,0.1138,0.0381,0.4302,3.7796,0.028,1.5552
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, table_reservation_not_required",0.1526,0.0456,0.0255,0.1674,3.6728,0.0186,1.1463
+amenities+type,"indoor_seating, table_reservation_not_required","TYPE=Casual Dining, home_delivery",0.0456,0.1526,0.0255,0.5606,3.6728,0.0186,1.9284
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating, outdoor_seating",full_bar_available,0.0748,0.0932,0.0253,0.3381,3.6274,0.0183,1.37
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery, indoor_seating, outdoor_seating",0.0932,0.0748,0.0253,0.2714,3.6274,0.0183,1.2699
+amenities+type,table_reservation_not_required,"TYPE=Casual Dining, home_delivery",0.0499,0.1526,0.0274,0.5488,3.5954,0.0198,1.8779
+amenities+type,"TYPE=Casual Dining, home_delivery",table_reservation_not_required,0.1526,0.0499,0.0274,0.1793,3.5954,0.0198,1.1577
+amenities+type,"TYPE=Casual Dining, indoor_seating","full_bar_available, home_delivery",0.2023,0.0556,0.0401,0.198,3.5586,0.0288,1.1775
+amenities+type,"full_bar_available, home_delivery","TYPE=Casual Dining, indoor_seating",0.0556,0.2023,0.0401,0.72,3.5586,0.0288,2.8488
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating","full_bar_available, indoor_seating",0.0813,0.0885,0.0253,0.311,3.5142,0.0181,1.323
+amenities+type,"full_bar_available, indoor_seating","TYPE=Casual Dining, home_delivery, outdoor_seating",0.0885,0.0813,0.0253,0.2858,3.5142,0.0181,1.2864
+amenities+type,table_reservation_not_required,"TYPE=Casual Dining, home_delivery, indoor_seating",0.0499,0.1459,0.0255,0.5124,3.5127,0.0183,1.7517
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating",table_reservation_not_required,0.1459,0.0499,0.0255,0.1751,3.5127,0.0183,1.1519
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery, outdoor_seating",0.0932,0.0813,0.0266,0.2856,3.511,0.019,1.2859
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating",full_bar_available,0.0813,0.0932,0.0266,0.3273,3.511,0.019,1.3479
+amenities+type,"full_bar_available, home_delivery, indoor_seating",TYPE=Casual Dining,0.0536,0.2135,0.0401,0.7477,3.5015,0.0286,3.1171
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery, indoor_seating",0.2135,0.0536,0.0401,0.1876,3.5015,0.0286,1.1649
+amenities+type,"full_bar_available, home_delivery",TYPE=Casual Dining,0.0556,0.2135,0.0415,0.7452,3.4898,0.0296,3.0864
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery",0.2135,0.0556,0.0415,0.1941,3.4898,0.0296,1.1719
+amenities+type,"full_bar_available, home_delivery, indoor_seating, outdoor_seating",TYPE=Casual Dining,0.0341,0.2135,0.0253,0.7415,3.4728,0.018,3.043
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery, indoor_seating, outdoor_seating",0.2135,0.0341,0.0253,0.1185,3.4728,0.018,1.0957
+amenities+type,"full_bar_available, home_delivery, outdoor_seating","TYPE=Casual Dining, indoor_seating",0.036,0.2023,0.0253,0.7025,3.4722,0.018,2.6814
+amenities+type,"TYPE=Casual Dining, indoor_seating","full_bar_available, home_delivery, outdoor_seating",0.2023,0.036,0.0253,0.1251,3.4722,0.018,1.1018
+amenities+type,"full_bar_available, home_delivery, outdoor_seating",TYPE=Casual Dining,0.036,0.2135,0.0266,0.7391,3.4614,0.0189,3.0148
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery, outdoor_seating",0.2135,0.036,0.0266,0.1247,3.4614,0.0189,1.1013
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, table_reservation_not_required",0.2135,0.0354,0.0255,0.1196,3.3841,0.018,1.0957
+amenities+type,"home_delivery, indoor_seating, table_reservation_not_required",TYPE=Casual Dining,0.0354,0.2135,0.0255,0.7226,3.3841,0.018,2.8352
+amenities+type,"TYPE=Quick Bites, breakfast","free_parking, vegetarian_only",0.1413,0.0436,0.0209,0.1475,3.3838,0.0147,1.1219
+amenities+type,"free_parking, vegetarian_only","TYPE=Quick Bites, breakfast",0.0436,0.1413,0.0209,0.4783,3.3838,0.0147,1.6458
+amenities+type,"indoor_seating, table_reservation_not_required",TYPE=Casual Dining,0.0456,0.2135,0.0327,0.7179,3.362,0.023,2.7879
+amenities+type,TYPE=Casual Dining,"indoor_seating, table_reservation_not_required",0.2135,0.0456,0.0327,0.1532,3.362,0.023,1.1271
+amenities+type,"TYPE=Casual Dining, indoor_seating","full_bar_available, home_delivery, smoking_are",0.2023,0.039,0.0265,0.1308,3.3543,0.0186,1.1056
+amenities+type,"full_bar_available, home_delivery, smoking_are","TYPE=Casual Dining, indoor_seating",0.039,0.2023,0.0265,0.6786,3.3543,0.0186,2.4822
+amenities+type,"home_delivery, table_reservation_not_required",TYPE=Casual Dining,0.0382,0.2135,0.0274,0.7155,3.3509,0.0192,2.7646
+amenities+type,TYPE=Casual Dining,"home_delivery, table_reservation_not_required",0.2135,0.0382,0.0274,0.1281,3.3509,0.0192,1.1031
+amenities+type,"full_bar_available, home_delivery, outdoor_seating, smoking_are",TYPE=Casual Dining,0.0291,0.2135,0.0207,0.711,3.3299,0.0145,2.7218
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery, outdoor_seating, smoking_are",0.2135,0.0291,0.0207,0.0969,3.3299,0.0145,1.0751
+amenities+type,table_reservation_not_required,TYPE=Casual Dining,0.0499,0.2135,0.0352,0.7058,3.3053,0.0245,2.6731
+amenities+type,TYPE=Casual Dining,table_reservation_not_required,0.2135,0.0499,0.0352,0.1648,3.3053,0.0245,1.1376
+amenities+type,"TYPE=Casual Dining, indoor_seating","home_delivery, table_reservation_not_required",0.2023,0.0382,0.0255,0.1263,3.3021,0.0178,1.1008
+amenities+type,"home_delivery, table_reservation_not_required","TYPE=Casual Dining, indoor_seating",0.0382,0.2023,0.0255,0.6681,3.3021,0.0178,2.4034
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery, indoor_seating, smoking_are",0.2135,0.0376,0.0265,0.1239,3.2967,0.0184,1.0985
+amenities+type,"full_bar_available, home_delivery, indoor_seating, smoking_are",TYPE=Casual Dining,0.0376,0.2135,0.0265,0.7039,3.2967,0.0184,2.6565
+amenities+type,"full_bar_available, outdoor_seating",TYPE=Casual Dining,0.0587,0.2135,0.0412,0.7022,3.2887,0.0287,2.6413
+amenities+type,TYPE=Casual Dining,"full_bar_available, outdoor_seating",0.2135,0.0587,0.0412,0.193,3.2887,0.0287,1.1664
+amenities+type,TYPE=Casual Dining,"full_bar_available, indoor_seating, outdoor_seating",0.2135,0.0543,0.0381,0.1783,3.2832,0.0265,1.1509
+amenities+type,"full_bar_available, indoor_seating, outdoor_seating",TYPE=Casual Dining,0.0543,0.2135,0.0381,0.7011,3.2832,0.0265,2.6309
+amenities+type,"full_bar_available, home_delivery, smoking_are",TYPE=Casual Dining,0.039,0.2135,0.0273,0.6998,3.2772,0.019,2.6197
+amenities+type,TYPE=Casual Dining,"full_bar_available, home_delivery, smoking_are",0.2135,0.039,0.0273,0.1277,3.2772,0.019,1.1018
+amenities+type,"TYPE=Casual Dining, indoor_seating",full_bar_available,0.2023,0.0932,0.0613,0.3031,3.2513,0.0425,1.3011
+amenities+type,full_bar_available,"TYPE=Casual Dining, indoor_seating",0.0932,0.2023,0.0613,0.6578,3.2513,0.0425,2.3312
+amenities+type,"full_bar_available, indoor_seating",TYPE=Casual Dining,0.0885,0.2135,0.0613,0.6927,3.2442,0.0424,2.5596
+amenities+type,TYPE=Casual Dining,"full_bar_available, indoor_seating",0.2135,0.0885,0.0613,0.2871,3.2442,0.0424,1.2786
+amenities+type,table_reservation_not_required,"TYPE=Casual Dining, indoor_seating",0.0499,0.2023,0.0327,0.6562,3.2433,0.0226,2.3202
+amenities+type,"TYPE=Casual Dining, indoor_seating",table_reservation_not_required,0.2023,0.0499,0.0327,0.1617,3.2433,0.0226,1.1334
+amenities+type,full_bar_available,TYPE=Casual Dining,0.0932,0.2135,0.0645,0.6923,3.2422,0.0446,2.556
+amenities+type,TYPE=Casual Dining,full_bar_available,0.2135,0.0932,0.0645,0.3022,3.2422,0.0446,1.2995
+amenities+type,"full_bar_available, outdoor_seating","TYPE=Casual Dining, indoor_seating",0.0587,0.2023,0.0381,0.6489,3.2071,0.0262,2.2718
+amenities+type,"TYPE=Casual Dining, indoor_seating","full_bar_available, outdoor_seating",0.2023,0.0587,0.0381,0.1882,3.2071,0.0262,1.1595
+amenities+type,"full_bar_available, outdoor_seating, smoking_are","TYPE=Casual Dining, indoor_seating",0.0466,0.2023,0.0299,0.6413,3.1699,0.0205,2.2241
+amenities+type,"TYPE=Casual Dining, indoor_seating","full_bar_available, outdoor_seating, smoking_are",0.2023,0.0466,0.0299,0.1479,3.1699,0.0205,1.1188
+amenities+type,TYPE=Casual Dining,"full_bar_available, indoor_seating, outdoor_seating, smoking_are",0.2135,0.0444,0.0299,0.1401,3.1539,0.0204,1.1113
+amenities+type,"full_bar_available, indoor_seating, outdoor_seating, smoking_are",TYPE=Casual Dining,0.0444,0.2135,0.0299,0.6735,3.1539,0.0204,2.4086
+amenities+type,"TYPE=Casual Dining, indoor_seating","home_delivery, table_booking_recommended",0.2023,0.0341,0.0218,0.1075,3.1518,0.0149,1.0823
+amenities+type,"home_delivery, table_booking_recommended","TYPE=Casual Dining, indoor_seating",0.0341,0.2023,0.0218,0.6377,3.1518,0.0149,2.2016
+amenities+type,"TYPE=Casual Dining, indoor_seating","home_delivery, smoking_are",0.2023,0.0592,0.0377,0.1862,3.1459,0.0257,1.156
+amenities+type,"home_delivery, smoking_are","TYPE=Casual Dining, indoor_seating",0.0592,0.2023,0.0377,0.6365,3.1459,0.0257,2.1944
+amenities+type,"full_bar_available, outdoor_seating, smoking_are",TYPE=Casual Dining,0.0466,0.2135,0.0312,0.6696,3.1359,0.0213,2.3804
+amenities+type,TYPE=Casual Dining,"full_bar_available, outdoor_seating, smoking_are",0.2135,0.0466,0.0312,0.1463,3.1359,0.0213,1.1167
+amenities+type,"home_delivery, indoor_seating, smoking_are",TYPE=Casual Dining,0.0565,0.2135,0.0377,0.6662,3.1198,0.0256,2.356
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, smoking_are",0.2135,0.0565,0.0377,0.1764,3.1198,0.0256,1.1455
+amenities+type,"home_delivery, indoor_seating, outdoor_seating, smoking_are",TYPE=Casual Dining,0.0424,0.2135,0.0281,0.6621,3.1009,0.019,2.3278
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, outdoor_seating, smoking_are",0.2135,0.0424,0.0281,0.1316,3.1009,0.019,1.1027
+amenities+type,"TYPE=Casual Dining, indoor_seating","home_delivery, outdoor_seating, smoking_are",0.2023,0.0449,0.0281,0.1389,3.0925,0.019,1.1091
+amenities+type,"home_delivery, outdoor_seating, smoking_are","TYPE=Casual Dining, indoor_seating",0.0449,0.2023,0.0281,0.6257,3.0925,0.019,2.131
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, table_booking_recommended",0.2135,0.033,0.0218,0.1019,3.0909,0.0147,1.0767
+amenities+type,"home_delivery, indoor_seating, table_booking_recommended",TYPE=Casual Dining,0.033,0.2135,0.0218,0.66,3.0909,0.0147,2.3131
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, table_booking_recommended",0.1526,0.0462,0.0218,0.1425,3.0832,0.0147,1.1123
+amenities+type,"indoor_seating, table_booking_recommended","TYPE=Casual Dining, home_delivery",0.0462,0.1526,0.0218,0.4706,3.0832,0.0147,1.6006
+amenities+type,"TYPE=Casual Dining, indoor_seating","full_bar_available, smoking_are",0.2023,0.0636,0.0396,0.1959,3.0795,0.0268,1.1645
+amenities+type,"full_bar_available, smoking_are","TYPE=Casual Dining, indoor_seating",0.0636,0.2023,0.0396,0.6231,3.0795,0.0268,2.1162
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating",table_booking_recommended,0.1459,0.0485,0.0218,0.1492,3.0779,0.0147,1.1183
+amenities+type,table_booking_recommended,"TYPE=Casual Dining, home_delivery, indoor_seating",0.0485,0.1459,0.0218,0.449,3.0779,0.0147,1.5501
+amenities+type,TYPE=Casual Dining,"home_delivery, smoking_are",0.2135,0.0592,0.0388,0.1818,3.0721,0.0262,1.1499
+amenities+type,"home_delivery, smoking_are",TYPE=Casual Dining,0.0592,0.2135,0.0388,0.656,3.0721,0.0262,2.2862
+amenities+type,"TYPE=Casual Dining, home_delivery","full_bar_available, indoor_seating, outdoor_seating",0.1526,0.0543,0.0253,0.1658,3.0522,0.017,1.1336
+amenities+type,"full_bar_available, indoor_seating, outdoor_seating","TYPE=Casual Dining, home_delivery",0.0543,0.1526,0.0253,0.4659,3.0522,0.017,1.5864
+amenities+type,TYPE=Casual Dining,"home_delivery, outdoor_seating, smoking_are",0.2135,0.0449,0.0292,0.1366,3.0419,0.0196,1.1062
+amenities+type,"home_delivery, outdoor_seating, smoking_are",TYPE=Casual Dining,0.0449,0.2135,0.0292,0.6495,3.0419,0.0196,2.2441
+amenities+type,"full_bar_available, indoor_seating, smoking_are",TYPE=Casual Dining,0.0612,0.2135,0.0396,0.6482,3.0358,0.0266,2.2359
+amenities+type,TYPE=Casual Dining,"full_bar_available, indoor_seating, smoking_are",0.2135,0.0612,0.0396,0.1856,3.0358,0.0266,1.1529
+amenities+type,"indoor_seating, outdoor_seating, smoking_are",TYPE=Casual Dining,0.0641,0.2135,0.0415,0.6478,3.0338,0.0278,2.2331
+amenities+type,TYPE=Casual Dining,"indoor_seating, outdoor_seating, smoking_are",0.2135,0.0641,0.0415,0.1945,3.0338,0.0278,1.1619
+amenities+type,"home_delivery, table_booking_recommended",TYPE=Casual Dining,0.0341,0.2135,0.0221,0.6473,3.0316,0.0148,2.2301
+amenities+type,TYPE=Casual Dining,"home_delivery, table_booking_recommended",0.2135,0.0341,0.0221,0.1034,3.0316,0.0148,1.0773
+amenities+type,smoking_are,"TYPE=Casual Dining, indoor_seating",0.0911,0.2023,0.0558,0.6121,3.0254,0.0374,2.0565
+amenities+type,"TYPE=Casual Dining, indoor_seating",smoking_are,0.2023,0.0911,0.0558,0.2758,3.0254,0.0374,1.2549
+amenities+type,"outdoor_seating, smoking_are","TYPE=Casual Dining, indoor_seating",0.0679,0.2023,0.0415,0.6117,3.0231,0.0278,2.054
+amenities+type,"TYPE=Casual Dining, indoor_seating","outdoor_seating, smoking_are",0.2023,0.0679,0.0415,0.2053,3.0231,0.0278,1.1729
+amenities+type,TYPE=Casual Dining,"full_bar_available, smoking_are",0.2135,0.0636,0.041,0.1922,3.021,0.0275,1.1592
+amenities+type,"full_bar_available, smoking_are",TYPE=Casual Dining,0.0636,0.2135,0.041,0.6451,3.021,0.0275,2.2159
+amenities+type,TYPE=Casual Dining,"indoor_seating, smoking_are",0.2135,0.0869,0.0558,0.2613,3.0052,0.0372,1.236
+amenities+type,"indoor_seating, smoking_are",TYPE=Casual Dining,0.0869,0.2135,0.0558,0.6417,3.0052,0.0372,2.195
+amenities+type,"outdoor_seating, smoking_are",TYPE=Casual Dining,0.0679,0.2135,0.0433,0.6383,2.9895,0.0288,2.1747
+amenities+type,TYPE=Casual Dining,"outdoor_seating, smoking_are",0.2135,0.0679,0.0433,0.203,2.9895,0.0288,1.1695
+amenities+type,"TYPE=Casual Dining, home_delivery",table_booking_recommended,0.1526,0.0485,0.0221,0.1447,2.9862,0.0147,1.1125
+amenities+type,table_booking_recommended,"TYPE=Casual Dining, home_delivery",0.0485,0.1526,0.0221,0.4558,2.9862,0.0147,1.557
+amenities+type,"TYPE=Casual Dining, home_delivery","full_bar_available, outdoor_seating",0.1526,0.0587,0.0266,0.1744,2.9723,0.0177,1.1402
+amenities+type,"full_bar_available, outdoor_seating","TYPE=Casual Dining, home_delivery",0.0587,0.1526,0.0266,0.4537,2.9723,0.0177,1.551
+amenities+type,smoking_are,TYPE=Casual Dining,0.0911,0.2135,0.0578,0.6338,2.9682,0.0383,2.1477
+amenities+type,TYPE=Casual Dining,smoking_are,0.2135,0.0911,0.0578,0.2706,2.9682,0.0383,1.2459
+amenities+type,"full_bar_available, indoor_seating","TYPE=Casual Dining, home_delivery",0.0885,0.1526,0.0401,0.4525,2.9648,0.0265,1.5477
+amenities+type,"TYPE=Casual Dining, home_delivery","full_bar_available, indoor_seating",0.1526,0.0885,0.0401,0.2624,2.9648,0.0265,1.2358
+amenities+type,"full_bar_available, outdoor_seating","TYPE=Casual Dining, home_delivery, indoor_seating",0.0587,0.1459,0.0253,0.4312,2.9559,0.0167,1.5016
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating","full_bar_available, outdoor_seating",0.1459,0.0587,0.0253,0.1734,2.9559,0.0167,1.1389
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating",full_bar_available,0.1459,0.0932,0.0401,0.2746,2.9458,0.0265,1.25
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery, indoor_seating",0.0932,0.1459,0.0401,0.4297,2.9458,0.0265,1.4977
+amenities+type,"TYPE=Casual Dining, full_bar_available, smoking_are","indoor_seating, outdoor_seating",0.041,0.2488,0.0299,0.7289,2.9297,0.0197,2.7711
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, full_bar_available, smoking_are",0.2488,0.041,0.0299,0.1202,2.9297,0.0197,1.09
+amenities+type,"TYPE=Casual Dining, home_delivery",full_bar_available,0.1526,0.0932,0.0415,0.2716,2.9139,0.0272,1.2449
+amenities+type,full_bar_available,"TYPE=Casual Dining, home_delivery",0.0932,0.1526,0.0415,0.4447,2.9139,0.0272,1.5261
+amenities+type,"TYPE=Casual Dining, home_delivery, smoking_are","indoor_seating, outdoor_seating",0.0388,0.2488,0.0281,0.724,2.9099,0.0184,2.7216
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, home_delivery, smoking_are",0.2488,0.0388,0.0281,0.113,2.9099,0.0184,1.0836
+amenities+type,"full_bar_available, outdoor_seating, smoking_are","TYPE=Casual Dining, home_delivery",0.0466,0.1526,0.0207,0.4435,2.9055,0.0136,1.5226
+amenities+type,"TYPE=Casual Dining, home_delivery","full_bar_available, outdoor_seating, smoking_are",0.1526,0.0466,0.0207,0.1355,2.9055,0.0136,1.1028
+amenities+type,"TYPE=Casual Dining, smoking_are","indoor_seating, outdoor_seating",0.0578,0.2488,0.0415,0.719,2.8897,0.0272,2.673
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, smoking_are",0.2488,0.0578,0.0415,0.1669,2.8897,0.0272,1.131
+amenities+type,"indoor_seating, outdoor_seating","home_delivery, smoking_are",0.2488,0.0592,0.0424,0.1706,2.8829,0.0277,1.1343
+amenities+type,"home_delivery, smoking_are","indoor_seating, outdoor_seating",0.0592,0.2488,0.0424,0.7173,2.8829,0.0277,2.6569
+amenities+type,"indoor_seating, outdoor_seating","full_bar_available, home_delivery, smoking_are",0.2488,0.039,0.0279,0.112,2.8721,0.0182,1.0822
+amenities+type,"full_bar_available, home_delivery, smoking_are","indoor_seating, outdoor_seating",0.039,0.2488,0.0279,0.7146,2.8721,0.0182,2.632
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, outdoor_seating, smoking_are",0.1526,0.0641,0.0281,0.1841,2.8717,0.0183,1.1471
+amenities+type,"indoor_seating, outdoor_seating, smoking_are","TYPE=Casual Dining, home_delivery",0.0641,0.1526,0.0281,0.4383,2.8717,0.0183,1.5086
+amenities+type,"full_bar_available, smoking_are","TYPE=Casual Dining, home_delivery, indoor_seating",0.0636,0.1459,0.0265,0.4158,2.8505,0.0172,1.4621
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating","full_bar_available, smoking_are",0.1459,0.0636,0.0265,0.1814,2.8505,0.0172,1.1438
+amenities+type,"indoor_seating, smoking_are","TYPE=Casual Dining, home_delivery",0.0869,0.1526,0.0377,0.4332,2.8381,0.0244,1.4949
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, smoking_are",0.1526,0.0869,0.0377,0.2468,2.8381,0.0244,1.2122
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating","outdoor_seating, smoking_are",0.1459,0.0679,0.0281,0.1927,2.837,0.0182,1.1545
+amenities+type,"outdoor_seating, smoking_are","TYPE=Casual Dining, home_delivery, indoor_seating",0.0679,0.1459,0.0281,0.4138,2.837,0.0182,1.4571
+amenities+type,"full_bar_available, indoor_seating, smoking_are","TYPE=Casual Dining, home_delivery",0.0612,0.1526,0.0265,0.4326,2.8344,0.0171,1.4935
+amenities+type,"TYPE=Casual Dining, home_delivery","full_bar_available, indoor_seating, smoking_are",0.1526,0.0612,0.0265,0.1733,2.8344,0.0171,1.1357
+amenities+type,table_booking_recommended,"TYPE=Casual Dining, indoor_seating",0.0485,0.2023,0.0278,0.5731,2.8327,0.018,1.8687
+amenities+type,"TYPE=Casual Dining, indoor_seating",table_booking_recommended,0.2023,0.0485,0.0278,0.1373,2.8327,0.018,1.1029
+amenities+type,smoking_are,"TYPE=Casual Dining, home_delivery, indoor_seating",0.0911,0.1459,0.0377,0.4132,2.8326,0.0244,1.4556
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating",smoking_are,0.1459,0.0911,0.0377,0.2582,2.8326,0.0244,1.2252
+amenities+type,smoking_are,"indoor_seating, outdoor_seating",0.0911,0.2488,0.0641,0.7034,2.8273,0.0414,2.533
+amenities+type,"indoor_seating, outdoor_seating",smoking_are,0.2488,0.0911,0.0641,0.2577,2.8273,0.0414,1.2244
+amenities+type,"TYPE=Casual Dining, home_delivery","outdoor_seating, smoking_are",0.1526,0.0679,0.0292,0.1911,2.8147,0.0188,1.1524
+amenities+type,"outdoor_seating, smoking_are","TYPE=Casual Dining, home_delivery",0.0679,0.1526,0.0292,0.4296,2.8147,0.0188,1.4856
+amenities+type,TYPE=Casual Dining,"indoor_seating, table_booking_recommended",0.2135,0.0462,0.0278,0.1301,2.8132,0.0179,1.0964
+amenities+type,"indoor_seating, table_booking_recommended",TYPE=Casual Dining,0.0462,0.2135,0.0278,0.6007,2.8132,0.0179,1.9697
+amenities+type,"full_bar_available, smoking_are","TYPE=Casual Dining, home_delivery",0.0636,0.1526,0.0273,0.4288,2.8091,0.0176,1.4834
+amenities+type,"TYPE=Casual Dining, home_delivery","full_bar_available, smoking_are",0.1526,0.0636,0.0273,0.1787,2.8091,0.0176,1.1402
+amenities+type,"full_bar_available, smoking_are","indoor_seating, outdoor_seating",0.0636,0.2488,0.0444,0.6982,2.8062,0.0286,2.4889
+amenities+type,"indoor_seating, outdoor_seating","full_bar_available, smoking_are",0.2488,0.0636,0.0444,0.1785,2.8062,0.0286,1.1399
+amenities+type,smoking_are,"TYPE=Casual Dining, home_delivery",0.0911,0.1526,0.0388,0.4259,2.7902,0.0249,1.4759
+amenities+type,"TYPE=Casual Dining, home_delivery",smoking_are,0.1526,0.0911,0.0388,0.2543,2.7902,0.0249,1.2188
+amenities+type,"TYPE=Casual Dining, breakfast","indoor_seating, vegetarian_only",0.0501,0.1503,0.021,0.4194,2.7901,0.0135,1.4635
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Casual Dining, breakfast",0.1503,0.0501,0.021,0.1398,2.7901,0.0135,1.1043
+amenities+type,table_booking_recommended,TYPE=Casual Dining,0.0485,0.2135,0.0286,0.5901,2.7637,0.0182,1.9189
+amenities+type,TYPE=Casual Dining,table_booking_recommended,0.2135,0.0485,0.0286,0.1339,2.7637,0.0182,1.0987
+amenities+type,"TYPE=Casual Dining, smoking_are","home_delivery, indoor_seating, outdoor_seating",0.0578,0.1773,0.0281,0.4864,2.7441,0.0179,1.602
+amenities+type,"home_delivery, indoor_seating, outdoor_seating","TYPE=Casual Dining, smoking_are",0.1773,0.0578,0.0281,0.1585,2.7441,0.0179,1.1197
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, no_alcohol_available",0.1526,0.0691,0.0284,0.1863,2.6974,0.0179,1.1441
+amenities+type,"indoor_seating, no_alcohol_available","TYPE=Casual Dining, home_delivery",0.0691,0.1526,0.0284,0.4117,2.6974,0.0179,1.4404
+amenities+type,"breakfast, indoor_seating","TYPE=Casual Dining, vegetarian_only",0.1894,0.0413,0.021,0.111,2.6875,0.0132,1.0784
+amenities+type,"TYPE=Casual Dining, vegetarian_only","breakfast, indoor_seating",0.0413,0.1894,0.021,0.509,2.6875,0.0132,1.6509
+amenities+type,"TYPE=Quick Bites, breakfast, vegetarian_only",free_parking,0.0539,0.1457,0.0209,0.3869,2.655,0.013,1.3933
+amenities+type,free_parking,"TYPE=Quick Bites, breakfast, vegetarian_only",0.1457,0.0539,0.0209,0.1431,2.655,0.013,1.1041
+amenities+type,smoking_are,"home_delivery, indoor_seating, outdoor_seating",0.0911,0.1773,0.0424,0.4656,2.6267,0.0263,1.5397
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",smoking_are,0.1773,0.0911,0.0424,0.2394,2.6267,0.0263,1.195
+amenities+type,TYPE=Casual Dining,"no_alcohol_available, outdoor_seating",0.2135,0.0376,0.021,0.0984,2.6189,0.013,1.0675
+amenities+type,"no_alcohol_available, outdoor_seating",TYPE=Casual Dining,0.0376,0.2135,0.021,0.5592,2.6189,0.013,1.7842
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, no_alcohol_available",0.2135,0.0511,0.0284,0.1332,2.6059,0.0175,1.0947
+amenities+type,"home_delivery, indoor_seating, no_alcohol_available",TYPE=Casual Dining,0.0511,0.2135,0.0284,0.5565,2.6059,0.0175,1.7731
+amenities+type,"breakfast, free_parking","indoor_seating, vegetarian_only",0.0517,0.1503,0.0202,0.3907,2.5994,0.0124,1.3946
+amenities+type,"indoor_seating, vegetarian_only","breakfast, free_parking",0.1503,0.0517,0.0202,0.1343,2.5994,0.0124,1.0955
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only",free_parking,0.0678,0.1457,0.0251,0.3694,2.5351,0.0152,1.3547
+amenities+type,free_parking,"TYPE=Quick Bites, home_delivery, vegetarian_only",0.1457,0.0678,0.0251,0.1719,2.5351,0.0152,1.1257
+amenities+type,"breakfast, home_delivery","indoor_seating, outdoor_seating, vegetarian_only",0.1548,0.0597,0.0232,0.1496,2.5042,0.0139,1.1057
+amenities+type,"indoor_seating, outdoor_seating, vegetarian_only","breakfast, home_delivery",0.0597,0.1548,0.0232,0.3876,2.5042,0.0139,1.3802
+amenities+type,"indoor_seating, no_alcohol_available",TYPE=Casual Dining,0.0691,0.2135,0.0368,0.5322,2.4925,0.022,1.6813
+amenities+type,TYPE=Casual Dining,"indoor_seating, no_alcohol_available",0.2135,0.0691,0.0368,0.1721,2.4925,0.022,1.1245
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating, vegetarian_only",free_parking,0.0578,0.1457,0.0209,0.3623,2.4868,0.0125,1.3397
+amenities+type,free_parking,"TYPE=Quick Bites, home_delivery, indoor_seating, vegetarian_only",0.1457,0.0578,0.0209,0.1437,2.4868,0.0125,1.1003
+amenities+type,"TYPE=Quick Bites, vegetarian_only",free_parking,0.1011,0.1457,0.0365,0.361,2.4779,0.0218,1.337
+amenities+type,free_parking,"TYPE=Quick Bites, vegetarian_only",0.1457,0.1011,0.0365,0.2506,2.4779,0.0218,1.1994
+amenities+type,vegetarian_only,"TYPE=Quick Bites, breakfast, free_parking",0.1927,0.0437,0.0209,0.1082,2.4774,0.0124,1.0724
+amenities+type,"TYPE=Quick Bites, breakfast, free_parking",vegetarian_only,0.0437,0.1927,0.0209,0.4774,2.4774,0.0124,1.5447
+amenities+type,"home_delivery, indoor_seating, outdoor_seating","full_bar_available, smoking_are",0.1773,0.0636,0.0279,0.1571,2.4698,0.0166,1.1109
+amenities+type,"full_bar_available, smoking_are","home_delivery, indoor_seating, outdoor_seating",0.0636,0.1773,0.0279,0.4378,2.4698,0.0166,1.4635
+amenities+type,"indoor_seating, outdoor_seating","full_bar_available, home_delivery",0.2488,0.0556,0.0341,0.1371,2.4651,0.0203,1.0945
+amenities+type,"full_bar_available, home_delivery","indoor_seating, outdoor_seating",0.0556,0.2488,0.0341,0.6133,2.4651,0.0203,1.9427
+amenities+type,"TYPE=Quick Bites, vegetarian_only","breakfast, outdoor_seating",0.1011,0.0992,0.0247,0.2445,2.4641,0.0147,1.1923
+amenities+type,"breakfast, outdoor_seating","TYPE=Quick Bites, vegetarian_only",0.0992,0.1011,0.0247,0.2492,2.4641,0.0147,1.1972
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only","free_parking, indoor_seating",0.0678,0.1258,0.0209,0.3086,2.454,0.0124,1.2645
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, home_delivery, vegetarian_only",0.1258,0.0678,0.0209,0.1664,2.454,0.0124,1.1183
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, full_bar_available, home_delivery",0.2488,0.0415,0.0253,0.1017,2.4531,0.015,1.0671
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery","indoor_seating, outdoor_seating",0.0415,0.2488,0.0253,0.6103,2.4531,0.015,1.9278
+amenities+type,"breakfast, indoor_seating","free_parking, vegetarian_only",0.1894,0.0436,0.0202,0.1066,2.4455,0.0119,1.0705
+amenities+type,"free_parking, vegetarian_only","breakfast, indoor_seating",0.0436,0.1894,0.0202,0.4631,2.4455,0.0119,1.5099
+amenities+type,free_parking,"TYPE=Quick Bites, indoor_seating, vegetarian_only",0.1457,0.0846,0.0301,0.2064,2.4416,0.0178,1.1536
+amenities+type,"TYPE=Quick Bites, indoor_seating, vegetarian_only",free_parking,0.0846,0.1457,0.0301,0.3558,2.4416,0.0178,1.326
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, vegetarian_only",0.1019,0.1011,0.0251,0.2458,2.4303,0.0147,1.1918
+amenities+type,"TYPE=Quick Bites, vegetarian_only","free_parking, home_delivery",0.1011,0.1019,0.0251,0.2478,2.4303,0.0147,1.1938
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, indoor_seating, vegetarian_only",0.1019,0.0846,0.0209,0.2053,2.4284,0.0123,1.152
+amenities+type,"TYPE=Quick Bites, indoor_seating, vegetarian_only","free_parking, home_delivery",0.0846,0.1019,0.0209,0.2476,2.4284,0.0123,1.1935
+amenities+type,vegetarian_only,"breakfast, free_parking",0.1927,0.0517,0.0241,0.1249,2.417,0.0141,1.0837
+amenities+type,"breakfast, free_parking",vegetarian_only,0.0517,0.1927,0.0241,0.4657,2.417,0.0141,1.511
+amenities+type,"breakfast, indoor_seating, outdoor_seating","home_delivery, vegetarian_only",0.0756,0.129,0.0232,0.3064,2.3759,0.0134,1.2559
+amenities+type,"home_delivery, vegetarian_only","breakfast, indoor_seating, outdoor_seating",0.129,0.0756,0.0232,0.1796,2.3759,0.0134,1.1267
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, full_bar_available",0.2488,0.0645,0.0381,0.153,2.3715,0.022,1.1045
+amenities+type,"TYPE=Casual Dining, full_bar_available","indoor_seating, outdoor_seating",0.0645,0.2488,0.0381,0.59,2.3715,0.022,1.8324
+amenities+type,"indoor_seating, outdoor_seating","home_delivery, table_booking_recommended",0.2488,0.0341,0.0201,0.0808,2.3688,0.0116,1.0508
+amenities+type,"home_delivery, table_booking_recommended","indoor_seating, outdoor_seating",0.0341,0.2488,0.0201,0.5894,2.3688,0.0116,1.8294
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, vegetarian_only",0.1258,0.1011,0.0301,0.2392,2.3654,0.0174,1.1815
+amenities+type,"TYPE=Quick Bites, vegetarian_only","free_parking, indoor_seating",0.1011,0.1258,0.0301,0.2975,2.3654,0.0174,1.2444
+amenities+type,"breakfast, free_parking, indoor_seating",vegetarian_only,0.0443,0.1927,0.0202,0.4554,2.3634,0.0116,1.4824
+amenities+type,vegetarian_only,"breakfast, free_parking, indoor_seating",0.1927,0.0443,0.0202,0.1048,2.3634,0.0116,1.0675
+amenities+type,"indoor_seating, vegetarian_only","breakfast, home_delivery, outdoor_seating",0.1503,0.0652,0.0232,0.1541,2.3632,0.0134,1.1051
+amenities+type,"breakfast, home_delivery, outdoor_seating","indoor_seating, vegetarian_only",0.0652,0.1503,0.0232,0.3552,2.3632,0.0134,1.3178
+amenities+type,"TYPE=Casual Dining, full_bar_available, smoking_are",outdoor_seating,0.041,0.3223,0.0312,0.761,2.3612,0.018,2.836
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available, smoking_are",0.3223,0.041,0.0312,0.0969,2.3612,0.018,1.0619
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, vegetarian_only",0.1894,0.1011,0.0452,0.2385,2.3583,0.026,1.1804
+amenities+type,"TYPE=Quick Bites, vegetarian_only","breakfast, indoor_seating",0.1011,0.1894,0.0452,0.4466,2.3583,0.026,1.4648
+amenities+type,outdoor_seating,"home_delivery, smoking_are",0.3223,0.0592,0.0449,0.1394,2.355,0.0258,1.0932
+amenities+type,"home_delivery, smoking_are",outdoor_seating,0.0592,0.3223,0.0449,0.7591,2.355,0.0258,2.8126
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery, smoking_are",outdoor_seating,0.0273,0.3223,0.0207,0.7583,2.3527,0.0119,2.8039
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available, home_delivery, smoking_are",0.3223,0.0273,0.0207,0.0642,2.3527,0.0119,1.0394
+amenities+type,full_bar_available,"indoor_seating, outdoor_seating",0.0932,0.2488,0.0543,0.5827,2.3419,0.0311,1.8
+amenities+type,"indoor_seating, outdoor_seating",full_bar_available,0.2488,0.0932,0.0543,0.2183,2.3419,0.0311,1.16
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available, indoor_seating, smoking_are",0.3223,0.0396,0.0299,0.0928,2.3414,0.0171,1.0586
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating, smoking_are",outdoor_seating,0.0396,0.3223,0.0299,0.7547,2.3414,0.0171,2.7624
+amenities+type,"breakfast, home_delivery, indoor_seating, outdoor_seating",vegetarian_only,0.0513,0.1927,0.0232,0.451,2.3409,0.0133,1.4706
+amenities+type,vegetarian_only,"breakfast, home_delivery, indoor_seating, outdoor_seating",0.1927,0.0513,0.0232,0.1202,2.3409,0.0133,1.0782
+amenities+type,table_booking_recommended,"home_delivery, indoor_seating, outdoor_seating",0.0485,0.1773,0.0201,0.415,2.3409,0.0115,1.4063
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",table_booking_recommended,0.1773,0.0485,0.0201,0.1134,2.3409,0.0115,1.0733
+amenities+type,outdoor_seating,"TYPE=Casual Dining, home_delivery, smoking_are",0.3223,0.0388,0.0292,0.0905,2.3318,0.0167,1.0568
+amenities+type,"TYPE=Casual Dining, home_delivery, smoking_are",outdoor_seating,0.0388,0.3223,0.0292,0.7516,2.3318,0.0167,2.7281
+amenities+type,"home_delivery, indoor_seating, smoking_are",outdoor_seating,0.0565,0.3223,0.0424,0.7507,2.3292,0.0242,2.7187
+amenities+type,outdoor_seating,"home_delivery, indoor_seating, smoking_are",0.3223,0.0565,0.0424,0.1317,2.3292,0.0242,1.0865
+amenities+type,"TYPE=Casual Dining, smoking_are",outdoor_seating,0.0578,0.3223,0.0433,0.7504,2.328,0.0247,2.7146
+amenities+type,outdoor_seating,"TYPE=Casual Dining, smoking_are",0.3223,0.0578,0.0433,0.1345,2.328,0.0247,1.0886
+amenities+type,"outdoor_seating, vegetarian_only","breakfast, home_delivery, indoor_seating",0.0804,0.1237,0.0232,0.2879,2.3274,0.0132,1.2306
+amenities+type,"breakfast, home_delivery, indoor_seating","outdoor_seating, vegetarian_only",0.1237,0.0804,0.0232,0.1872,2.3274,0.0132,1.1314
+amenities+type,"free_parking, home_delivery, indoor_seating","TYPE=Quick Bites, vegetarian_only",0.0893,0.1011,0.0209,0.2345,2.3193,0.0119,1.1743
+amenities+type,"TYPE=Quick Bites, vegetarian_only","free_parking, home_delivery, indoor_seating",0.1011,0.0893,0.0209,0.207,2.3193,0.0119,1.1485
+amenities+type,"outdoor_seating, vegetarian_only","breakfast, home_delivery",0.0804,0.1548,0.0288,0.3586,2.317,0.0164,1.3178
+amenities+type,"breakfast, home_delivery","outdoor_seating, vegetarian_only",0.1548,0.0804,0.0288,0.1864,2.317,0.0164,1.1302
+amenities+type,outdoor_seating,"full_bar_available, home_delivery, smoking_are",0.3223,0.039,0.0291,0.0903,2.3154,0.0165,1.0564
+amenities+type,"full_bar_available, home_delivery, smoking_are",outdoor_seating,0.039,0.3223,0.0291,0.7463,2.3154,0.0165,2.6712
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating, smoking_are",outdoor_seating,0.0377,0.3223,0.0281,0.7462,2.315,0.016,2.6698
+amenities+type,outdoor_seating,"TYPE=Casual Dining, home_delivery, indoor_seating, smoking_are",0.3223,0.0377,0.0281,0.0872,2.315,0.016,1.0543
+amenities+type,breakfast,"free_parking, indoor_seating, vegetarian_only",0.2475,0.0353,0.0202,0.0816,2.313,0.0115,1.0504
+amenities+type,"free_parking, indoor_seating, vegetarian_only",breakfast,0.0353,0.2475,0.0202,0.5724,2.313,0.0115,1.76
+amenities+type,smoking_are,outdoor_seating,0.0911,0.3223,0.0679,0.745,2.3115,0.0385,2.6579
+amenities+type,outdoor_seating,smoking_are,0.3223,0.0911,0.0679,0.2107,2.3115,0.0385,1.1514
+amenities+type,outdoor_seating,"TYPE=Casual Dining, indoor_seating, smoking_are",0.3223,0.0558,0.0415,0.1289,2.3097,0.0236,1.0839
+amenities+type,"TYPE=Casual Dining, indoor_seating, smoking_are",outdoor_seating,0.0558,0.3223,0.0415,0.7445,2.3097,0.0236,2.652
+amenities+type,"TYPE=Quick Bites, free_parking, vegetarian_only",breakfast,0.0365,0.2475,0.0209,0.5711,2.3076,0.0118,1.7545
+amenities+type,breakfast,"TYPE=Quick Bites, free_parking, vegetarian_only",0.2475,0.0365,0.0209,0.0842,2.3076,0.0118,1.0521
+amenities+type,"TYPE=Casual Dining, breakfast, indoor_seating",vegetarian_only,0.0474,0.1927,0.021,0.4435,2.3016,0.0119,1.4507
+amenities+type,vegetarian_only,"TYPE=Casual Dining, breakfast, indoor_seating",0.1927,0.0474,0.021,0.1091,2.3016,0.0119,1.0692
+amenities+type,"full_bar_available, home_delivery, indoor_seating, smoking_are",outdoor_seating,0.0376,0.3223,0.0279,0.7412,2.2997,0.0157,2.6188
+amenities+type,outdoor_seating,"full_bar_available, home_delivery, indoor_seating, smoking_are",0.3223,0.0376,0.0279,0.0864,2.2997,0.0157,1.0535
+amenities+type,"breakfast, home_delivery, outdoor_seating",vegetarian_only,0.0652,0.1927,0.0288,0.4425,2.2964,0.0163,1.448
+amenities+type,vegetarian_only,"breakfast, home_delivery, outdoor_seating",0.1927,0.0652,0.0288,0.1497,2.2964,0.0163,1.0994
+amenities+type,outdoor_seating,"indoor_seating, smoking_are",0.3223,0.0869,0.0641,0.1989,2.2879,0.0361,1.1398
+amenities+type,"indoor_seating, smoking_are",outdoor_seating,0.0869,0.3223,0.0641,0.7374,2.2879,0.0361,2.5811
+amenities+type,outdoor_seating,"full_bar_available, smoking_are",0.3223,0.0636,0.0466,0.1447,2.2747,0.0261,1.0948
+amenities+type,"full_bar_available, smoking_are",outdoor_seating,0.0636,0.3223,0.0466,0.7332,2.2747,0.0261,2.5397
+amenities+type,breakfast,"TYPE=Quick Bites, outdoor_seating, vegetarian_only",0.2475,0.044,0.0247,0.0999,2.27,0.0138,1.0621
+amenities+type,"TYPE=Quick Bites, outdoor_seating, vegetarian_only",breakfast,0.044,0.2475,0.0247,0.5618,2.27,0.0138,1.7173
+amenities+type,"TYPE=Casual Dining, indoor_seating","home_delivery, no_alcohol_available",0.2023,0.062,0.0284,0.1405,2.2675,0.0159,1.0914
+amenities+type,"home_delivery, no_alcohol_available","TYPE=Casual Dining, indoor_seating",0.062,0.2023,0.0284,0.4588,2.2675,0.0159,1.4738
+amenities+type,table_booking_recommended,"indoor_seating, outdoor_seating",0.0485,0.2488,0.0273,0.5629,2.2625,0.0152,1.7187
+amenities+type,"indoor_seating, outdoor_seating",table_booking_recommended,0.2488,0.0485,0.0273,0.1096,2.2625,0.0152,1.0687
+amenities+type,vegetarian_only,"TYPE=Casual Dining, breakfast",0.1927,0.0501,0.0218,0.1133,2.262,0.0122,1.0713
+amenities+type,"TYPE=Casual Dining, breakfast",vegetarian_only,0.0501,0.1927,0.0218,0.4359,2.262,0.0122,1.431
+amenities+type,"breakfast, home_delivery, indoor_seating","TYPE=Quick Bites, vegetarian_only",0.1237,0.1011,0.0283,0.2285,2.2598,0.0158,1.1651
+amenities+type,"TYPE=Quick Bites, vegetarian_only","breakfast, home_delivery, indoor_seating",0.1011,0.1237,0.0283,0.2795,2.2598,0.0158,1.2163
+amenities+type,"home_delivery, no_alcohol_available",TYPE=Casual Dining,0.062,0.2135,0.0298,0.4814,2.2544,0.0166,1.5165
+amenities+type,TYPE=Casual Dining,"home_delivery, no_alcohol_available",0.2135,0.062,0.0298,0.1397,2.2544,0.0166,1.0904
+amenities+type,"home_delivery, vegetarian_only","breakfast, outdoor_seating",0.129,0.0992,0.0288,0.2236,2.2539,0.016,1.1603
+amenities+type,"breakfast, outdoor_seating","home_delivery, vegetarian_only",0.0992,0.129,0.0288,0.2907,2.2539,0.016,1.228
+amenities+type,outdoor_seating,"full_bar_available, indoor_seating, smoking_are",0.3223,0.0612,0.0444,0.1378,2.2537,0.0247,1.0889
+amenities+type,"full_bar_available, indoor_seating, smoking_are",outdoor_seating,0.0612,0.3223,0.0444,0.7264,2.2537,0.0247,2.477
+amenities+type,"home_delivery, outdoor_seating","TYPE=Casual Dining, smoking_are",0.2256,0.0578,0.0292,0.1293,2.2388,0.0161,1.0822
+amenities+type,"TYPE=Casual Dining, smoking_are","home_delivery, outdoor_seating",0.0578,0.2256,0.0292,0.505,2.2388,0.0161,1.5645
+amenities+type,"breakfast, indoor_seating, outdoor_seating",vegetarian_only,0.0756,0.1927,0.0326,0.4308,2.2356,0.018,1.4182
+amenities+type,vegetarian_only,"breakfast, indoor_seating, outdoor_seating",0.1927,0.0756,0.0326,0.1689,2.2356,0.018,1.1124
+amenities+type,"home_delivery, outdoor_seating","TYPE=Casual Dining, full_bar_available, smoking_are",0.2256,0.041,0.0207,0.0917,2.2345,0.0114,1.0558
+amenities+type,"TYPE=Casual Dining, full_bar_available, smoking_are","home_delivery, outdoor_seating",0.041,0.2256,0.0207,0.504,2.2345,0.0114,1.5614
+amenities+type,"TYPE=Casual Dining, indoor_seating, smoking_are","home_delivery, outdoor_seating",0.0558,0.2256,0.0281,0.5037,2.233,0.0155,1.5604
+amenities+type,"home_delivery, outdoor_seating","TYPE=Casual Dining, indoor_seating, smoking_are",0.2256,0.0558,0.0281,0.1246,2.233,0.0155,1.0786
+amenities+type,"free_parking, vegetarian_only",breakfast,0.0436,0.2475,0.0241,0.552,2.2304,0.0133,1.6797
+amenities+type,breakfast,"free_parking, vegetarian_only",0.2475,0.0436,0.0241,0.0972,2.2304,0.0133,1.0594
+amenities+type,"TYPE=Casual Dining, home_delivery",no_alcohol_available,0.1526,0.0877,0.0298,0.1955,2.2291,0.0164,1.134
+amenities+type,no_alcohol_available,"TYPE=Casual Dining, home_delivery",0.0877,0.1526,0.0298,0.3402,2.2291,0.0164,1.2843
+amenities+type,"breakfast, outdoor_seating","home_delivery, indoor_seating, vegetarian_only",0.0992,0.105,0.0232,0.2334,2.2229,0.0127,1.1675
+amenities+type,"home_delivery, indoor_seating, vegetarian_only","breakfast, outdoor_seating",0.105,0.0992,0.0232,0.2206,2.2229,0.0127,1.1557
+amenities+type,no_alcohol_available,"TYPE=Casual Dining, home_delivery, indoor_seating",0.0877,0.1459,0.0284,0.3242,2.2228,0.0156,1.264
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating",no_alcohol_available,0.1459,0.0877,0.0284,0.1949,2.2228,0.0156,1.1332
+amenities+type,"TYPE=Casual Dining, full_bar_available","home_delivery, indoor_seating, outdoor_seating",0.0645,0.1773,0.0253,0.3921,2.2118,0.0139,1.3534
+amenities+type,"home_delivery, indoor_seating, outdoor_seating","TYPE=Casual Dining, full_bar_available",0.1773,0.0645,0.0253,0.1427,2.2118,0.0139,1.0912
+amenities+type,vegetarian_only,"TYPE=Quick Bites, breakfast, outdoor_seating",0.1927,0.0582,0.0247,0.1283,2.2053,0.0135,1.0805
+amenities+type,"TYPE=Quick Bites, breakfast, outdoor_seating",vegetarian_only,0.0582,0.1927,0.0247,0.4249,2.2053,0.0135,1.4039
+amenities+type,breakfast,"indoor_seating, outdoor_seating, vegetarian_only",0.2475,0.0597,0.0326,0.1315,2.2014,0.0178,1.0827
+amenities+type,"indoor_seating, outdoor_seating, vegetarian_only",breakfast,0.0597,0.2475,0.0326,0.5448,2.2014,0.0178,1.6532
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only","breakfast, indoor_seating",0.0678,0.1894,0.0283,0.4168,2.2006,0.0154,1.3899
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, home_delivery, vegetarian_only",0.1894,0.0678,0.0283,0.1493,2.2006,0.0154,1.0957
+amenities+type,smoking_are,"home_delivery, outdoor_seating",0.0911,0.2256,0.0449,0.4928,2.1846,0.0244,1.5268
+amenities+type,"home_delivery, outdoor_seating",smoking_are,0.2256,0.0911,0.0449,0.1991,2.1846,0.0244,1.1348
+amenities+type,"breakfast, outdoor_seating","indoor_seating, vegetarian_only",0.0992,0.1503,0.0326,0.3281,2.1825,0.0176,1.2645
+amenities+type,"indoor_seating, vegetarian_only","breakfast, outdoor_seating",0.1503,0.0992,0.0326,0.2166,2.1825,0.0176,1.1498
+amenities+type,"breakfast, outdoor_seating",vegetarian_only,0.0992,0.1927,0.0417,0.4203,2.1811,0.0226,1.3926
+amenities+type,vegetarian_only,"breakfast, outdoor_seating",0.1927,0.0992,0.0417,0.2164,2.1811,0.0226,1.1496
+amenities+type,breakfast,"home_delivery, indoor_seating, outdoor_seating, vegetarian_only",0.2475,0.043,0.0232,0.0936,2.1751,0.0125,1.0558
+amenities+type,"home_delivery, indoor_seating, outdoor_seating, vegetarian_only",breakfast,0.043,0.2475,0.0232,0.5383,2.1751,0.0125,1.6299
+amenities+type,"outdoor_seating, vegetarian_only","TYPE=Quick Bites, breakfast",0.0804,0.1413,0.0247,0.3074,2.1748,0.0134,1.2397
+amenities+type,"TYPE=Quick Bites, breakfast","outdoor_seating, vegetarian_only",0.1413,0.0804,0.0247,0.1749,2.1748,0.0134,1.1145
+amenities+type,"home_delivery, outdoor_seating","indoor_seating, smoking_are",0.2256,0.0869,0.0424,0.1882,2.1641,0.0228,1.1247
+amenities+type,"indoor_seating, smoking_are","home_delivery, outdoor_seating",0.0869,0.2256,0.0424,0.4882,2.1641,0.0228,1.513
+amenities+type,"TYPE=Quick Bites, indoor_seating, vegetarian_only","breakfast, home_delivery",0.0846,0.1548,0.0283,0.3343,2.16,0.0152,1.2697
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, indoor_seating, vegetarian_only",0.1548,0.0846,0.0283,0.1826,2.16,0.0152,1.12
+amenities+type,breakfast,"TYPE=Quick Bites, indoor_seating, vegetarian_only",0.2475,0.0846,0.0452,0.1825,2.1582,0.0242,1.1198
+amenities+type,"TYPE=Quick Bites, indoor_seating, vegetarian_only",breakfast,0.0846,0.2475,0.0452,0.5341,2.1582,0.0242,1.6152
+amenities+type,"TYPE=Quick Bites, vegetarian_only",breakfast,0.1011,0.2475,0.0539,0.533,2.1537,0.0289,1.6114
+amenities+type,breakfast,"TYPE=Quick Bites, vegetarian_only",0.2475,0.1011,0.0539,0.2178,2.1537,0.0289,1.1491
+amenities+type,"TYPE=Casual Dining, indoor_seating, vegetarian_only",breakfast,0.0395,0.2475,0.021,0.5324,2.1511,0.0112,1.6092
+amenities+type,breakfast,"TYPE=Casual Dining, indoor_seating, vegetarian_only",0.2475,0.0395,0.021,0.0849,2.1511,0.0112,1.0497
+amenities+type,"TYPE=Quick Bites, breakfast, indoor_seating",free_parking,0.1195,0.1457,0.0373,0.3124,2.1441,0.0199,1.2425
+amenities+type,free_parking,"TYPE=Quick Bites, breakfast, indoor_seating",0.1457,0.1195,0.0373,0.2562,2.1441,0.0199,1.1838
+amenities+type,"TYPE=Quick Bites, free_parking","breakfast, vegetarian_only",0.1101,0.0883,0.0209,0.1894,2.1435,0.0111,1.1246
+amenities+type,"breakfast, vegetarian_only","TYPE=Quick Bites, free_parking",0.0883,0.1101,0.0209,0.236,2.1435,0.0111,1.1648
+amenities+type,"home_delivery, outdoor_seating, vegetarian_only","breakfast, indoor_seating",0.0571,0.1894,0.0232,0.4055,2.1411,0.0123,1.3635
+amenities+type,"breakfast, indoor_seating","home_delivery, outdoor_seating, vegetarian_only",0.1894,0.0571,0.0232,0.1223,2.1411,0.0123,1.0742
+amenities+type,"TYPE=Quick Bites, indoor_seating, outdoor_seating","free_parking, home_delivery",0.1043,0.1019,0.0227,0.2182,2.1402,0.0121,1.1487
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, indoor_seating, outdoor_seating",0.1019,0.1043,0.0227,0.2231,2.1402,0.0121,1.153
+amenities+type,breakfast,"TYPE=Casual Dining, vegetarian_only",0.2475,0.0413,0.0218,0.0882,2.1373,0.0116,1.0515
+amenities+type,"TYPE=Casual Dining, vegetarian_only",breakfast,0.0413,0.2475,0.0218,0.5289,2.1373,0.0116,1.5975
+amenities+type,"outdoor_seating, vegetarian_only","breakfast, indoor_seating",0.0804,0.1894,0.0326,0.4047,2.137,0.0173,1.3617
+amenities+type,"breakfast, indoor_seating","outdoor_seating, vegetarian_only",0.1894,0.0804,0.0326,0.1719,2.137,0.0173,1.1104
+amenities+type,"TYPE=Quick Bites, breakfast","indoor_seating, vegetarian_only",0.1413,0.1503,0.0452,0.3195,2.1257,0.0239,1.2487
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Quick Bites, breakfast",0.1503,0.1413,0.0452,0.3004,2.1257,0.0239,1.2274
+amenities+type,"TYPE=Quick Bites, breakfast",free_parking,0.1413,0.1457,0.0437,0.309,2.121,0.0231,1.2364
+amenities+type,free_parking,"TYPE=Quick Bites, breakfast",0.1457,0.1413,0.0437,0.2998,2.121,0.0231,1.2263
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery, indoor_seating",free_parking,0.077,0.1457,0.0237,0.3084,2.1163,0.0125,1.2352
+amenities+type,free_parking,"TYPE=Quick Bites, breakfast, home_delivery, indoor_seating",0.1457,0.077,0.0237,0.1629,2.1163,0.0125,1.1026
+amenities+type,"TYPE=Casual Dining, outdoor_seating",no_alcohol_available,0.1138,0.0877,0.021,0.1846,2.1058,0.011,1.1189
+amenities+type,no_alcohol_available,"TYPE=Casual Dining, outdoor_seating",0.0877,0.1138,0.021,0.2397,2.1058,0.011,1.1655
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery",free_parking,0.09,0.1457,0.0276,0.3068,2.1054,0.0145,1.2323
+amenities+type,free_parking,"TYPE=Quick Bites, breakfast, home_delivery",0.1457,0.09,0.0276,0.1895,2.1054,0.0145,1.1227
+amenities+type,"TYPE=Quick Bites, breakfast","free_parking, indoor_seating",0.1413,0.1258,0.0373,0.2641,2.1003,0.0196,1.188
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, breakfast",0.1258,0.1413,0.0373,0.2969,2.1003,0.0196,1.2212
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery","free_parking, indoor_seating",0.09,0.1258,0.0237,0.2637,2.0971,0.0124,1.1874
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, breakfast, home_delivery",0.1258,0.09,0.0237,0.1887,2.0971,0.0124,1.1217
+amenities+type,"TYPE=Quick Bites, vegetarian_only","breakfast, home_delivery",0.1011,0.1548,0.0328,0.3244,2.0958,0.0171,1.251
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, vegetarian_only",0.1548,0.1011,0.0328,0.2119,2.0958,0.0171,1.1406
+amenities+type,breakfast,"outdoor_seating, vegetarian_only",0.2475,0.0804,0.0417,0.1685,2.0948,0.0218,1.1059
+amenities+type,"outdoor_seating, vegetarian_only",breakfast,0.0804,0.2475,0.0417,0.5184,2.0948,0.0218,1.5627
+amenities+type,"breakfast, home_delivery","indoor_seating, vegetarian_only",0.1548,0.1503,0.0487,0.3147,2.0935,0.0254,1.2399
+amenities+type,"indoor_seating, vegetarian_only","breakfast, home_delivery",0.1503,0.1548,0.0487,0.324,2.0935,0.0254,1.2504
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Quick Bites, breakfast, home_delivery",0.1503,0.09,0.0283,0.188,2.0895,0.0147,1.1208
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery","indoor_seating, vegetarian_only",0.09,0.1503,0.0283,0.3141,2.0895,0.0147,1.2388
+amenities+type,no_alcohol_available,TYPE=Casual Dining,0.0877,0.2135,0.039,0.4445,2.0819,0.0203,1.4159
+amenities+type,TYPE=Casual Dining,no_alcohol_available,0.2135,0.0877,0.039,0.1826,2.0819,0.0203,1.1161
+amenities+type,"TYPE=Casual Dining, indoor_seating",no_alcohol_available,0.2023,0.0877,0.0368,0.1817,2.0718,0.019,1.1148
+amenities+type,no_alcohol_available,"TYPE=Casual Dining, indoor_seating",0.0877,0.2023,0.0368,0.4192,2.0718,0.019,1.3733
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",full_bar_available,0.1773,0.0932,0.0341,0.1925,2.0649,0.0176,1.1229
+amenities+type,full_bar_available,"home_delivery, indoor_seating, outdoor_seating",0.0932,0.1773,0.0341,0.366,2.0649,0.0176,1.2978
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, outdoor_seating",0.1019,0.1497,0.0314,0.308,2.0569,0.0161,1.2287
+amenities+type,"TYPE=Quick Bites, outdoor_seating","free_parking, home_delivery",0.1497,0.1019,0.0314,0.2097,2.0569,0.0161,1.1363
+amenities+type,vegetarian_only,"breakfast, home_delivery, indoor_seating",0.1927,0.1237,0.0487,0.2528,2.0435,0.0249,1.1727
+amenities+type,"breakfast, home_delivery, indoor_seating",vegetarian_only,0.1237,0.1927,0.0487,0.3937,2.0435,0.0249,1.3316
+amenities+type,"home_delivery, outdoor_seating, vegetarian_only",breakfast,0.0571,0.2475,0.0288,0.5051,2.0407,0.0147,1.5204
+amenities+type,breakfast,"home_delivery, outdoor_seating, vegetarian_only",0.2475,0.0571,0.0288,0.1166,2.0407,0.0147,1.0673
+amenities+type,free_parking,"TYPE=Quick Bites, home_delivery, indoor_seating, outdoor_seating",0.1457,0.0766,0.0227,0.1561,2.0368,0.0116,1.0942
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating, outdoor_seating",free_parking,0.0766,0.1457,0.0227,0.2968,2.0368,0.0116,1.2148
+amenities+type,"TYPE=Casual Dining, breakfast","indoor_seating, outdoor_seating",0.0501,0.2488,0.0253,0.5049,2.0294,0.0128,1.5174
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, breakfast",0.2488,0.0501,0.0253,0.1017,2.0294,0.0128,1.0574
+amenities+type,"home_delivery, outdoor_seating","full_bar_available, smoking_are",0.2256,0.0636,0.0291,0.129,2.0272,0.0147,1.075
+amenities+type,"full_bar_available, smoking_are","home_delivery, outdoor_seating",0.0636,0.2256,0.0291,0.4573,2.0272,0.0147,1.4269
+amenities+type,free_parking,"TYPE=Quick Bites, indoor_seating, outdoor_seating",0.1457,0.1043,0.0307,0.211,2.0237,0.0155,1.1353
+amenities+type,"TYPE=Quick Bites, indoor_seating, outdoor_seating",free_parking,0.1043,0.1457,0.0307,0.2949,2.0237,0.0155,1.2115
+amenities+type,"home_delivery, outdoor_seating","full_bar_available, indoor_seating, smoking_are",0.2256,0.0612,0.0279,0.1235,2.0195,0.0141,1.0711
+amenities+type,"full_bar_available, indoor_seating, smoking_are","home_delivery, outdoor_seating",0.0612,0.2256,0.0279,0.4555,2.0195,0.0141,1.4224
+amenities+type,"full_bar_available, home_delivery",outdoor_seating,0.0556,0.3223,0.036,0.6474,2.0086,0.0181,1.922
+amenities+type,outdoor_seating,"full_bar_available, home_delivery",0.3223,0.0556,0.036,0.1117,2.0086,0.0181,1.0632
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, vegetarian_only",0.2488,0.0413,0.0206,0.0828,2.0056,0.0103,1.0453
+amenities+type,"TYPE=Casual Dining, vegetarian_only","indoor_seating, outdoor_seating",0.0413,0.2488,0.0206,0.499,2.0056,0.0103,1.4994
+amenities+type,free_parking,"TYPE=Quick Bites, home_delivery, outdoor_seating",0.1457,0.1075,0.0314,0.2155,2.0037,0.0157,1.1376
+amenities+type,"TYPE=Quick Bites, home_delivery, outdoor_seating",free_parking,0.1075,0.1457,0.0314,0.292,2.0037,0.0157,1.2066
+amenities+type,"TYPE=Quick Bites, outdoor_seating",free_parking,0.1497,0.1457,0.0436,0.2911,1.9981,0.0218,1.2052
+amenities+type,free_parking,"TYPE=Quick Bites, outdoor_seating",0.1457,0.1497,0.0436,0.2992,1.9981,0.0218,1.2133
+amenities+type,"home_delivery, vegetarian_only","breakfast, indoor_seating",0.129,0.1894,0.0487,0.3776,1.994,0.0243,1.3025
+amenities+type,"breakfast, indoor_seating","home_delivery, vegetarian_only",0.1894,0.129,0.0487,0.2572,1.994,0.0243,1.1726
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery",outdoor_seating,0.0415,0.3223,0.0266,0.6421,1.9923,0.0133,1.8937
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available, home_delivery",0.3223,0.0415,0.0266,0.0826,1.9923,0.0133,1.0448
+amenities+type,"breakfast, indoor_seating",vegetarian_only,0.1894,0.1927,0.0726,0.3834,1.9897,0.0361,1.3093
+amenities+type,vegetarian_only,"breakfast, indoor_seating",0.1927,0.1894,0.0726,0.3768,1.9897,0.0361,1.3008
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available",0.3223,0.0645,0.0412,0.1278,1.9812,0.0204,1.0726
+amenities+type,"TYPE=Casual Dining, full_bar_available",outdoor_seating,0.0645,0.3223,0.0412,0.6386,1.9812,0.0204,1.875
+amenities+type,vegetarian_only,"TYPE=Quick Bites, breakfast",0.1927,0.1413,0.0539,0.2797,1.9791,0.0267,1.1921
+amenities+type,"TYPE=Quick Bites, breakfast",vegetarian_only,0.1413,0.1927,0.0539,0.3813,1.9791,0.0267,1.3049
+amenities+type,breakfast,"TYPE=Quick Bites, home_delivery, indoor_seating, vegetarian_only",0.2475,0.0578,0.0283,0.1142,1.9771,0.014,1.0637
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating, vegetarian_only",breakfast,0.0578,0.2475,0.0283,0.4893,1.9771,0.014,1.4735
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, outdoor_seating",0.2135,0.1773,0.0748,0.3504,1.9769,0.037,1.2666
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",TYPE=Casual Dining,0.1773,0.2135,0.0748,0.4221,1.9769,0.037,1.361
+amenities+type,"full_bar_available, home_delivery, indoor_seating",outdoor_seating,0.0536,0.3223,0.0341,0.6369,1.9761,0.0169,1.8665
+amenities+type,outdoor_seating,"full_bar_available, home_delivery, indoor_seating",0.3223,0.0536,0.0341,0.1059,1.9761,0.0169,1.0585
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Casual Dining, home_delivery",0.2488,0.1526,0.0748,0.3008,1.9705,0.0369,1.2118
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, outdoor_seating",0.1526,0.2488,0.0748,0.4903,1.9705,0.0369,1.4737
+amenities+type,outdoor_seating,wifi,0.3223,0.0326,0.0207,0.0642,1.9665,0.0102,1.0337
+amenities+type,wifi,outdoor_seating,0.0326,0.3223,0.0207,0.6338,1.9665,0.0102,1.8508
+amenities+type,"TYPE=Quick Bites, breakfast, indoor_seating",vegetarian_only,0.1195,0.1927,0.0452,0.3779,1.9614,0.0221,1.2978
+amenities+type,vegetarian_only,"TYPE=Quick Bites, breakfast, indoor_seating",0.1927,0.1195,0.0452,0.2344,1.9614,0.0221,1.1501
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery, indoor_seating",outdoor_seating,0.0401,0.3223,0.0253,0.6317,1.9598,0.0124,1.84
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available, home_delivery, indoor_seating",0.3223,0.0401,0.0253,0.0785,1.9598,0.0124,1.0417
+amenities+type,"desserts_and_bakes, home_delivery",vegetarian_only,0.0546,0.1927,0.0206,0.3771,1.957,0.0101,1.296
+amenities+type,vegetarian_only,"desserts_and_bakes, home_delivery",0.1927,0.0546,0.0206,0.1069,1.957,0.0101,1.0585
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only",breakfast,0.0678,0.2475,0.0328,0.4836,1.954,0.016,1.4572
+amenities+type,breakfast,"TYPE=Quick Bites, home_delivery, vegetarian_only",0.2475,0.0678,0.0328,0.1325,1.954,0.016,1.0746
+amenities+type,outdoor_seating,full_bar_available,0.3223,0.0932,0.0587,0.1821,1.9531,0.0286,1.1086
+amenities+type,full_bar_available,outdoor_seating,0.0932,0.3223,0.0587,0.6295,1.9531,0.0286,1.8293
+amenities+type,breakfast,"indoor_seating, vegetarian_only",0.2475,0.1503,0.0726,0.2934,1.9516,0.0354,1.2024
+amenities+type,"indoor_seating, vegetarian_only",breakfast,0.1503,0.2475,0.0726,0.483,1.9516,0.0354,1.4556
+amenities+type,"TYPE=Quick Bites, breakfast, indoor_seating","free_parking, home_delivery",0.1195,0.1019,0.0237,0.1986,1.9483,0.0116,1.1206
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, breakfast, indoor_seating",0.1019,0.1195,0.0237,0.2328,1.9483,0.0116,1.1477
+amenities+type,"indoor_seating, outdoor_seating",TYPE=Casual Dining,0.2488,0.2135,0.1033,0.415,1.9437,0.0501,1.3445
+amenities+type,TYPE=Casual Dining,"indoor_seating, outdoor_seating",0.2135,0.2488,0.1033,0.4836,1.9437,0.0501,1.4547
+amenities+type,desserts_and_bakes,vegetarian_only,0.0845,0.1927,0.0316,0.3737,1.9393,0.0153,1.2889
+amenities+type,vegetarian_only,desserts_and_bakes,0.1927,0.0845,0.0316,0.1638,1.9393,0.0153,1.0949
+amenities+type,table_booking_recommended,"home_delivery, outdoor_seating",0.0485,0.2256,0.0211,0.4354,1.9302,0.0102,1.3716
+amenities+type,"home_delivery, outdoor_seating",table_booking_recommended,0.2256,0.0485,0.0211,0.0935,1.9302,0.0102,1.0497
+amenities+type,"indoor_seating, table_booking_recommended","home_delivery, outdoor_seating",0.0462,0.2256,0.0201,0.4349,1.9282,0.0097,1.3705
+amenities+type,"home_delivery, outdoor_seating","indoor_seating, table_booking_recommended",0.2256,0.0462,0.0201,0.0891,1.9282,0.0097,1.0471
+amenities+type,outdoor_seating,"TYPE=Casual Dining, full_bar_available, indoor_seating",0.3223,0.0613,0.0381,0.1181,1.9266,0.0183,1.0644
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating",outdoor_seating,0.0613,0.3223,0.0381,0.621,1.9266,0.0183,1.7879
+amenities+type,TYPE=Quick Bites,"breakfast, free_parking, vegetarian_only",0.4514,0.0241,0.0209,0.0462,1.9195,0.01,1.0232
+amenities+type,"breakfast, free_parking, vegetarian_only",TYPE=Quick Bites,0.0241,0.4514,0.0209,0.8664,1.9195,0.01,4.1076
+amenities+type,"home_delivery, table_booking_recommended",outdoor_seating,0.0341,0.3223,0.0211,0.6184,1.9185,0.0101,1.7757
+amenities+type,outdoor_seating,"home_delivery, table_booking_recommended",0.3223,0.0341,0.0211,0.0655,1.9185,0.0101,1.0335
+amenities+type,"TYPE=Quick Bites, breakfast","free_parking, home_delivery",0.1413,0.1019,0.0276,0.1953,1.9161,0.0132,1.1161
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, breakfast",0.1019,0.1413,0.0276,0.2708,1.9161,0.0132,1.1776
+amenities+type,"breakfast, home_delivery",vegetarian_only,0.1548,0.1927,0.0571,0.369,1.9151,0.0273,1.2794
+amenities+type,vegetarian_only,"breakfast, home_delivery",0.1927,0.1548,0.0571,0.2964,1.9151,0.0273,1.2013
+amenities+type,"breakfast, indoor_seating, vegetarian_only",free_parking,0.0726,0.1457,0.0202,0.2781,1.9086,0.0096,1.1834
+amenities+type,free_parking,"breakfast, indoor_seating, vegetarian_only",0.1457,0.0726,0.0202,0.1386,1.9086,0.0096,1.0766
+amenities+type,vegetarian_only,"TYPE=Quick Bites, breakfast, home_delivery, indoor_seating",0.1927,0.077,0.0283,0.1467,1.9059,0.0134,1.0817
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery, indoor_seating",vegetarian_only,0.077,0.1927,0.0283,0.3672,1.9059,0.0134,1.2759
+amenities+type,"home_delivery, indoor_seating, vegetarian_only","TYPE=Quick Bites, breakfast",0.105,0.1413,0.0283,0.2692,1.9049,0.0134,1.175
+amenities+type,"TYPE=Quick Bites, breakfast","home_delivery, indoor_seating, vegetarian_only",0.1413,0.105,0.0283,0.2,1.9049,0.0134,1.1188
+amenities+type,"full_bar_available, indoor_seating",outdoor_seating,0.0885,0.3223,0.0543,0.6136,1.9037,0.0258,1.7538
+amenities+type,outdoor_seating,"full_bar_available, indoor_seating",0.3223,0.0885,0.0543,0.1685,1.9037,0.0258,1.0962
+amenities+type,outdoor_seating,"home_delivery, indoor_seating, table_booking_recommended",0.3223,0.033,0.0201,0.0624,1.8925,0.0095,1.0314
+amenities+type,"home_delivery, indoor_seating, table_booking_recommended",outdoor_seating,0.033,0.3223,0.0201,0.61,1.8925,0.0095,1.7376
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery",vegetarian_only,0.09,0.1927,0.0328,0.3645,1.8916,0.0155,1.2703
+amenities+type,vegetarian_only,"TYPE=Quick Bites, breakfast, home_delivery",0.1927,0.09,0.0328,0.1702,1.8916,0.0155,1.0967
+amenities+type,"home_delivery, vegetarian_only",desserts_and_bakes,0.129,0.0845,0.0206,0.1597,1.8911,0.0097,1.0896
+amenities+type,desserts_and_bakes,"home_delivery, vegetarian_only",0.0845,0.129,0.0206,0.2439,1.8911,0.0097,1.152
+amenities+type,"free_parking, indoor_seating, vegetarian_only",TYPE=Quick Bites,0.0353,0.4514,0.0301,0.8528,1.8893,0.0142,3.7272
+amenities+type,TYPE=Quick Bites,"free_parking, indoor_seating, vegetarian_only",0.4514,0.0353,0.0301,0.0666,1.8893,0.0142,1.0336
+amenities+type,"TYPE=Quick Bites, breakfast","free_parking, home_delivery, indoor_seating",0.1413,0.0893,0.0237,0.1679,1.8815,0.0111,1.0946
+amenities+type,"free_parking, home_delivery, indoor_seating","TYPE=Quick Bites, breakfast",0.0893,0.1413,0.0237,0.2659,1.8815,0.0111,1.1697
+amenities+type,"home_delivery, indoor_seating, vegetarian_only",breakfast,0.105,0.2475,0.0487,0.4639,1.8744,0.0227,1.4037
+amenities+type,breakfast,"home_delivery, indoor_seating, vegetarian_only",0.2475,0.105,0.0487,0.1968,1.8744,0.0227,1.1143
+amenities+type,TYPE=Quick Bites,"breakfast, free_parking",0.4514,0.0517,0.0437,0.0968,1.8727,0.0204,1.0499
+amenities+type,"breakfast, free_parking",TYPE=Quick Bites,0.0517,0.4514,0.0437,0.8453,1.8727,0.0204,3.5463
+amenities+type,"TYPE=Quick Bites, indoor_seating","breakfast, free_parking, home_delivery",0.3865,0.0328,0.0237,0.0614,1.8721,0.0111,1.0305
+amenities+type,"breakfast, free_parking, home_delivery","TYPE=Quick Bites, indoor_seating",0.0328,0.3865,0.0237,0.7236,1.8721,0.0111,2.2197
+amenities+type,free_parking,"breakfast, vegetarian_only",0.1457,0.0883,0.0241,0.1652,1.8694,0.0112,1.092
+amenities+type,"breakfast, vegetarian_only",free_parking,0.0883,0.1457,0.0241,0.2724,1.8694,0.0112,1.1741
+amenities+type,"breakfast, free_parking","TYPE=Quick Bites, indoor_seating",0.0517,0.3865,0.0373,0.7225,1.8692,0.0174,2.2107
+amenities+type,"TYPE=Quick Bites, indoor_seating","breakfast, free_parking",0.3865,0.0517,0.0373,0.0966,1.8692,0.0174,1.0497
+amenities+type,"breakfast, vegetarian_only","TYPE=Quick Bites, outdoor_seating",0.0883,0.1497,0.0247,0.2799,1.8689,0.0115,1.1807
+amenities+type,"TYPE=Quick Bites, outdoor_seating","breakfast, vegetarian_only",0.1497,0.0883,0.0247,0.1651,1.8689,0.0115,1.0919
+amenities+type,TYPE=Quick Bites,"breakfast, free_parking, indoor_seating",0.4514,0.0443,0.0373,0.0827,1.8654,0.0173,1.0418
+amenities+type,"breakfast, free_parking, indoor_seating",TYPE=Quick Bites,0.0443,0.4514,0.0373,0.842,1.8654,0.0173,3.4725
+amenities+type,TYPE=Quick Bites,"breakfast, free_parking, home_delivery",0.4514,0.0328,0.0276,0.0612,1.8648,0.0128,1.0302
+amenities+type,"breakfast, free_parking, home_delivery",TYPE=Quick Bites,0.0328,0.4514,0.0276,0.8417,1.8648,0.0128,3.4659
+amenities+type,"free_parking, home_delivery, indoor_seating, vegetarian_only",TYPE=Quick Bites,0.025,0.4514,0.0209,0.8383,1.8572,0.0097,3.3925
+amenities+type,TYPE=Quick Bites,"free_parking, home_delivery, indoor_seating, vegetarian_only",0.4514,0.025,0.0209,0.0464,1.8572,0.0097,1.0224
+amenities+type,TYPE=Quick Bites,"free_parking, vegetarian_only",0.4514,0.0436,0.0365,0.0809,1.8553,0.0168,1.0406
+amenities+type,"free_parking, vegetarian_only",TYPE=Quick Bites,0.0436,0.4514,0.0365,0.8374,1.8553,0.0168,3.3747
+amenities+type,vegetarian_only,breakfast,0.1927,0.2475,0.0883,0.4585,1.8527,0.0407,1.3897
+amenities+type,breakfast,vegetarian_only,0.2475,0.1927,0.0883,0.357,1.8527,0.0407,1.2555
+amenities+type,outdoor_seating,table_booking_recommended,0.3223,0.0485,0.0289,0.0897,1.852,0.0133,1.0454
+amenities+type,table_booking_recommended,outdoor_seating,0.0485,0.3223,0.0289,0.5969,1.852,0.0133,1.6813
+amenities+type,"breakfast, free_parking, home_delivery, indoor_seating",TYPE=Quick Bites,0.0284,0.4514,0.0237,0.8348,1.8494,0.0109,3.3206
+amenities+type,TYPE=Quick Bites,"breakfast, free_parking, home_delivery, indoor_seating",0.4514,0.0284,0.0237,0.0526,1.8494,0.0109,1.0255
+amenities+type,TYPE=Quick Bites,"free_parking, home_delivery, vegetarian_only",0.4514,0.0301,0.0251,0.0555,1.8452,0.0115,1.0269
+amenities+type,"free_parking, home_delivery, vegetarian_only",TYPE=Quick Bites,0.0301,0.4514,0.0251,0.8329,1.8452,0.0115,3.2827
+amenities+type,"TYPE=Quick Bites, breakfast, indoor_seating","home_delivery, vegetarian_only",0.1195,0.129,0.0283,0.2366,1.8341,0.0129,1.1409
+amenities+type,"home_delivery, vegetarian_only","TYPE=Quick Bites, breakfast, indoor_seating",0.129,0.1195,0.0283,0.2192,1.8341,0.0129,1.1276
+amenities+type,"indoor_seating, outdoor_seating",table_reservation_not_required,0.2488,0.0499,0.0227,0.0914,1.8336,0.0103,1.0457
+amenities+type,table_reservation_not_required,"indoor_seating, outdoor_seating",0.0499,0.2488,0.0227,0.4562,1.8336,0.0103,1.3814
+amenities+type,outdoor_seating,"indoor_seating, table_booking_recommended",0.3223,0.0462,0.0273,0.0846,1.8305,0.0124,1.0419
+amenities+type,"indoor_seating, table_booking_recommended",outdoor_seating,0.0462,0.3223,0.0273,0.59,1.8305,0.0124,1.653
+amenities+type,"home_delivery, outdoor_seating","TYPE=Casual Dining, full_bar_available, indoor_seating",0.2256,0.0613,0.0253,0.1122,1.8293,0.0115,1.0573
+amenities+type,"TYPE=Casual Dining, full_bar_available, indoor_seating","home_delivery, outdoor_seating",0.0613,0.2256,0.0253,0.4126,1.8293,0.0115,1.3185
+amenities+type,"TYPE=Casual Dining, full_bar_available","home_delivery, outdoor_seating",0.0645,0.2256,0.0266,0.4125,1.8288,0.0121,1.3182
+amenities+type,"home_delivery, outdoor_seating","TYPE=Casual Dining, full_bar_available",0.2256,0.0645,0.0266,0.118,1.8288,0.0121,1.0606
+amenities+type,"TYPE=Quick Bites, home_delivery","free_parking, indoor_seating, vegetarian_only",0.3263,0.0353,0.0209,0.0642,1.8189,0.0094,1.0309
+amenities+type,"free_parking, indoor_seating, vegetarian_only","TYPE=Quick Bites, home_delivery",0.0353,0.3263,0.0209,0.5935,1.8189,0.0094,1.6572
+amenities+type,"TYPE=Quick Bites, free_parking","indoor_seating, vegetarian_only",0.1101,0.1503,0.0301,0.2732,1.8175,0.0135,1.1691
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Quick Bites, free_parking",0.1503,0.1101,0.0301,0.2001,1.8175,0.0135,1.1125
+amenities+type,"breakfast, vegetarian_only","free_parking, indoor_seating",0.0883,0.1258,0.0202,0.2285,1.8173,0.0091,1.1332
+amenities+type,"free_parking, indoor_seating","breakfast, vegetarian_only",0.1258,0.0883,0.0202,0.1606,1.8173,0.0091,1.086
+amenities+type,"home_delivery, indoor_seating, vegetarian_only","TYPE=Quick Bites, free_parking",0.105,0.1101,0.0209,0.1994,1.8108,0.0094,1.1115
+amenities+type,"TYPE=Quick Bites, free_parking","home_delivery, indoor_seating, vegetarian_only",0.1101,0.105,0.0209,0.1901,1.8108,0.0094,1.1051
+amenities+type,"TYPE=Quick Bites, indoor_seating","free_parking, home_delivery, vegetarian_only",0.3865,0.0301,0.0209,0.0542,1.8004,0.0093,1.0255
+amenities+type,"free_parking, home_delivery, vegetarian_only","TYPE=Quick Bites, indoor_seating",0.0301,0.3865,0.0209,0.6959,1.8004,0.0093,2.0173
+amenities+type,"home_delivery, vegetarian_only","TYPE=Quick Bites, breakfast",0.129,0.1413,0.0328,0.2543,1.7993,0.0146,1.1515
+amenities+type,"TYPE=Quick Bites, breakfast","home_delivery, vegetarian_only",0.1413,0.129,0.0328,0.2321,1.7993,0.0146,1.1342
+amenities+type,"TYPE=Quick Bites, free_parking","breakfast, indoor_seating",0.1101,0.1894,0.0373,0.3391,1.7904,0.0165,1.2265
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, free_parking",0.1894,0.1101,0.0373,0.1971,1.7904,0.0165,1.1084
+amenities+type,breakfast,"home_delivery, vegetarian_only",0.2475,0.129,0.0571,0.2308,1.7892,0.0252,1.1323
+amenities+type,"home_delivery, vegetarian_only",breakfast,0.129,0.2475,0.0571,0.4428,1.7892,0.0252,1.3506
+amenities+type,"free_parking, vegetarian_only","TYPE=Quick Bites, indoor_seating",0.0436,0.3865,0.0301,0.69,1.7851,0.0132,1.9789
+amenities+type,"TYPE=Quick Bites, indoor_seating","free_parking, vegetarian_only",0.3865,0.0436,0.0301,0.0778,1.7851,0.0132,1.0371
+amenities+type,"home_delivery, outdoor_seating",table_reservation_not_required,0.2256,0.0499,0.02,0.0888,1.7807,0.0088,1.0427
+amenities+type,table_reservation_not_required,"home_delivery, outdoor_seating",0.0499,0.2256,0.02,0.4017,1.7807,0.0088,1.2943
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Quick Bites, free_parking, home_delivery",0.1503,0.0784,0.0209,0.1393,1.7768,0.0092,1.0707
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery","indoor_seating, vegetarian_only",0.0784,0.1503,0.0209,0.2671,1.7768,0.0092,1.1593
+amenities+type,"home_delivery, vegetarian_only","TYPE=Quick Bites, free_parking",0.129,0.1101,0.0251,0.1942,1.7642,0.0109,1.1044
+amenities+type,"TYPE=Quick Bites, free_parking","home_delivery, vegetarian_only",0.1101,0.129,0.0251,0.2275,1.7642,0.0109,1.1276
+amenities+type,"free_parking, vegetarian_only","TYPE=Quick Bites, home_delivery",0.0436,0.3263,0.0251,0.5747,1.7613,0.0108,1.584
+amenities+type,"TYPE=Quick Bites, home_delivery","free_parking, vegetarian_only",0.3263,0.0436,0.0251,0.0768,1.7613,0.0108,1.036
+amenities+type,"breakfast, home_delivery, indoor_seating","TYPE=Quick Bites, free_parking",0.1237,0.1101,0.0237,0.1919,1.7426,0.0101,1.1012
+amenities+type,"TYPE=Quick Bites, free_parking","breakfast, home_delivery, indoor_seating",0.1101,0.1237,0.0237,0.2156,1.7426,0.0101,1.1171
+amenities+type,"TYPE=Quick Bites, indoor_seating, outdoor_seating","breakfast, home_delivery",0.1043,0.1548,0.028,0.2688,1.7366,0.0119,1.1559
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, indoor_seating, outdoor_seating",0.1548,0.1043,0.028,0.181,1.7366,0.0119,1.0938
+amenities+type,outdoor_seating,"TYPE=Casual Dining, breakfast",0.3223,0.0501,0.028,0.0869,1.735,0.0119,1.0403
+amenities+type,"TYPE=Casual Dining, breakfast",outdoor_seating,0.0501,0.3223,0.028,0.5592,1.735,0.0119,1.5374
+amenities+type,"free_parking, home_delivery","TYPE=Quick Bites, indoor_seating",0.1019,0.3865,0.068,0.6669,1.7255,0.0286,1.8419
+amenities+type,"TYPE=Quick Bites, indoor_seating","free_parking, home_delivery",0.3865,0.1019,0.068,0.1759,1.7255,0.0286,1.0897
+amenities+type,"TYPE=Quick Bites, free_parking, indoor_seating","home_delivery, vegetarian_only",0.0942,0.129,0.0209,0.2222,1.723,0.0088,1.1199
+amenities+type,"home_delivery, vegetarian_only","TYPE=Quick Bites, free_parking, indoor_seating",0.129,0.0942,0.0209,0.1623,1.723,0.0088,1.0813
+amenities+type,vegetarian_only,"TYPE=Quick Bites, free_parking",0.1927,0.1101,0.0365,0.1895,1.7209,0.0153,1.0979
+amenities+type,"TYPE=Quick Bites, free_parking",vegetarian_only,0.1101,0.1927,0.0365,0.3316,1.7209,0.0153,1.2078
+amenities+type,"indoor_seating, vegetarian_only",no_alcohol_available,0.1503,0.0877,0.0227,0.1508,1.7194,0.0095,1.0743
+amenities+type,no_alcohol_available,"indoor_seating, vegetarian_only",0.0877,0.1503,0.0227,0.2585,1.7194,0.0095,1.1458
+amenities+type,"home_delivery, outdoor_seating",full_bar_available,0.2256,0.0932,0.036,0.1597,1.713,0.015,1.0791
+amenities+type,full_bar_available,"home_delivery, outdoor_seating",0.0932,0.2256,0.036,0.3864,1.713,0.015,1.2621
+amenities+type,"full_bar_available, indoor_seating","home_delivery, outdoor_seating",0.0885,0.2256,0.0341,0.3855,1.7089,0.0142,1.2602
+amenities+type,"home_delivery, outdoor_seating","full_bar_available, indoor_seating",0.2256,0.0885,0.0341,0.1513,1.7089,0.0142,1.0739
+amenities+type,"free_parking, home_delivery",TYPE=Quick Bites,0.1019,0.4514,0.0784,0.7688,1.7032,0.0324,2.3729
+amenities+type,TYPE=Quick Bites,"free_parking, home_delivery",0.4514,0.1019,0.0784,0.1736,1.7032,0.0324,1.0868
+amenities+type,vegetarian_only,"indoor_seating, no_alcohol_available",0.1927,0.0691,0.0227,0.1176,1.7031,0.0094,1.055
+amenities+type,"indoor_seating, no_alcohol_available",vegetarian_only,0.0691,0.1927,0.0227,0.3282,1.7031,0.0094,1.2017
+amenities+type,"TYPE=Quick Bites, outdoor_seating","free_parking, home_delivery, indoor_seating",0.1497,0.0893,0.0227,0.1519,1.7019,0.0094,1.0739
+amenities+type,"free_parking, home_delivery, indoor_seating","TYPE=Quick Bites, outdoor_seating",0.0893,0.1497,0.0227,0.2548,1.7019,0.0094,1.141
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating","free_parking, vegetarian_only",0.2827,0.0436,0.0209,0.0741,1.6986,0.0086,1.0329
+amenities+type,"free_parking, vegetarian_only","TYPE=Quick Bites, home_delivery, indoor_seating",0.0436,0.2827,0.0209,0.4802,1.6986,0.0086,1.3799
+amenities+type,TYPE=Casual Dining,"home_delivery, outdoor_seating",0.2135,0.2256,0.0813,0.3809,1.6888,0.0332,1.251
+amenities+type,"home_delivery, outdoor_seating",TYPE=Casual Dining,0.2256,0.2135,0.0813,0.3606,1.6888,0.0332,1.23
+amenities+type,TYPE=Quick Bites,"free_parking, home_delivery, indoor_seating",0.4514,0.0893,0.068,0.1506,1.6877,0.0277,1.0723
+amenities+type,"free_parking, home_delivery, indoor_seating",TYPE=Quick Bites,0.0893,0.4514,0.068,0.7618,1.6877,0.0277,2.3029
+amenities+type,"TYPE=Quick Bites, home_delivery, outdoor_seating","free_parking, indoor_seating",0.1075,0.1258,0.0227,0.2115,1.6817,0.0092,1.1087
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, home_delivery, outdoor_seating",0.1258,0.1075,0.0227,0.1809,1.6817,0.0092,1.0895
+amenities+type,outdoor_seating,"TYPE=Casual Dining, vegetarian_only",0.3223,0.0413,0.0223,0.0693,1.6782,0.009,1.0301
+amenities+type,"TYPE=Casual Dining, vegetarian_only",outdoor_seating,0.0413,0.3223,0.0223,0.5409,1.6782,0.009,1.4762
+amenities+type,free_parking,TYPE=Quick Bites,0.1457,0.4514,0.1101,0.7557,1.6741,0.0443,2.2453
+amenities+type,TYPE=Quick Bites,free_parking,0.4514,0.1457,0.1101,0.2439,1.6741,0.0443,1.1299
+amenities+type,outdoor_seating,"TYPE=Casual Dining, no_alcohol_available",0.3223,0.039,0.021,0.0652,1.6726,0.0085,1.028
+amenities+type,"TYPE=Casual Dining, no_alcohol_available",outdoor_seating,0.039,0.3223,0.021,0.5391,1.6726,0.0085,1.4704
+amenities+type,"TYPE=Quick Bites, indoor_seating",free_parking,0.3865,0.1457,0.0942,0.2437,1.6726,0.0379,1.1296
+amenities+type,free_parking,"TYPE=Quick Bites, indoor_seating",0.1457,0.3865,0.0942,0.6465,1.6726,0.0379,1.7354
+amenities+type,free_parking,"breakfast, outdoor_seating",0.1457,0.0992,0.0241,0.1652,1.6645,0.0096,1.079
+amenities+type,"breakfast, outdoor_seating",free_parking,0.0992,0.1457,0.0241,0.2425,1.6645,0.0096,1.1278
+amenities+type,TYPE=Quick Bites,"free_parking, indoor_seating",0.4514,0.1258,0.0942,0.2087,1.6594,0.0374,1.1048
+amenities+type,"free_parking, indoor_seating",TYPE=Quick Bites,0.1258,0.4514,0.0942,0.749,1.6594,0.0374,2.1859
+amenities+type,vegetarian_only,"TYPE=Quick Bites, free_parking, home_delivery",0.1927,0.0784,0.0251,0.13,1.659,0.01,1.0594
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery",vegetarian_only,0.0784,0.1927,0.0251,0.3197,1.659,0.01,1.1866
+amenities+type,vegetarian_only,"TYPE=Quick Bites, free_parking, indoor_seating",0.1927,0.0942,0.0301,0.1561,1.6573,0.0119,1.0734
+amenities+type,"TYPE=Quick Bites, free_parking, indoor_seating",vegetarian_only,0.0942,0.1927,0.0301,0.3193,1.6573,0.0119,1.1861
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, outdoor_seating",0.1548,0.1497,0.0384,0.2481,1.6571,0.0152,1.1309
+amenities+type,"TYPE=Quick Bites, outdoor_seating","breakfast, home_delivery",0.1497,0.1548,0.0384,0.2565,1.6571,0.0152,1.1368
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, home_delivery",0.1258,0.3263,0.068,0.5406,1.657,0.027,1.4666
+amenities+type,"TYPE=Quick Bites, home_delivery","free_parking, indoor_seating",0.3263,0.1258,0.068,0.2084,1.657,0.027,1.1044
+amenities+type,outdoor_seating,"TYPE=Casual Dining, breakfast, indoor_seating",0.3223,0.0474,0.0253,0.0785,1.6565,0.01,1.0338
+amenities+type,"TYPE=Casual Dining, breakfast, indoor_seating",outdoor_seating,0.0474,0.3223,0.0253,0.5339,1.6565,0.01,1.454
+amenities+type,outdoor_seating,TYPE=Casual Dining,0.3223,0.2135,0.1138,0.3531,1.6536,0.045,1.2158
+amenities+type,TYPE=Casual Dining,outdoor_seating,0.2135,0.3223,0.1138,0.533,1.6536,0.045,1.4511
+amenities+type,"TYPE=Casual Dining, home_delivery",outdoor_seating,0.1526,0.3223,0.0813,0.5329,1.6535,0.0321,1.4509
+amenities+type,outdoor_seating,"TYPE=Casual Dining, home_delivery",0.3223,0.1526,0.0813,0.2524,1.6535,0.0321,1.1334
+amenities+type,free_parking,"TYPE=Quick Bites, home_delivery, indoor_seating",0.1457,0.2827,0.068,0.4666,1.6508,0.0268,1.3449
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating",free_parking,0.2827,0.1457,0.068,0.2405,1.6508,0.0268,1.1248
+amenities+type,"TYPE=Quick Bites, home_delivery",free_parking,0.3263,0.1457,0.0784,0.2402,1.6486,0.0308,1.1244
+amenities+type,free_parking,"TYPE=Quick Bites, home_delivery",0.1457,0.3263,0.0784,0.5379,1.6486,0.0308,1.458
+amenities+type,"TYPE=Quick Bites, home_delivery","breakfast, free_parking, indoor_seating",0.3263,0.0443,0.0237,0.0727,1.6407,0.0093,1.0306
+amenities+type,"breakfast, free_parking, indoor_seating","TYPE=Quick Bites, home_delivery",0.0443,0.3263,0.0237,0.5353,1.6407,0.0093,1.4499
+amenities+type,"home_delivery, outdoor_seating","TYPE=Casual Dining, indoor_seating",0.2256,0.2023,0.0748,0.3318,1.6397,0.0292,1.1937
+amenities+type,"TYPE=Casual Dining, indoor_seating","home_delivery, outdoor_seating",0.2023,0.2256,0.0748,0.3699,1.6397,0.0292,1.229
+amenities+type,"breakfast, free_parking","TYPE=Quick Bites, home_delivery",0.0517,0.3263,0.0276,0.5343,1.6376,0.0107,1.4467
+amenities+type,"TYPE=Quick Bites, home_delivery","breakfast, free_parking",0.3263,0.0517,0.0276,0.0846,1.6376,0.0107,1.036
+amenities+type,"free_parking, indoor_seating","TYPE=Quick Bites, outdoor_seating",0.1258,0.1497,0.0307,0.2444,1.6323,0.0119,1.1253
+amenities+type,"TYPE=Quick Bites, outdoor_seating","free_parking, indoor_seating",0.1497,0.1258,0.0307,0.2053,1.6323,0.0119,1.1001
+amenities+type,"home_delivery, indoor_seating, vegetarian_only",free_parking,0.105,0.1457,0.025,0.2378,1.6323,0.0097,1.1209
+amenities+type,free_parking,"home_delivery, indoor_seating, vegetarian_only",0.1457,0.105,0.025,0.1714,1.6323,0.0097,1.0801
+amenities+type,"breakfast, home_delivery, vegetarian_only","indoor_seating, outdoor_seating",0.0571,0.2488,0.0232,0.4055,1.6297,0.0089,1.2635
+amenities+type,"indoor_seating, outdoor_seating","breakfast, home_delivery, vegetarian_only",0.2488,0.0571,0.0232,0.0931,1.6297,0.0089,1.0397
+amenities+type,"indoor_seating, vegetarian_only","free_parking, home_delivery",0.1503,0.1019,0.025,0.1661,1.6295,0.0096,1.077
+amenities+type,"free_parking, home_delivery","indoor_seating, vegetarian_only",0.1019,0.1503,0.025,0.2449,1.6295,0.0096,1.1253
+amenities+type,"TYPE=Quick Bites, free_parking, indoor_seating","breakfast, home_delivery",0.0942,0.1548,0.0237,0.252,1.628,0.0092,1.1299
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, free_parking, indoor_seating",0.1548,0.0942,0.0237,0.1534,1.628,0.0092,1.0699
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating","breakfast, free_parking",0.2827,0.0517,0.0237,0.084,1.6249,0.0091,1.0353
+amenities+type,"breakfast, free_parking","TYPE=Quick Bites, home_delivery, indoor_seating",0.0517,0.2827,0.0237,0.4593,1.6249,0.0091,1.3267
+amenities+type,"home_delivery, table_reservation_not_required",outdoor_seating,0.0382,0.3223,0.02,0.5237,1.6248,0.0077,1.4228
+amenities+type,outdoor_seating,"home_delivery, table_reservation_not_required",0.3223,0.0382,0.02,0.0621,1.6248,0.0077,1.0255
+amenities+type,"TYPE=Quick Bites, free_parking","breakfast, home_delivery",0.1101,0.1548,0.0276,0.2507,1.6201,0.0106,1.1281
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, free_parking",0.1548,0.1101,0.0276,0.1784,1.6201,0.0106,1.0831
+amenities+type,"TYPE=Casual Dining, indoor_seating, vegetarian_only",outdoor_seating,0.0395,0.3223,0.0206,0.5219,1.6193,0.0079,1.4175
+amenities+type,outdoor_seating,"TYPE=Casual Dining, indoor_seating, vegetarian_only",0.3223,0.0395,0.0206,0.0639,1.6193,0.0079,1.0261
+amenities+type,table_reservation_not_required,outdoor_seating,0.0499,0.3223,0.026,0.5207,1.6154,0.0099,1.4138
+amenities+type,outdoor_seating,table_reservation_not_required,0.3223,0.0499,0.026,0.0805,1.6154,0.0099,1.0334
+amenities+type,TYPE=Casual Dining,"indoor_seating, outdoor_seating, vegetarian_only",0.2135,0.0597,0.0206,0.0965,1.6149,0.0078,1.0407
+amenities+type,"indoor_seating, outdoor_seating, vegetarian_only",TYPE=Casual Dining,0.0597,0.2135,0.0206,0.3448,1.6149,0.0078,1.2004
+amenities+type,no_alcohol_available,vegetarian_only,0.0877,0.1927,0.0273,0.3111,1.6145,0.0104,1.1719
+amenities+type,vegetarian_only,no_alcohol_available,0.1927,0.0877,0.0273,0.1416,1.6145,0.0104,1.0628
+amenities+type,free_parking,"indoor_seating, vegetarian_only",0.1457,0.1503,0.0353,0.2421,1.6104,0.0134,1.1211
+amenities+type,"indoor_seating, vegetarian_only",free_parking,0.1503,0.1457,0.0353,0.2346,1.6104,0.0134,1.1162
+amenities+type,breakfast,"TYPE=Quick Bites, indoor_seating, outdoor_seating",0.2475,0.1043,0.0415,0.1678,1.6099,0.0157,1.0764
+amenities+type,"TYPE=Quick Bites, indoor_seating, outdoor_seating",breakfast,0.1043,0.2475,0.0415,0.3984,1.6099,0.0157,1.2509
+amenities+type,"breakfast, indoor_seating",free_parking,0.1894,0.1457,0.0443,0.2341,1.6068,0.0167,1.1154
+amenities+type,free_parking,"breakfast, indoor_seating",0.1457,0.1894,0.0443,0.3043,1.6068,0.0167,1.1652
+amenities+type,"TYPE=Quick Bites, free_parking",breakfast,0.1101,0.2475,0.0437,0.3967,1.6029,0.0164,1.2473
+amenities+type,breakfast,"TYPE=Quick Bites, free_parking",0.2475,0.1101,0.0437,0.1765,1.6029,0.0164,1.0806
+amenities+type,breakfast,"TYPE=Quick Bites, free_parking, indoor_seating",0.2475,0.0942,0.0373,0.1508,1.6014,0.014,1.0667
+amenities+type,"TYPE=Quick Bites, free_parking, indoor_seating",breakfast,0.0942,0.2475,0.0373,0.3963,1.6014,0.014,1.2466
+amenities+type,"home_delivery, vegetarian_only",free_parking,0.129,0.1457,0.0301,0.2332,1.6007,0.0113,1.1141
+amenities+type,free_parking,"home_delivery, vegetarian_only",0.1457,0.129,0.0301,0.2064,1.6007,0.0113,1.0976
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery","breakfast, indoor_seating",0.0784,0.1894,0.0237,0.3028,1.5991,0.0089,1.1627
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, free_parking, home_delivery",0.1894,0.0784,0.0237,0.1253,1.5991,0.0089,1.0537
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery, indoor_seating",vegetarian_only,0.068,0.1927,0.0209,0.3079,1.5979,0.0078,1.1664
+amenities+type,vegetarian_only,"TYPE=Quick Bites, free_parking, home_delivery, indoor_seating",0.1927,0.068,0.0209,0.1086,1.5979,0.0078,1.0456
+amenities+type,"TYPE=Casual Dining, home_delivery, indoor_seating",outdoor_seating,0.1459,0.3223,0.0748,0.513,1.5916,0.0278,1.3915
+amenities+type,outdoor_seating,"TYPE=Casual Dining, home_delivery, indoor_seating",0.3223,0.1459,0.0748,0.2322,1.5916,0.0278,1.1124
+amenities+type,"TYPE=Quick Bites, indoor_seating, outdoor_seating","home_delivery, vegetarian_only",0.1043,0.129,0.0213,0.2047,1.5874,0.0079,1.0953
+amenities+type,"home_delivery, vegetarian_only","TYPE=Quick Bites, indoor_seating, outdoor_seating",0.129,0.1043,0.0213,0.1655,1.5874,0.0079,1.0734
+amenities+type,"TYPE=Casual Dining, indoor_seating",outdoor_seating,0.2023,0.3223,0.1033,0.5104,1.5835,0.0381,1.3841
+amenities+type,outdoor_seating,"TYPE=Casual Dining, indoor_seating",0.3223,0.2023,0.1033,0.3204,1.5835,0.0381,1.1737
+amenities+type,"breakfast, home_delivery, indoor_seating",free_parking,0.1237,0.1457,0.0284,0.2298,1.5775,0.0104,1.1093
+amenities+type,free_parking,"breakfast, home_delivery, indoor_seating",0.1457,0.1237,0.0284,0.1951,1.5775,0.0104,1.0888
+amenities+type,"TYPE=Quick Bites, outdoor_seating",breakfast,0.1497,0.2475,0.0582,0.3886,1.57,0.0211,1.2307
+amenities+type,breakfast,"TYPE=Quick Bites, outdoor_seating",0.2475,0.1497,0.0582,0.2351,1.57,0.0211,1.1116
+amenities+type,TYPE=Casual Dining,"breakfast, indoor_seating, outdoor_seating",0.2135,0.0756,0.0253,0.1185,1.5679,0.0092,1.0487
+amenities+type,"breakfast, indoor_seating, outdoor_seating",TYPE=Casual Dining,0.0756,0.2135,0.0253,0.3348,1.5679,0.0092,1.1823
+amenities+type,"breakfast, home_delivery, vegetarian_only",outdoor_seating,0.0571,0.3223,0.0288,0.5051,1.5669,0.0104,1.3692
+amenities+type,outdoor_seating,"breakfast, home_delivery, vegetarian_only",0.3223,0.0571,0.0288,0.0895,1.5669,0.0104,1.0356
+amenities+type,"home_delivery, vegetarian_only","TYPE=Quick Bites, outdoor_seating",0.129,0.1497,0.03,0.2326,1.5532,0.0107,1.108
+amenities+type,"TYPE=Quick Bites, outdoor_seating","home_delivery, vegetarian_only",0.1497,0.129,0.03,0.2003,1.5532,0.0107,1.0892
+amenities+type,vegetarian_only,free_parking,0.1927,0.1457,0.0436,0.2263,1.5529,0.0155,1.1041
+amenities+type,free_parking,vegetarian_only,0.1457,0.1927,0.0436,0.2992,1.5529,0.0155,1.152
+amenities+type,"indoor_seating, table_reservation_not_required",outdoor_seating,0.0456,0.3223,0.0227,0.4991,1.5485,0.0081,1.3529
+amenities+type,outdoor_seating,"indoor_seating, table_reservation_not_required",0.3223,0.0456,0.0227,0.0706,1.5485,0.0081,1.0269
+amenities+type,"free_parking, home_delivery, outdoor_seating",TYPE=Quick Bites,0.0451,0.4514,0.0314,0.6965,1.5431,0.0111,1.8078
+amenities+type,TYPE=Quick Bites,"free_parking, home_delivery, outdoor_seating",0.4514,0.0451,0.0314,0.0696,1.5431,0.0111,1.0263
+amenities+type,"free_parking, indoor_seating","home_delivery, vegetarian_only",0.1258,0.129,0.025,0.1986,1.5395,0.0088,1.0868
+amenities+type,"home_delivery, vegetarian_only","free_parking, indoor_seating",0.129,0.1258,0.025,0.1936,1.5395,0.0088,1.0841
+amenities+type,vegetarian_only,"free_parking, home_delivery",0.1927,0.1019,0.0301,0.1561,1.5314,0.0104,1.0642
+amenities+type,"free_parking, home_delivery",vegetarian_only,0.1019,0.1927,0.0301,0.2951,1.5314,0.0104,1.1452
+amenities+type,"TYPE=Quick Bites, indoor_seating, outdoor_seating",vegetarian_only,0.1043,0.1927,0.0307,0.2941,1.5262,0.0106,1.1436
+amenities+type,vegetarian_only,"TYPE=Quick Bites, indoor_seating, outdoor_seating",0.1927,0.1043,0.0307,0.1591,1.5262,0.0106,1.0652
+amenities+type,vegetarian_only,"TYPE=Quick Bites, outdoor_seating",0.1927,0.1497,0.044,0.2284,1.5253,0.0152,1.1019
+amenities+type,"TYPE=Quick Bites, outdoor_seating",vegetarian_only,0.1497,0.1927,0.044,0.2939,1.5253,0.0152,1.1433
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, table_booking_recommended",0.4995,0.0286,0.0218,0.0436,1.5231,0.0075,1.0156
+amenities+type,"TYPE=Casual Dining, table_booking_recommended","home_delivery, indoor_seating",0.0286,0.4995,0.0218,0.7608,1.5231,0.0075,2.0924
+amenities+type,"free_parking, outdoor_seating",breakfast,0.064,0.2475,0.0241,0.3758,1.5185,0.0082,1.2056
+amenities+type,breakfast,"free_parking, outdoor_seating",0.2475,0.064,0.0241,0.0972,1.5185,0.0082,1.0368
+amenities+type,"indoor_seating, outdoor_seating","home_delivery, no_alcohol_available",0.2488,0.062,0.0234,0.0941,1.5179,0.008,1.0354
+amenities+type,"home_delivery, no_alcohol_available","indoor_seating, outdoor_seating",0.062,0.2488,0.0234,0.3777,1.5179,0.008,1.207
+amenities+type,"TYPE=Quick Bites, outdoor_seating","breakfast, home_delivery, indoor_seating",0.1497,0.1237,0.028,0.1871,1.5127,0.0095,1.078
+amenities+type,"breakfast, home_delivery, indoor_seating","TYPE=Quick Bites, outdoor_seating",0.1237,0.1497,0.028,0.2265,1.5127,0.0095,1.0993
+amenities+type,"free_parking, outdoor_seating",TYPE=Quick Bites,0.064,0.4514,0.0436,0.6808,1.5083,0.0147,1.7189
+amenities+type,TYPE=Quick Bites,"free_parking, outdoor_seating",0.4514,0.064,0.0436,0.0966,1.5083,0.0147,1.036
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",no_alcohol_available,0.1773,0.0877,0.0234,0.132,1.5057,0.0079,1.0511
+amenities+type,no_alcohol_available,"home_delivery, indoor_seating, outdoor_seating",0.0877,0.1773,0.0234,0.2669,1.5057,0.0079,1.1223
+amenities+type,"TYPE=Quick Bites, home_delivery","free_parking, outdoor_seating",0.3263,0.064,0.0314,0.0962,1.5029,0.0105,1.0356
+amenities+type,"free_parking, outdoor_seating","TYPE=Quick Bites, home_delivery",0.064,0.3263,0.0314,0.4903,1.5029,0.0105,1.3219
+amenities+type,"indoor_seating, no_alcohol_available","home_delivery, outdoor_seating",0.0691,0.2256,0.0234,0.3389,1.5025,0.0078,1.1714
+amenities+type,"home_delivery, outdoor_seating","indoor_seating, no_alcohol_available",0.2256,0.0691,0.0234,0.1038,1.5025,0.0078,1.0387
+amenities+type,"indoor_seating, outdoor_seating","breakfast, vegetarian_only",0.2488,0.0883,0.0326,0.1308,1.481,0.0106,1.0489
+amenities+type,"breakfast, vegetarian_only","indoor_seating, outdoor_seating",0.0883,0.2488,0.0326,0.3685,1.481,0.0106,1.1895
+amenities+type,"home_delivery, indoor_seating, outdoor_seating","breakfast, vegetarian_only",0.1773,0.0883,0.0232,0.1306,1.4787,0.0075,1.0486
+amenities+type,"breakfast, vegetarian_only","home_delivery, indoor_seating, outdoor_seating",0.0883,0.1773,0.0232,0.2621,1.4787,0.0075,1.115
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating, outdoor_seating",breakfast,0.0766,0.2475,0.028,0.3656,1.4772,0.0091,1.1862
+amenities+type,breakfast,"TYPE=Quick Bites, home_delivery, indoor_seating, outdoor_seating",0.2475,0.0766,0.028,0.1132,1.4772,0.0091,1.0412
+amenities+type,outdoor_seating,"breakfast, home_delivery, indoor_seating, vegetarian_only",0.3223,0.0487,0.0232,0.0718,1.4751,0.0075,1.0249
+amenities+type,"breakfast, home_delivery, indoor_seating, vegetarian_only",outdoor_seating,0.0487,0.3223,0.0232,0.4755,1.4751,0.0075,1.292
+amenities+type,"free_parking, home_delivery","breakfast, indoor_seating",0.1019,0.1894,0.0284,0.2789,1.4727,0.0091,1.1241
+amenities+type,"breakfast, indoor_seating","free_parking, home_delivery",0.1894,0.1019,0.0284,0.1501,1.4727,0.0091,1.0567
+amenities+type,"TYPE=Quick Bites, outdoor_seating","breakfast, indoor_seating",0.1497,0.1894,0.0415,0.2774,1.4646,0.0132,1.1218
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, outdoor_seating",0.1894,0.1497,0.0415,0.2193,1.4646,0.0132,1.0891
+amenities+type,outdoor_seating,"breakfast, vegetarian_only",0.3223,0.0883,0.0417,0.1294,1.4644,0.0132,1.0471
+amenities+type,"breakfast, vegetarian_only",outdoor_seating,0.0883,0.3223,0.0417,0.472,1.4644,0.0132,1.2835
+amenities+type,"free_parking, indoor_seating","breakfast, home_delivery",0.1258,0.1548,0.0284,0.2261,1.4607,0.009,1.0921
+amenities+type,"breakfast, home_delivery","free_parking, indoor_seating",0.1548,0.1258,0.0284,0.1837,1.4607,0.009,1.071
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, no_alcohol_available",0.4995,0.039,0.0284,0.0569,1.4602,0.009,1.019
+amenities+type,"TYPE=Casual Dining, no_alcohol_available","home_delivery, indoor_seating",0.039,0.4995,0.0284,0.7294,1.4602,0.009,1.8495
+amenities+type,"free_parking, indoor_seating",vegetarian_only,0.1258,0.1927,0.0353,0.2805,1.4556,0.011,1.122
+amenities+type,vegetarian_only,"free_parking, indoor_seating",0.1927,0.1258,0.0353,0.1831,1.4556,0.011,1.0701
+amenities+type,free_parking,"breakfast, home_delivery",0.1457,0.1548,0.0328,0.2251,1.4545,0.0102,1.0908
+amenities+type,"breakfast, home_delivery",free_parking,0.1548,0.1457,0.0328,0.2119,1.4545,0.0102,1.084
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, table_reservation_not_required",0.4995,0.0352,0.0255,0.0511,1.4534,0.008,1.0168
+amenities+type,"TYPE=Casual Dining, table_reservation_not_required","home_delivery, indoor_seating",0.0352,0.4995,0.0255,0.726,1.4534,0.008,1.8266
+amenities+type,"free_parking, home_delivery, indoor_seating",vegetarian_only,0.0893,0.1927,0.025,0.2798,1.452,0.0078,1.1209
+amenities+type,vegetarian_only,"free_parking, home_delivery, indoor_seating",0.1927,0.0893,0.025,0.1296,1.452,0.0078,1.0464
+amenities+type,"TYPE=Quick Bites, home_delivery, outdoor_seating",vegetarian_only,0.1075,0.1927,0.03,0.2789,1.4476,0.0093,1.1196
+amenities+type,vegetarian_only,"TYPE=Quick Bites, home_delivery, outdoor_seating",0.1927,0.1075,0.03,0.1557,1.4476,0.0093,1.057
+amenities+type,"home_delivery, outdoor_seating","breakfast, vegetarian_only",0.2256,0.0883,0.0288,0.1279,1.4474,0.0089,1.0453
+amenities+type,"breakfast, vegetarian_only","home_delivery, outdoor_seating",0.0883,0.2256,0.0288,0.3265,1.4474,0.0089,1.1499
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating, outdoor_seating",vegetarian_only,0.0766,0.1927,0.0213,0.2785,1.4454,0.0066,1.1189
+amenities+type,vegetarian_only,"TYPE=Quick Bites, home_delivery, indoor_seating, outdoor_seating",0.1927,0.0766,0.0213,0.1108,1.4454,0.0066,1.0384
+amenities+type,"breakfast, free_parking",outdoor_seating,0.0517,0.3223,0.0241,0.4657,1.4449,0.0074,1.2684
+amenities+type,outdoor_seating,"breakfast, free_parking",0.3223,0.0517,0.0241,0.0747,1.4449,0.0074,1.0248
+amenities+type,breakfast,"TYPE=Quick Bites, home_delivery, outdoor_seating",0.2475,0.1075,0.0384,0.1552,1.4429,0.0118,1.0564
+amenities+type,"TYPE=Quick Bites, home_delivery, outdoor_seating",breakfast,0.1075,0.2475,0.0384,0.3571,1.4429,0.0118,1.1705
+amenities+type,TYPE=Quick Bites,"free_parking, home_delivery, indoor_seating, outdoor_seating",0.4514,0.0351,0.0227,0.0504,1.4354,0.0069,1.0161
+amenities+type,"free_parking, home_delivery, indoor_seating, outdoor_seating",TYPE=Quick Bites,0.0351,0.4514,0.0227,0.6479,1.4354,0.0069,1.5581
+amenities+type,breakfast,free_parking,0.2475,0.1457,0.0517,0.2088,1.433,0.0156,1.0797
+amenities+type,free_parking,breakfast,0.1457,0.2475,0.0517,0.3546,1.433,0.0156,1.166
+amenities+type,breakfast,"free_parking, indoor_seating",0.2475,0.1258,0.0443,0.1792,1.4245,0.0132,1.065
+amenities+type,"free_parking, indoor_seating",breakfast,0.1258,0.2475,0.0443,0.3526,1.4245,0.0132,1.1623
+amenities+type,breakfast,"TYPE=Quick Bites, free_parking, home_delivery",0.2475,0.0784,0.0276,0.1116,1.4234,0.0082,1.0373
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery",breakfast,0.0784,0.2475,0.0276,0.3523,1.4234,0.0082,1.1618
+amenities+type,outdoor_seating,"TYPE=Quick Bites, breakfast, vegetarian_only",0.3223,0.0539,0.0247,0.0767,1.4232,0.0074,1.0247
+amenities+type,"TYPE=Quick Bites, breakfast, vegetarian_only",outdoor_seating,0.0539,0.3223,0.0247,0.4587,1.4232,0.0074,1.252
+amenities+type,"home_delivery, indoor_seating, no_alcohol_available",outdoor_seating,0.0511,0.3223,0.0234,0.4581,1.4212,0.0069,1.2505
+amenities+type,outdoor_seating,"home_delivery, indoor_seating, no_alcohol_available",0.3223,0.0511,0.0234,0.0726,1.4212,0.0069,1.0232
+amenities+type,"indoor_seating, outdoor_seating",no_alcohol_available,0.2488,0.0877,0.031,0.1245,1.4203,0.0092,1.0421
+amenities+type,no_alcohol_available,"indoor_seating, outdoor_seating",0.0877,0.2488,0.031,0.3534,1.4203,0.0092,1.1617
+amenities+type,table_reservation_not_required,"home_delivery, indoor_seating",0.0499,0.4995,0.0354,0.7091,1.4196,0.0104,1.7204
+amenities+type,"home_delivery, indoor_seating",table_reservation_not_required,0.4995,0.0499,0.0354,0.0708,1.4196,0.0104,1.0225
+amenities+type,"home_delivery, outdoor_seating","breakfast, indoor_seating, vegetarian_only",0.2256,0.0726,0.0232,0.1027,1.414,0.0068,1.0335
+amenities+type,"breakfast, indoor_seating, vegetarian_only","home_delivery, outdoor_seating",0.0726,0.2256,0.0232,0.319,1.414,0.0068,1.1371
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery, indoor_seating",breakfast,0.068,0.2475,0.0237,0.3491,1.4105,0.0069,1.1561
+amenities+type,breakfast,"TYPE=Quick Bites, free_parking, home_delivery, indoor_seating",0.2475,0.068,0.0237,0.0959,1.4105,0.0069,1.0309
+amenities+type,"TYPE=Quick Bites, home_delivery","free_parking, indoor_seating, outdoor_seating",0.3263,0.0495,0.0227,0.0697,1.4075,0.0066,1.0217
+amenities+type,"free_parking, indoor_seating, outdoor_seating","TYPE=Quick Bites, home_delivery",0.0495,0.3263,0.0227,0.4592,1.4075,0.0066,1.2459
+amenities+type,"TYPE=Casual Dining, home_delivery, table_booking_recommended",indoor_seating,0.0221,0.7003,0.0218,0.9851,1.4067,0.0063,20.0823
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, table_booking_recommended",0.7003,0.0221,0.0218,0.0311,1.4067,0.0063,1.0093
+amenities+type,"TYPE=Casual Dining, vegetarian_only","home_delivery, indoor_seating",0.0413,0.4995,0.0289,0.7006,1.4026,0.0083,1.6717
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, vegetarian_only",0.4995,0.0413,0.0289,0.0579,1.4026,0.0083,1.0176
+amenities+type,"breakfast, indoor_seating",TYPE=Quick Bites,0.1894,0.4514,0.1195,0.631,1.3979,0.034,1.4867
+amenities+type,TYPE=Quick Bites,"breakfast, indoor_seating",0.4514,0.1894,0.1195,0.2647,1.3979,0.034,1.1025
+amenities+type,outdoor_seating,"indoor_seating, no_alcohol_available",0.3223,0.0691,0.031,0.0961,1.3921,0.0087,1.03
+amenities+type,"indoor_seating, no_alcohol_available",outdoor_seating,0.0691,0.3223,0.031,0.4487,1.3921,0.0087,1.2292
+amenities+type,"home_delivery, indoor_seating","outdoor_seating, table_booking_recommended",0.4995,0.0289,0.0201,0.0403,1.3917,0.0057,1.0118
+amenities+type,"outdoor_seating, table_booking_recommended","home_delivery, indoor_seating",0.0289,0.4995,0.0201,0.6952,1.3917,0.0057,1.6418
+amenities+type,"breakfast, indoor_seating, vegetarian_only",outdoor_seating,0.0726,0.3223,0.0326,0.4484,1.391,0.0092,1.2285
+amenities+type,outdoor_seating,"breakfast, indoor_seating, vegetarian_only",0.3223,0.0726,0.0326,0.101,1.391,0.0092,1.0316
+amenities+type,indoor_seating,"TYPE=Casual Dining, table_booking_recommended",0.7003,0.0286,0.0278,0.0397,1.3869,0.0077,1.0115
+amenities+type,"TYPE=Casual Dining, table_booking_recommended",indoor_seating,0.0286,0.7003,0.0278,0.9712,1.3869,0.0077,10.4008
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, smoking_are",0.7003,0.0388,0.0377,0.0538,1.3856,0.0105,1.0158
+amenities+type,"TYPE=Casual Dining, home_delivery, smoking_are",indoor_seating,0.0388,0.7003,0.0377,0.9703,1.3856,0.0105,10.084
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery, smoking_are",indoor_seating,0.0273,0.7003,0.0265,0.9698,1.3849,0.0074,9.9213
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available, home_delivery, smoking_are",0.7003,0.0273,0.0265,0.0378,1.3849,0.0074,1.0109
+amenities+type,"free_parking, home_delivery","indoor_seating, outdoor_seating",0.1019,0.2488,0.0351,0.3444,1.3841,0.0097,1.1458
+amenities+type,"indoor_seating, outdoor_seating","free_parking, home_delivery",0.2488,0.1019,0.0351,0.1411,1.3841,0.0097,1.0456
+amenities+type,no_alcohol_available,"home_delivery, outdoor_seating",0.0877,0.2256,0.0274,0.312,1.3833,0.0076,1.1257
+amenities+type,"home_delivery, outdoor_seating",no_alcohol_available,0.2256,0.0877,0.0274,0.1213,1.3833,0.0076,1.0383
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery",indoor_seating,0.0415,0.7003,0.0401,0.9662,1.3798,0.011,8.8687
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available, home_delivery",0.7003,0.0415,0.0401,0.0572,1.3798,0.011,1.0167
+amenities+type,indoor_seating,"home_delivery, table_booking_recommended",0.7003,0.0341,0.033,0.0471,1.3797,0.0091,1.0136
+amenities+type,"home_delivery, table_booking_recommended",indoor_seating,0.0341,0.7003,0.033,0.9662,1.3797,0.0091,8.8636
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available, smoking_are",0.7003,0.041,0.0396,0.0566,1.3793,0.0109,1.0165
+amenities+type,"TYPE=Casual Dining, full_bar_available, smoking_are",indoor_seating,0.041,0.7003,0.0396,0.9659,1.3793,0.0109,8.7805
+amenities+type,indoor_seating,"TYPE=Casual Dining, smoking_are",0.7003,0.0578,0.0558,0.0797,1.3791,0.0153,1.0238
+amenities+type,"TYPE=Casual Dining, smoking_are",indoor_seating,0.0578,0.7003,0.0558,0.9658,1.3791,0.0153,8.7548
+amenities+type,"breakfast, home_delivery, indoor_seating",TYPE=Quick Bites,0.1237,0.4514,0.077,0.6223,1.3786,0.0211,1.4524
+amenities+type,TYPE=Quick Bites,"breakfast, home_delivery, indoor_seating",0.4514,0.1237,0.077,0.1705,1.3786,0.0211,1.0565
+amenities+type,"breakfast, indoor_seating, vegetarian_only",TYPE=Quick Bites,0.0726,0.4514,0.0452,0.622,1.3781,0.0124,1.4515
+amenities+type,TYPE=Quick Bites,"breakfast, indoor_seating, vegetarian_only",0.4514,0.0726,0.0452,0.1001,1.3781,0.0124,1.0305
+amenities+type,"full_bar_available, home_delivery, smoking_are",indoor_seating,0.039,0.7003,0.0376,0.9641,1.3767,0.0103,8.3397
+amenities+type,indoor_seating,"full_bar_available, home_delivery, smoking_are",0.7003,0.039,0.0376,0.0537,1.3767,0.0103,1.0155
+amenities+type,"TYPE=Quick Bites, home_delivery, outdoor_seating","breakfast, indoor_seating",0.1075,0.1894,0.028,0.2605,1.3757,0.0077,1.0962
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, home_delivery, outdoor_seating",0.1894,0.1075,0.028,0.148,1.3757,0.0077,1.0474
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating, smoking_are",indoor_seating,0.0292,0.7003,0.0281,0.9633,1.3756,0.0077,8.162
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, outdoor_seating, smoking_are",0.7003,0.0292,0.0281,0.0401,1.3756,0.0077,1.0114
+amenities+type,indoor_seating,"full_bar_available, home_delivery",0.7003,0.0556,0.0536,0.0765,1.3751,0.0146,1.0226
+amenities+type,"full_bar_available, home_delivery",indoor_seating,0.0556,0.7003,0.0536,0.963,1.3751,0.0146,8.0929
+amenities+type,"free_parking, indoor_seating, outdoor_seating",TYPE=Quick Bites,0.0495,0.4514,0.0307,0.6206,1.375,0.0084,1.4462
+amenities+type,TYPE=Quick Bites,"free_parking, indoor_seating, outdoor_seating",0.4514,0.0495,0.0307,0.0681,1.375,0.0084,1.0199
+amenities+type,"TYPE=Casual Dining, breakfast, vegetarian_only",indoor_seating,0.0218,0.7003,0.021,0.9623,1.3741,0.0057,7.943
+amenities+type,indoor_seating,"TYPE=Casual Dining, breakfast, vegetarian_only",0.7003,0.0218,0.021,0.03,1.3741,0.0057,1.0084
+amenities+type,outdoor_seating,"home_delivery, vegetarian_only",0.3223,0.129,0.0571,0.1772,1.3738,0.0155,1.0586
+amenities+type,"home_delivery, vegetarian_only",outdoor_seating,0.129,0.3223,0.0571,0.4428,1.3738,0.0155,1.2163
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, vegetarian_only",0.7003,0.0301,0.0289,0.0413,1.3733,0.0079,1.0117
+amenities+type,"TYPE=Casual Dining, home_delivery, vegetarian_only",indoor_seating,0.0301,0.7003,0.0289,0.9616,1.3733,0.0079,7.8146
+amenities+type,indoor_seating,"full_bar_available, smoking_are",0.7003,0.0636,0.0612,0.0873,1.3725,0.0166,1.026
+amenities+type,"full_bar_available, smoking_are",indoor_seating,0.0636,0.7003,0.0612,0.9611,1.3725,0.0166,7.7132
+amenities+type,"TYPE=Casual Dining, breakfast, home_delivery",indoor_seating,0.0338,0.7003,0.0325,0.961,1.3723,0.0088,7.6807
+amenities+type,indoor_seating,"TYPE=Casual Dining, breakfast, home_delivery",0.7003,0.0338,0.0325,0.0464,1.3723,0.0088,1.0132
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only",outdoor_seating,0.0678,0.3223,0.03,0.4423,1.3722,0.0081,1.2151
+amenities+type,outdoor_seating,"TYPE=Quick Bites, home_delivery, vegetarian_only",0.3223,0.0678,0.03,0.0931,1.3722,0.0081,1.0278
+amenities+type,outdoor_seating,"free_parking, home_delivery",0.3223,0.1019,0.0451,0.1399,1.3719,0.0122,1.0441
+amenities+type,"free_parking, home_delivery",outdoor_seating,0.1019,0.3223,0.0451,0.4422,1.3719,0.0122,1.2149
+amenities+type,free_parking,"home_delivery, outdoor_seating",0.1457,0.2256,0.0451,0.3094,1.3716,0.0122,1.1214
+amenities+type,"home_delivery, outdoor_seating",free_parking,0.2256,0.1457,0.0451,0.1999,1.3716,0.0122,1.0677
+amenities+type,outdoor_seating,"home_delivery, no_alcohol_available",0.3223,0.062,0.0274,0.0849,1.3697,0.0074,1.025
+amenities+type,"home_delivery, no_alcohol_available",outdoor_seating,0.062,0.3223,0.0274,0.4415,1.3697,0.0074,1.2134
+amenities+type,indoor_seating,"TYPE=Casual Dining, outdoor_seating, smoking_are",0.7003,0.0433,0.0415,0.0593,1.3683,0.0112,1.017
+amenities+type,"TYPE=Casual Dining, outdoor_seating, smoking_are",indoor_seating,0.0433,0.7003,0.0415,0.9582,1.3683,0.0112,7.1664
+amenities+type,"TYPE=Casual Dining, full_bar_available, outdoor_seating, smoking_are",indoor_seating,0.0312,0.7003,0.0299,0.9578,1.3677,0.008,7.1
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available, outdoor_seating, smoking_are",0.7003,0.0312,0.0299,0.0427,1.3677,0.008,1.012
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating",0.2135,0.4995,0.1459,0.6831,1.3676,0.0392,1.5795
+amenities+type,"home_delivery, indoor_seating",TYPE=Casual Dining,0.4995,0.2135,0.1459,0.292,1.3676,0.0392,1.1109
+amenities+type,indoor_seating,"full_bar_available, home_delivery, outdoor_seating, smoking_are",0.7003,0.0291,0.0279,0.0398,1.3674,0.0075,1.0111
+amenities+type,"full_bar_available, home_delivery, outdoor_seating, smoking_are",indoor_seating,0.0291,0.7003,0.0279,0.9575,1.3674,0.0075,7.0538
+amenities+type,"smoking_are, table_booking_recommended",indoor_seating,0.025,0.7003,0.0239,0.9571,1.3668,0.0064,6.9862
+amenities+type,indoor_seating,"smoking_are, table_booking_recommended",0.7003,0.025,0.0239,0.0341,1.3668,0.0064,1.0095
+amenities+type,"indoor_seating, outdoor_seating",free_parking,0.2488,0.1457,0.0495,0.1991,1.3663,0.0133,1.0666
+amenities+type,free_parking,"indoor_seating, outdoor_seating",0.1457,0.2488,0.0495,0.3399,1.3663,0.0133,1.1381
+amenities+type,"TYPE=Casual Dining, vegetarian_only",indoor_seating,0.0413,0.7003,0.0395,0.9561,1.3653,0.0106,6.8258
+amenities+type,indoor_seating,"TYPE=Casual Dining, vegetarian_only",0.7003,0.0413,0.0395,0.0564,1.3653,0.0106,1.016
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery",0.7003,0.1526,0.1459,0.2083,1.3648,0.039,1.0703
+amenities+type,"TYPE=Casual Dining, home_delivery",indoor_seating,0.1526,0.7003,0.1459,0.9557,1.3648,0.039,6.7697
+amenities+type,indoor_seating,"home_delivery, smoking_are",0.7003,0.0592,0.0565,0.0807,1.3644,0.0151,1.0235
+amenities+type,"home_delivery, smoking_are",indoor_seating,0.0592,0.7003,0.0565,0.9554,1.3644,0.0151,6.7253
+amenities+type,indoor_seating,"full_bar_available, table_booking_recommended",0.7003,0.0296,0.0283,0.0404,1.3644,0.0075,1.0112
+amenities+type,"full_bar_available, table_booking_recommended",indoor_seating,0.0296,0.7003,0.0283,0.9554,1.3644,0.0075,6.7253
+amenities+type,outdoor_seating,free_parking,0.3223,0.1457,0.064,0.1987,1.3635,0.0171,1.0661
+amenities+type,free_parking,outdoor_seating,0.1457,0.3223,0.064,0.4395,1.3635,0.0171,1.209
+amenities+type,indoor_seating,"full_bar_available, smoking_are, table_booking_recommended",0.7003,0.0218,0.0208,0.0297,1.3631,0.0055,1.0081
+amenities+type,"full_bar_available, smoking_are, table_booking_recommended",indoor_seating,0.0218,0.7003,0.0208,0.9545,1.3631,0.0055,6.5942
+amenities+type,table_booking_recommended,indoor_seating,0.0485,0.7003,0.0462,0.9541,1.3625,0.0123,6.5276
+amenities+type,indoor_seating,table_booking_recommended,0.7003,0.0485,0.0462,0.066,1.3625,0.0123,1.0188
+amenities+type,smoking_are,indoor_seating,0.0911,0.7003,0.0869,0.9539,1.3622,0.0231,6.5002
+amenities+type,indoor_seating,smoking_are,0.7003,0.0911,0.0869,0.1242,1.3622,0.0231,1.0377
+amenities+type,"TYPE=Quick Bites, outdoor_seating","indoor_seating, vegetarian_only",0.1497,0.1503,0.0307,0.2047,1.362,0.0081,1.0684
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Quick Bites, outdoor_seating",0.1503,0.1497,0.0307,0.2039,1.362,0.0081,1.0681
+amenities+type,"home_delivery, indoor_seating",table_booking_recommended,0.4995,0.0485,0.033,0.066,1.3619,0.0088,1.0188
+amenities+type,table_booking_recommended,"home_delivery, indoor_seating",0.0485,0.4995,0.033,0.6803,1.3619,0.0088,1.5654
+amenities+type,indoor_seating,"home_delivery, outdoor_seating, table_booking_recommended",0.7003,0.0211,0.0201,0.0287,1.3611,0.0053,1.0078
+amenities+type,"home_delivery, outdoor_seating, table_booking_recommended",indoor_seating,0.0211,0.7003,0.0201,0.9531,1.3611,0.0053,6.3944
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, no_alcohol_available",0.7003,0.0298,0.0284,0.0406,1.361,0.0075,1.0112
+amenities+type,"TYPE=Casual Dining, home_delivery, no_alcohol_available",indoor_seating,0.0298,0.7003,0.0284,0.953,1.361,0.0075,6.3826
+amenities+type,"full_bar_available, outdoor_seating, smoking_are",indoor_seating,0.0466,0.7003,0.0444,0.9523,1.3599,0.0118,6.2834
+amenities+type,indoor_seating,"full_bar_available, outdoor_seating, smoking_are",0.7003,0.0466,0.0444,0.0634,1.3599,0.0118,1.0179
+amenities+type,free_parking,"home_delivery, indoor_seating, outdoor_seating",0.1457,0.1773,0.0351,0.241,1.3592,0.0093,1.0839
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",free_parking,0.1773,0.1457,0.0351,0.198,1.3592,0.0093,1.0653
+amenities+type,"home_delivery, indoor_seating, vegetarian_only","TYPE=Quick Bites, outdoor_seating",0.105,0.1497,0.0213,0.2033,1.3576,0.0056,1.0672
+amenities+type,"TYPE=Quick Bites, outdoor_seating","home_delivery, indoor_seating, vegetarian_only",0.1497,0.105,0.0213,0.1425,1.3576,0.0056,1.0438
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available, home_delivery, outdoor_seating",0.7003,0.0266,0.0253,0.0361,1.3573,0.0067,1.0099
+amenities+type,"TYPE=Casual Dining, full_bar_available, home_delivery, outdoor_seating",indoor_seating,0.0266,0.7003,0.0253,0.9505,1.3573,0.0067,6.0509
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available",0.7003,0.0645,0.0613,0.0876,1.3569,0.0161,1.0252
+amenities+type,"TYPE=Casual Dining, full_bar_available",indoor_seating,0.0645,0.7003,0.0613,0.9502,1.3569,0.0161,6.0178
+amenities+type,full_bar_available,indoor_seating,0.0932,0.7003,0.0885,0.9496,1.3561,0.0232,5.9474
+amenities+type,indoor_seating,full_bar_available,0.7003,0.0932,0.0885,0.1264,1.3561,0.0232,1.038
+amenities+type,TYPE=Casual Dining,"breakfast, indoor_seating, vegetarian_only",0.2135,0.0726,0.021,0.0984,1.3555,0.0055,1.0286
+amenities+type,"breakfast, indoor_seating, vegetarian_only",TYPE=Casual Dining,0.0726,0.2135,0.021,0.2894,1.3555,0.0055,1.1068
+amenities+type,TYPE=Casual Dining,indoor_seating,0.2135,0.7003,0.2023,0.9475,1.3531,0.0528,5.7104
+amenities+type,indoor_seating,TYPE=Casual Dining,0.7003,0.2135,0.2023,0.2889,1.3531,0.0528,1.106
+amenities+type,"full_bar_available, home_delivery, outdoor_seating",indoor_seating,0.036,0.7003,0.0341,0.9474,1.3529,0.0089,5.695
+amenities+type,indoor_seating,"full_bar_available, home_delivery, outdoor_seating",0.7003,0.036,0.0341,0.0487,1.3529,0.0089,1.0134
+amenities+type,TYPE=Quick Bites,"breakfast, vegetarian_only",0.4514,0.0883,0.0539,0.1194,1.3516,0.014,1.0353
+amenities+type,"breakfast, vegetarian_only",TYPE=Quick Bites,0.0883,0.4514,0.0539,0.6101,1.3516,0.014,1.407
+amenities+type,live_music,indoor_seating,0.0213,0.7003,0.0202,0.9459,1.3508,0.0052,5.5451
+amenities+type,indoor_seating,live_music,0.7003,0.0213,0.0202,0.0288,1.3508,0.0052,1.0077
+amenities+type,indoor_seating,"TYPE=Casual Dining, breakfast",0.7003,0.0501,0.0474,0.0677,1.3505,0.0123,1.0188
+amenities+type,"TYPE=Casual Dining, breakfast",indoor_seating,0.0501,0.7003,0.0474,0.9457,1.3505,0.0123,5.5224
+amenities+type,outdoor_seating,"TYPE=Quick Bites, vegetarian_only",0.3223,0.1011,0.044,0.1365,1.3502,0.0114,1.041
+amenities+type,"TYPE=Quick Bites, vegetarian_only",outdoor_seating,0.1011,0.3223,0.044,0.4352,1.3502,0.0114,1.1999
+amenities+type,indoor_seating,"home_delivery, outdoor_seating, smoking_are",0.7003,0.0449,0.0424,0.0606,1.3494,0.011,1.0167
+amenities+type,"home_delivery, outdoor_seating, smoking_are",indoor_seating,0.0449,0.7003,0.0424,0.945,1.3494,0.011,5.4452
+amenities+type,"home_delivery, wifi",indoor_seating,0.0224,0.7003,0.0212,0.9449,1.3493,0.0055,5.4352
+amenities+type,indoor_seating,"home_delivery, wifi",0.7003,0.0224,0.0212,0.0302,1.3493,0.0055,1.0081
+amenities+type,indoor_seating,"outdoor_seating, smoking_are",0.7003,0.0679,0.0641,0.0916,1.3483,0.0166,1.026
+amenities+type,"outdoor_seating, smoking_are",indoor_seating,0.0679,0.7003,0.0641,0.9442,1.3483,0.0166,5.3692
+amenities+type,indoor_seating,"outdoor_seating, table_booking_recommended",0.7003,0.0289,0.0273,0.039,1.3467,0.007,1.0104
+amenities+type,"outdoor_seating, table_booking_recommended",indoor_seating,0.0289,0.7003,0.0273,0.943,1.3467,0.007,5.2604
+amenities+type,indoor_seating,"TYPE=Casual Dining, no_alcohol_available",0.7003,0.039,0.0368,0.0525,1.3465,0.0095,1.0143
+amenities+type,"TYPE=Casual Dining, no_alcohol_available",indoor_seating,0.039,0.7003,0.0368,0.9429,1.3465,0.0095,5.2509
+amenities+type,live_sports_screening,indoor_seating,0.0244,0.7003,0.0229,0.9392,1.3412,0.0058,4.929
+amenities+type,indoor_seating,live_sports_screening,0.7003,0.0244,0.0229,0.0327,1.3412,0.0058,1.0086
+amenities+type,"home_delivery, vegetarian_only","indoor_seating, outdoor_seating",0.129,0.2488,0.043,0.3335,1.3406,0.0109,1.1272
+amenities+type,"indoor_seating, outdoor_seating","home_delivery, vegetarian_only",0.2488,0.129,0.043,0.1729,1.3406,0.0109,1.0531
+amenities+type,valet_parking_available,indoor_seating,0.0255,0.7003,0.0238,0.9353,1.3356,0.006,4.6309
+amenities+type,indoor_seating,valet_parking_available,0.7003,0.0255,0.0238,0.034,1.3356,0.006,1.0088
+amenities+type,"breakfast, indoor_seating",no_alcohol_available,0.1894,0.0877,0.0222,0.1171,1.3349,0.0056,1.0333
+amenities+type,no_alcohol_available,"breakfast, indoor_seating",0.0877,0.1894,0.0222,0.2528,1.3349,0.0056,1.0849
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, table_reservation_not_required",0.7003,0.0274,0.0255,0.0365,1.3334,0.0064,1.0095
+amenities+type,"TYPE=Casual Dining, home_delivery, table_reservation_not_required",indoor_seating,0.0274,0.7003,0.0255,0.9337,1.3334,0.0064,4.5233
+amenities+type,"indoor_seating, outdoor_seating","breakfast, home_delivery",0.2488,0.1548,0.0513,0.2064,1.3333,0.0128,1.065
+amenities+type,"breakfast, home_delivery","indoor_seating, outdoor_seating",0.1548,0.2488,0.0513,0.3317,1.3333,0.0128,1.1241
+amenities+type,outdoor_seating,no_alcohol_available,0.3223,0.0877,0.0376,0.1166,1.3297,0.0093,1.0327
+amenities+type,no_alcohol_available,outdoor_seating,0.0877,0.3223,0.0376,0.4286,1.3297,0.0093,1.1859
+amenities+type,"TYPE=Casual Dining, table_reservation_not_required",indoor_seating,0.0352,0.7003,0.0327,0.9297,1.3277,0.0081,4.2662
+amenities+type,indoor_seating,"TYPE=Casual Dining, table_reservation_not_required",0.7003,0.0352,0.0327,0.0467,1.3277,0.0081,1.0121
+amenities+type,indoor_seating,"TYPE=Café, home_delivery",0.7003,0.0223,0.0207,0.0295,1.3275,0.0051,1.0075
+amenities+type,"TYPE=Café, home_delivery",indoor_seating,0.0223,0.7003,0.0207,0.9296,1.3275,0.0051,4.2594
+amenities+type,TYPE=Café,indoor_seating,0.0315,0.7003,0.0293,0.9293,1.3271,0.0072,4.2407
+amenities+type,indoor_seating,TYPE=Café,0.7003,0.0315,0.0293,0.0418,1.3271,0.0072,1.0107
+amenities+type,indoor_seating,wifi,0.7003,0.0326,0.0303,0.0433,1.3271,0.0075,1.0112
+amenities+type,wifi,indoor_seating,0.0326,0.7003,0.0303,0.9293,1.3271,0.0075,4.2391
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery",outdoor_seating,0.09,0.3223,0.0384,0.4267,1.324,0.0094,1.1822
+amenities+type,outdoor_seating,"TYPE=Quick Bites, breakfast, home_delivery",0.3223,0.09,0.0384,0.1192,1.324,0.0094,1.0331
+amenities+type,"breakfast, vegetarian_only","TYPE=Quick Bites, indoor_seating",0.0883,0.3865,0.0452,0.5112,1.3226,0.011,1.2551
+amenities+type,"TYPE=Quick Bites, indoor_seating","breakfast, vegetarian_only",0.3865,0.0883,0.0452,0.1168,1.3226,0.011,1.0323
+amenities+type,"breakfast, outdoor_seating",TYPE=Casual Dining,0.0992,0.2135,0.028,0.2824,1.3225,0.0068,1.096
+amenities+type,TYPE=Casual Dining,"breakfast, outdoor_seating",0.2135,0.0992,0.028,0.1312,1.3225,0.0068,1.0368
+amenities+type,"full_bar_available, outdoor_seating",indoor_seating,0.0587,0.7003,0.0543,0.9256,1.3217,0.0132,4.0266
+amenities+type,indoor_seating,"full_bar_available, outdoor_seating",0.7003,0.0587,0.0543,0.0776,1.3217,0.0132,1.0205
+amenities+type,"home_delivery, table_reservation_not_required",indoor_seating,0.0382,0.7003,0.0354,0.9246,1.3203,0.0086,3.9736
+amenities+type,indoor_seating,"home_delivery, table_reservation_not_required",0.7003,0.0382,0.0354,0.0505,1.3203,0.0086,1.0129
+amenities+type,"TYPE=Quick Bites, home_delivery, outdoor_seating","indoor_seating, vegetarian_only",0.1075,0.1503,0.0213,0.1985,1.3203,0.0052,1.0601
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Quick Bites, home_delivery, outdoor_seating",0.1503,0.1075,0.0213,0.142,1.3203,0.0052,1.0401
+amenities+type,"TYPE=Casual Dining, full_bar_available, outdoor_seating",indoor_seating,0.0412,0.7003,0.0381,0.924,1.3195,0.0092,3.9439
+amenities+type,indoor_seating,"TYPE=Casual Dining, full_bar_available, outdoor_seating",0.7003,0.0412,0.0381,0.0544,1.3195,0.0092,1.0139
+amenities+type,indoor_seating,"TYPE=Casual Dining, outdoor_seating, vegetarian_only",0.7003,0.0223,0.0206,0.0294,1.3174,0.005,1.0073
+amenities+type,"TYPE=Casual Dining, outdoor_seating, vegetarian_only",indoor_seating,0.0223,0.7003,0.0206,0.9225,1.3174,0.005,3.868
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, outdoor_seating",0.4995,0.1138,0.0748,0.1498,1.3163,0.018,1.0423
+amenities+type,"TYPE=Casual Dining, outdoor_seating","home_delivery, indoor_seating",0.1138,0.4995,0.0748,0.6575,1.3163,0.018,1.4613
+amenities+type,TYPE=Café,"home_delivery, indoor_seating",0.0315,0.4995,0.0207,0.6571,1.3154,0.005,1.4595
+amenities+type,"home_delivery, indoor_seating",TYPE=Café,0.4995,0.0315,0.0207,0.0414,1.3154,0.005,1.0104
+amenities+type,"TYPE=Quick Bites, vegetarian_only","home_delivery, outdoor_seating",0.1011,0.2256,0.03,0.2967,1.3152,0.0072,1.1011
+amenities+type,"home_delivery, outdoor_seating","TYPE=Quick Bites, vegetarian_only",0.2256,0.1011,0.03,0.133,1.3152,0.0072,1.0368
+amenities+type,"home_delivery, outdoor_seating",vegetarian_only,0.2256,0.1927,0.0571,0.2532,1.3141,0.0137,1.081
+amenities+type,vegetarian_only,"home_delivery, outdoor_seating",0.1927,0.2256,0.0571,0.2964,1.3141,0.0137,1.1007
+amenities+type,indoor_seating,"TYPE=Casual Dining, home_delivery, outdoor_seating",0.7003,0.0813,0.0748,0.1069,1.3137,0.0179,1.0286
+amenities+type,"TYPE=Casual Dining, home_delivery, outdoor_seating",indoor_seating,0.0813,0.7003,0.0748,0.92,1.3137,0.0179,3.7448
+amenities+type,"breakfast, outdoor_seating, vegetarian_only",TYPE=Quick Bites,0.0417,0.4514,0.0247,0.5929,1.3135,0.0059,1.3476
+amenities+type,TYPE=Quick Bites,"breakfast, outdoor_seating, vegetarian_only",0.4514,0.0417,0.0247,0.0548,1.3135,0.0059,1.0138
+amenities+type,"breakfast, home_delivery",outdoor_seating,0.1548,0.3223,0.0652,0.4212,1.3068,0.0153,1.1708
+amenities+type,outdoor_seating,"breakfast, home_delivery",0.3223,0.1548,0.0652,0.2023,1.3068,0.0153,1.0595
+amenities+type,"TYPE=Quick Bites, indoor_seating","free_parking, home_delivery, outdoor_seating",0.3865,0.0451,0.0227,0.0588,1.3054,0.0053,1.0146
+amenities+type,"free_parking, home_delivery, outdoor_seating","TYPE=Quick Bites, indoor_seating",0.0451,0.3865,0.0227,0.5046,1.3054,0.0053,1.2383
+amenities+type,table_reservation_not_required,indoor_seating,0.0499,0.7003,0.0456,0.914,1.3053,0.0107,3.4873
+amenities+type,indoor_seating,table_reservation_not_required,0.7003,0.0499,0.0456,0.0651,1.3053,0.0107,1.0163
+amenities+type,"breakfast, home_delivery, outdoor_seating",TYPE=Quick Bites,0.0652,0.4514,0.0384,0.5891,1.3052,0.009,1.3353
+amenities+type,TYPE=Quick Bites,"breakfast, home_delivery, outdoor_seating",0.4514,0.0652,0.0384,0.0851,1.3052,0.009,1.0217
+amenities+type,"TYPE=Casual Dining, smoking_are","home_delivery, indoor_seating",0.0578,0.4995,0.0377,0.6519,1.3051,0.0088,1.4379
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, smoking_are",0.4995,0.0578,0.0377,0.0754,1.3051,0.0088,1.0191
+amenities+type,home_delivery,TYPE=Takeaway,0.6628,0.0977,0.0842,0.1271,1.3011,0.0195,1.0337
+amenities+type,TYPE=Takeaway,home_delivery,0.0977,0.6628,0.0842,0.8624,1.3011,0.0195,2.4511
+amenities+type,"outdoor_seating, vegetarian_only",TYPE=Casual Dining,0.0804,0.2135,0.0223,0.2777,1.3003,0.0052,1.0888
+amenities+type,TYPE=Casual Dining,"outdoor_seating, vegetarian_only",0.2135,0.0804,0.0223,0.1046,1.3003,0.0052,1.027
+amenities+type,"free_parking, home_delivery",breakfast,0.1019,0.2475,0.0328,0.3217,1.3001,0.0076,1.1095
+amenities+type,breakfast,"free_parking, home_delivery",0.2475,0.1019,0.0328,0.1325,1.3001,0.0076,1.0353
+amenities+type,wifi,"home_delivery, indoor_seating",0.0326,0.4995,0.0212,0.649,1.2993,0.0049,1.4259
+amenities+type,"home_delivery, indoor_seating",wifi,0.4995,0.0326,0.0212,0.0424,1.2993,0.0049,1.0102
+amenities+type,"breakfast, outdoor_seating",TYPE=Quick Bites,0.0992,0.4514,0.0582,0.5864,1.2991,0.0134,1.3264
+amenities+type,TYPE=Quick Bites,"breakfast, outdoor_seating",0.4514,0.0992,0.0582,0.1289,1.2991,0.0134,1.0341
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, outdoor_seating, smoking_are",0.4995,0.0433,0.0281,0.0563,1.2979,0.0064,1.0137
+amenities+type,"TYPE=Casual Dining, outdoor_seating, smoking_are","home_delivery, indoor_seating",0.0433,0.4995,0.0281,0.6483,1.2979,0.0064,1.423
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, breakfast",0.4995,0.0501,0.0325,0.065,1.2973,0.0074,1.0159
+amenities+type,"TYPE=Casual Dining, breakfast","home_delivery, indoor_seating",0.0501,0.4995,0.0325,0.648,1.2973,0.0074,1.422
+amenities+type,breakfast,"indoor_seating, no_alcohol_available",0.2475,0.0691,0.0222,0.0896,1.2971,0.0051,1.0225
+amenities+type,"indoor_seating, no_alcohol_available",breakfast,0.0691,0.2475,0.0222,0.321,1.2971,0.0051,1.1083
+amenities+type,indoor_seating,"TYPE=Casual Dining, outdoor_seating",0.7003,0.1138,0.1033,0.1475,1.2957,0.0236,1.0395
+amenities+type,"TYPE=Casual Dining, outdoor_seating",indoor_seating,0.1138,0.7003,0.1033,0.9073,1.2957,0.0236,3.2339
+amenities+type,outdoor_seating,vegetarian_only,0.3223,0.1927,0.0804,0.2496,1.2952,0.0183,1.0758
+amenities+type,vegetarian_only,outdoor_seating,0.1927,0.3223,0.0804,0.4175,1.2952,0.0183,1.1633
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, full_bar_available, smoking_are",0.4995,0.041,0.0265,0.053,1.2904,0.006,1.0126
+amenities+type,"TYPE=Casual Dining, full_bar_available, smoking_are","home_delivery, indoor_seating",0.041,0.4995,0.0265,0.6446,1.2904,0.006,1.4082
+amenities+type,TYPE=Casual Dining,"home_delivery, indoor_seating, vegetarian_only",0.2135,0.105,0.0289,0.1355,1.2903,0.0065,1.0352
+amenities+type,"home_delivery, indoor_seating, vegetarian_only",TYPE=Casual Dining,0.105,0.2135,0.0289,0.2755,1.2903,0.0065,1.0855
+amenities+type,"TYPE=Casual Dining, breakfast, outdoor_seating",indoor_seating,0.028,0.7003,0.0253,0.9029,1.2894,0.0057,3.0882
+amenities+type,indoor_seating,"TYPE=Casual Dining, breakfast, outdoor_seating",0.7003,0.028,0.0253,0.0361,1.2894,0.0057,1.0084
+amenities+type,TYPE=Quick Bites,"breakfast, home_delivery",0.4514,0.1548,0.09,0.1994,1.2882,0.0201,1.0557
+amenities+type,"breakfast, home_delivery",TYPE=Quick Bites,0.1548,0.4514,0.09,0.5815,1.2882,0.0201,1.3108
+amenities+type,"breakfast, home_delivery, indoor_seating",outdoor_seating,0.1237,0.3223,0.0513,0.4151,1.2877,0.0115,1.1585
+amenities+type,outdoor_seating,"breakfast, home_delivery, indoor_seating",0.3223,0.1237,0.0513,0.1593,1.2877,0.0115,1.0423
+amenities+type,"free_parking, home_delivery, indoor_seating",breakfast,0.0893,0.2475,0.0284,0.3186,1.2872,0.0063,1.1043
+amenities+type,breakfast,"free_parking, home_delivery, indoor_seating",0.2475,0.0893,0.0284,0.1149,1.2872,0.0063,1.029
+amenities+type,"breakfast, home_delivery","TYPE=Quick Bites, indoor_seating",0.1548,0.3865,0.077,0.4973,1.2867,0.0172,1.2205
+amenities+type,"TYPE=Quick Bites, indoor_seating","breakfast, home_delivery",0.3865,0.1548,0.077,0.1991,1.2867,0.0172,1.0554
+amenities+type,TYPE=Quick Bites,"breakfast, home_delivery, indoor_seating, vegetarian_only",0.4514,0.0487,0.0283,0.0626,1.2858,0.0063,1.0148
+amenities+type,"breakfast, home_delivery, indoor_seating, vegetarian_only",TYPE=Quick Bites,0.0487,0.4514,0.0283,0.5804,1.2858,0.0063,1.3074
+amenities+type,"TYPE=Quick Bites, indoor_seating","breakfast, home_delivery, vegetarian_only",0.3865,0.0571,0.0283,0.0731,1.2805,0.0062,1.0173
+amenities+type,"breakfast, home_delivery, vegetarian_only","TYPE=Quick Bites, indoor_seating",0.0571,0.3865,0.0283,0.4949,1.2805,0.0062,1.2147
+amenities+type,outdoor_seating,"TYPE=Quick Bites, breakfast",0.3223,0.1413,0.0582,0.1805,1.2772,0.0126,1.0478
+amenities+type,"TYPE=Quick Bites, breakfast",outdoor_seating,0.1413,0.3223,0.0582,0.4117,1.2772,0.0126,1.1519
+amenities+type,TYPE=Quick Bites,"breakfast, home_delivery, vegetarian_only",0.4514,0.0571,0.0328,0.0727,1.2724,0.007,1.0168
+amenities+type,"breakfast, home_delivery, vegetarian_only",TYPE=Quick Bites,0.0571,0.4514,0.0328,0.5743,1.2724,0.007,1.2888
+amenities+type,outdoor_seating,"home_delivery, indoor_seating, vegetarian_only",0.3223,0.105,0.043,0.1335,1.2712,0.0092,1.0329
+amenities+type,"home_delivery, indoor_seating, vegetarian_only",outdoor_seating,0.105,0.3223,0.043,0.4097,1.2712,0.0092,1.1481
+amenities+type,"indoor_seating, vegetarian_only","home_delivery, outdoor_seating",0.1503,0.2256,0.043,0.2862,1.2687,0.0091,1.0849
+amenities+type,"home_delivery, outdoor_seating","indoor_seating, vegetarian_only",0.2256,0.1503,0.043,0.1907,1.2687,0.0091,1.0499
+amenities+type,"outdoor_seating, vegetarian_only","TYPE=Casual Dining, indoor_seating",0.0804,0.2023,0.0206,0.2561,1.266,0.0043,1.0724
+amenities+type,"TYPE=Casual Dining, indoor_seating","outdoor_seating, vegetarian_only",0.2023,0.0804,0.0206,0.1018,1.266,0.0043,1.0238
+amenities+type,breakfast,TYPE=Quick Bites,0.2475,0.4514,0.1413,0.5711,1.2652,0.0296,1.2791
+amenities+type,TYPE=Quick Bites,breakfast,0.4514,0.2475,0.1413,0.3131,1.2652,0.0296,1.0956
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only","indoor_seating, outdoor_seating",0.0678,0.2488,0.0213,0.3147,1.2649,0.0045,1.0962
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Quick Bites, home_delivery, vegetarian_only",0.2488,0.0678,0.0213,0.0858,1.2649,0.0045,1.0196
+amenities+type,"home_delivery, outdoor_seating","TYPE=Quick Bites, free_parking",0.2256,0.1101,0.0314,0.1392,1.2643,0.0066,1.0338
+amenities+type,"TYPE=Quick Bites, free_parking","home_delivery, outdoor_seating",0.1101,0.2256,0.0314,0.2852,1.2643,0.0066,1.0834
+amenities+type,"TYPE=Casual Dining, home_delivery","indoor_seating, vegetarian_only",0.1526,0.1503,0.0289,0.1895,1.2608,0.006,1.0484
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Casual Dining, home_delivery",0.1503,0.1526,0.0289,0.1924,1.2608,0.006,1.0493
+amenities+type,"TYPE=Casual Dining, indoor_seating","breakfast, outdoor_seating",0.2023,0.0992,0.0253,0.1251,1.2603,0.0052,1.0295
+amenities+type,"breakfast, outdoor_seating","TYPE=Casual Dining, indoor_seating",0.0992,0.2023,0.0253,0.255,1.2603,0.0052,1.0707
+amenities+type,"home_delivery, indoor_seating, outdoor_seating",vegetarian_only,0.1773,0.1927,0.043,0.2427,1.2595,0.0089,1.066
+amenities+type,vegetarian_only,"home_delivery, indoor_seating, outdoor_seating",0.1927,0.1773,0.043,0.2233,1.2595,0.0089,1.0592
+amenities+type,"free_parking, outdoor_seating","TYPE=Quick Bites, home_delivery, indoor_seating",0.064,0.2827,0.0227,0.3552,1.2566,0.0046,1.1125
+amenities+type,"TYPE=Quick Bites, home_delivery, indoor_seating","free_parking, outdoor_seating",0.2827,0.064,0.0227,0.0805,1.2566,0.0046,1.0179
+amenities+type,"home_delivery, indoor_seating",TYPE=Quick Bites,0.4995,0.4514,0.2827,0.5659,1.2538,0.0572,1.2639
+amenities+type,TYPE=Quick Bites,"home_delivery, indoor_seating",0.4514,0.4995,0.2827,0.6263,1.2538,0.0572,1.3391
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery","indoor_seating, outdoor_seating",0.09,0.2488,0.028,0.3114,1.2514,0.0056,1.0908
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Quick Bites, breakfast, home_delivery",0.2488,0.09,0.028,0.1126,1.2514,0.0056,1.0255
+amenities+type,"home_delivery, indoor_seating","outdoor_seating, smoking_are",0.4995,0.0679,0.0424,0.085,1.2512,0.0085,1.0186
+amenities+type,"outdoor_seating, smoking_are","home_delivery, indoor_seating",0.0679,0.4995,0.0424,0.625,1.2512,0.0085,1.3347
+amenities+type,indoor_seating,"outdoor_seating, table_reservation_not_required",0.7003,0.026,0.0227,0.0325,1.2512,0.0046,1.0067
+amenities+type,"outdoor_seating, table_reservation_not_required",indoor_seating,0.026,0.7003,0.0227,0.8762,1.2512,0.0046,2.4209
+amenities+type,"free_parking, home_delivery",indoor_seating,0.1019,0.7003,0.0893,0.8755,1.2503,0.0179,2.4076
+amenities+type,indoor_seating,"free_parking, home_delivery",0.7003,0.1019,0.0893,0.1275,1.2503,0.0179,1.0292
+amenities+type,breakfast,no_alcohol_available,0.2475,0.0877,0.0271,0.1096,1.2494,0.0054,1.0246
+amenities+type,no_alcohol_available,breakfast,0.0877,0.2475,0.0271,0.3092,1.2494,0.0054,1.0894
+amenities+type,breakfast,"TYPE=Quick Bites, indoor_seating",0.2475,0.3865,0.1195,0.4829,1.2492,0.0238,1.1863
+amenities+type,"TYPE=Quick Bites, indoor_seating",breakfast,0.3865,0.2475,0.1195,0.3092,1.2492,0.0238,1.0893
+amenities+type,"home_delivery, indoor_seating","no_alcohol_available, outdoor_seating",0.4995,0.0376,0.0234,0.0469,1.2468,0.0046,1.0097
+amenities+type,"no_alcohol_available, outdoor_seating","home_delivery, indoor_seating",0.0376,0.4995,0.0234,0.6228,1.2468,0.0046,1.3269
+amenities+type,"indoor_seating, outdoor_seating",vegetarian_only,0.2488,0.1927,0.0597,0.2401,1.2463,0.0118,1.0625
+amenities+type,vegetarian_only,"indoor_seating, outdoor_seating",0.1927,0.2488,0.0597,0.3101,1.2463,0.0118,1.0888
+amenities+type,"indoor_seating, vegetarian_only",TYPE=Quick Bites,0.1503,0.4514,0.0846,0.5625,1.2462,0.0167,1.254
+amenities+type,TYPE=Quick Bites,"indoor_seating, vegetarian_only",0.4514,0.1503,0.0846,0.1873,1.2462,0.0167,1.0455
+amenities+type,"breakfast, indoor_seating","TYPE=Quick Bites, home_delivery",0.1894,0.3263,0.077,0.4064,1.2457,0.0152,1.1351
+amenities+type,"TYPE=Quick Bites, home_delivery","breakfast, indoor_seating",0.3263,0.1894,0.077,0.2359,1.2457,0.0152,1.0609
+amenities+type,outdoor_seating,breakfast,0.3223,0.2475,0.0992,0.3078,1.2439,0.0195,1.0872
+amenities+type,breakfast,outdoor_seating,0.2475,0.3223,0.0992,0.4009,1.2439,0.0195,1.1312
+amenities+type,outdoor_seating,"TYPE=Quick Bites, free_parking, home_delivery",0.3223,0.0784,0.0314,0.0974,1.243,0.0061,1.0211
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery",outdoor_seating,0.0784,0.3223,0.0314,0.4006,1.243,0.0061,1.1307
+amenities+type,"TYPE=Casual Dining, full_bar_available","home_delivery, indoor_seating",0.0645,0.4995,0.0401,0.6207,1.2426,0.0078,1.3195
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, full_bar_available",0.4995,0.0645,0.0401,0.0802,1.2426,0.0078,1.017
+amenities+type,"free_parking, outdoor_seating","TYPE=Quick Bites, indoor_seating",0.064,0.3865,0.0307,0.4801,1.242,0.006,1.1799
+amenities+type,"TYPE=Quick Bites, indoor_seating","free_parking, outdoor_seating",0.3865,0.064,0.0307,0.0795,1.242,0.006,1.0168
+amenities+type,"home_delivery, indoor_seating",smoking_are,0.4995,0.0911,0.0565,0.1132,1.2417,0.011,1.0248
+amenities+type,smoking_are,"home_delivery, indoor_seating",0.0911,0.4995,0.0565,0.6203,1.2417,0.011,1.318
+amenities+type,indoor_seating,"TYPE=Quick Bites, free_parking, home_delivery",0.7003,0.0784,0.068,0.0971,1.2388,0.0131,1.0207
+amenities+type,"TYPE=Quick Bites, free_parking, home_delivery",indoor_seating,0.0784,0.7003,0.068,0.8675,1.2388,0.0131,2.2623
+amenities+type,"breakfast, indoor_seating",outdoor_seating,0.1894,0.3223,0.0756,0.399,1.238,0.0145,1.1277
+amenities+type,outdoor_seating,"breakfast, indoor_seating",0.3223,0.1894,0.0756,0.2345,1.238,0.0145,1.0589
+amenities+type,"breakfast, free_parking, home_delivery",indoor_seating,0.0328,0.7003,0.0284,0.8668,1.2379,0.0055,2.2508
+amenities+type,indoor_seating,"breakfast, free_parking, home_delivery",0.7003,0.0328,0.0284,0.0406,1.2379,0.0055,1.0081
+amenities+type,"free_parking, indoor_seating","home_delivery, outdoor_seating",0.1258,0.2256,0.0351,0.2792,1.2376,0.0067,1.0744
+amenities+type,"home_delivery, outdoor_seating","free_parking, indoor_seating",0.2256,0.1258,0.0351,0.1556,1.2376,0.0067,1.0354
+amenities+type,"TYPE=Quick Bites, home_delivery",indoor_seating,0.3263,0.7003,0.2827,0.8664,1.2372,0.0542,2.2432
+amenities+type,indoor_seating,"TYPE=Quick Bites, home_delivery",0.7003,0.3263,0.2827,0.4037,1.2372,0.0542,1.1298
+amenities+type,"TYPE=Quick Bites, free_parking","home_delivery, indoor_seating",0.1101,0.4995,0.068,0.6175,1.2363,0.013,1.3085
+amenities+type,"home_delivery, indoor_seating","TYPE=Quick Bites, free_parking",0.4995,0.1101,0.068,0.1361,1.2363,0.013,1.0301
+amenities+type,"indoor_seating, vegetarian_only",outdoor_seating,0.1503,0.3223,0.0597,0.3975,1.2332,0.0113,1.1247
+amenities+type,outdoor_seating,"indoor_seating, vegetarian_only",0.3223,0.1503,0.0597,0.1854,1.2332,0.0113,1.043
+amenities+type,free_parking,indoor_seating,0.1457,0.7003,0.1258,0.8631,1.2326,0.0237,2.1898
+amenities+type,indoor_seating,free_parking,0.7003,0.1457,0.1258,0.1796,1.2326,0.0237,1.0413
+amenities+type,indoor_seating,"TYPE=Quick Bites, breakfast, home_delivery, vegetarian_only",0.7003,0.0328,0.0283,0.0404,1.2307,0.0053,1.0079
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery, vegetarian_only",indoor_seating,0.0328,0.7003,0.0283,0.8618,1.2307,0.0053,2.169
+amenities+type,"indoor_seating, vegetarian_only",TYPE=Casual Dining,0.1503,0.2135,0.0395,0.2626,1.2298,0.0074,1.0666
+amenities+type,TYPE=Casual Dining,"indoor_seating, vegetarian_only",0.2135,0.1503,0.0395,0.1849,1.2298,0.0074,1.0424
+amenities+type,TYPE=Casual Dining,"breakfast, home_delivery, indoor_seating",0.2135,0.1237,0.0325,0.1521,1.2293,0.0061,1.0334
+amenities+type,"breakfast, home_delivery, indoor_seating",TYPE=Casual Dining,0.1237,0.2135,0.0325,0.2625,1.2293,0.0061,1.0664
+amenities+type,"TYPE=Casual Dining, full_bar_available, outdoor_seating","home_delivery, indoor_seating",0.0412,0.4995,0.0253,0.614,1.2292,0.0047,1.2966
+amenities+type,"home_delivery, indoor_seating","TYPE=Casual Dining, full_bar_available, outdoor_seating",0.4995,0.0412,0.0253,0.0507,1.2292,0.0047,1.0099
+amenities+type,"TYPE=Quick Bites, free_parking",outdoor_seating,0.1101,0.3223,0.0436,0.396,1.2285,0.0081,1.1219
+amenities+type,outdoor_seating,"TYPE=Quick Bites, free_parking",0.3223,0.1101,0.0436,0.1353,1.2285,0.0081,1.0291
+amenities+type,"TYPE=Quick Bites, breakfast, free_parking, home_delivery",indoor_seating,0.0276,0.7003,0.0237,0.8597,1.2277,0.0044,2.1364
+amenities+type,indoor_seating,"TYPE=Quick Bites, breakfast, free_parking, home_delivery",0.7003,0.0276,0.0237,0.0339,1.2277,0.0044,1.0065
+amenities+type,breakfast,"indoor_seating, outdoor_seating",0.2475,0.2488,0.0756,0.3054,1.2273,0.014,1.0814
+amenities+type,"indoor_seating, outdoor_seating",breakfast,0.2488,0.2475,0.0756,0.3037,1.2273,0.014,1.0808
+amenities+type,"home_delivery, indoor_seating",free_parking,0.4995,0.1457,0.0893,0.1787,1.2263,0.0165,1.0402
+amenities+type,free_parking,"home_delivery, indoor_seating",0.1457,0.4995,0.0893,0.6126,1.2263,0.0165,1.2918
+amenities+type,"breakfast, free_parking",indoor_seating,0.0517,0.7003,0.0443,0.8581,1.2253,0.0082,2.1116
+amenities+type,indoor_seating,"breakfast, free_parking",0.7003,0.0517,0.0443,0.0633,1.2253,0.0082,1.0124
+amenities+type,indoor_seating,TYPE=Quick Bites,0.7003,0.4514,0.3865,0.552,1.2228,0.0704,1.2245
+amenities+type,TYPE=Quick Bites,indoor_seating,0.4514,0.7003,0.3865,0.8563,1.2228,0.0704,2.086
+amenities+type,outdoor_seating,"free_parking, indoor_seating",0.3223,0.1258,0.0495,0.1537,1.2219,0.009,1.033
+amenities+type,"free_parking, indoor_seating",outdoor_seating,0.1258,0.3223,0.0495,0.3938,1.2219,0.009,1.118
+amenities+type,indoor_seating,"TYPE=Quick Bites, free_parking",0.7003,0.1101,0.0942,0.1345,1.2217,0.0171,1.0282
+amenities+type,"TYPE=Quick Bites, free_parking",indoor_seating,0.1101,0.7003,0.0942,0.8555,1.2217,0.0171,2.0749
+amenities+type,"home_delivery, no_alcohol_available, outdoor_seating",indoor_seating,0.0274,0.7003,0.0234,0.8554,1.2216,0.0042,2.0732
+amenities+type,indoor_seating,"home_delivery, no_alcohol_available, outdoor_seating",0.7003,0.0274,0.0234,0.0334,1.2216,0.0042,1.0063
+amenities+type,indoor_seating,"TYPE=Quick Bites, breakfast, home_delivery",0.7003,0.09,0.077,0.1099,1.2214,0.014,1.0224
+amenities+type,"TYPE=Quick Bites, breakfast, home_delivery",indoor_seating,0.09,0.7003,0.077,0.8553,1.2214,0.014,2.0716
+amenities+type,indoor_seating,"TYPE=Quick Bites, breakfast, free_parking",0.7003,0.0437,0.0373,0.0533,1.2206,0.0067,1.0102
+amenities+type,"TYPE=Quick Bites, breakfast, free_parking",indoor_seating,0.0437,0.7003,0.0373,0.8547,1.2206,0.0067,2.0631
+amenities+type,"free_parking, home_delivery, indoor_seating",outdoor_seating,0.0893,0.3223,0.0351,0.3934,1.2204,0.0063,1.1171
+amenities+type,outdoor_seating,"free_parking, home_delivery, indoor_seating",0.3223,0.0893,0.0351,0.1089,1.2204,0.0063,1.0221
+amenities+type,TYPE=Quick Bites,"home_delivery, indoor_seating, vegetarian_only",0.4514,0.105,0.0578,0.128,1.219,0.0104,1.0264
+amenities+type,"home_delivery, indoor_seating, vegetarian_only",TYPE=Quick Bites,0.105,0.4514,0.0578,0.5502,1.219,0.0104,1.2198
+amenities+type,"TYPE=Quick Bites, vegetarian_only","indoor_seating, outdoor_seating",0.1011,0.2488,0.0307,0.3032,1.2185,0.0055,1.078
+amenities+type,"indoor_seating, outdoor_seating","TYPE=Quick Bites, vegetarian_only",0.2488,0.1011,0.0307,0.1232,1.2185,0.0055,1.0252
+amenities+type,indoor_seating,"breakfast, home_delivery, vegetarian_only",0.7003,0.0571,0.0487,0.0696,1.2178,0.0087,1.0134
+amenities+type,"breakfast, home_delivery, vegetarian_only",indoor_seating,0.0571,0.7003,0.0487,0.8528,1.2178,0.0087,2.0364
+amenities+type,"breakfast, indoor_seating, outdoor_seating",TYPE=Quick Bites,0.0756,0.4514,0.0415,0.5496,1.2176,0.0074,1.2181
+amenities+type,TYPE=Quick Bites,"breakfast, indoor_seating, outdoor_seating",0.4514,0.0756,0.0415,0.092,1.2176,0.0074,1.0181
+amenities+type,indoor_seating,"TYPE=Quick Bites, home_delivery, vegetarian_only",0.7003,0.0678,0.0578,0.0825,1.2163,0.0103,1.016
+amenities+type,"TYPE=Quick Bites, home_delivery, vegetarian_only",indoor_seating,0.0678,0.7003,0.0578,0.8518,1.2163,0.0103,2.022
+amenities+type,TYPE=Quick Bites,"outdoor_seating, vegetarian_only",0.4514,0.0804,0.044,0.0975,1.2121,0.0077,1.0189
+amenities+type,"outdoor_seating, vegetarian_only",TYPE=Quick Bites,0.0804,0.4514,0.044,0.5471,1.2121,0.0077,1.2114
+amenities+type,TYPE=Quick Bites,"breakfast, home_delivery, indoor_seating, outdoor_seating",0.4514,0.0513,0.028,0.0621,1.2091,0.0048,1.0114
+amenities+type,"breakfast, home_delivery, indoor_seating, outdoor_seating",TYPE=Quick Bites,0.0513,0.4514,0.028,0.5457,1.2091,0.0048,1.2077
+amenities+type,"TYPE=Quick Bites, breakfast",indoor_seating,0.1413,0.7003,0.1195,0.8455,1.2074,0.0205,1.9398
+amenities+type,indoor_seating,"TYPE=Quick Bites, breakfast",0.7003,0.1413,0.1195,0.1706,1.2074,0.0205,1.0353
+amenities+type,"TYPE=Quick Bites, breakfast","home_delivery, outdoor_seating",0.1413,0.2256,0.0384,0.2717,1.2046,0.0065,1.0634
+amenities+type,"home_delivery, outdoor_seating","TYPE=Quick Bites, breakfast",0.2256,0.1413,0.0384,0.1703,1.2046,0.0065,1.0349
+amenities+type,"TYPE=Casual Dining, outdoor_seating","indoor_seating, vegetarian_only",0.1138,0.1503,0.0206,0.181,1.2043,0.0035,1.0375
+amenities+type,"indoor_seating, vegetarian_only","TYPE=Casual Dining, outdoor_seating",0.1503,0.1138,0.0206,0.1371,1.2043,0.0035,1.0269
+amenities+type,"breakfast, indoor_seating","home_delivery, outdoor_seating",0.1894,0.2256,0.0513,0.2711,1.2019,0.0086,1.0625
+amenities+type,"home_delivery, outdoor_seating","breakfast, indoor_seating",0.2256,0.1894,0.0513,0.2276,1.2019,0.0086,1.0495

@@ -11,8 +11,12 @@ import pandas as pd
  
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from db import get_db, ROOT  # noqa: E402
- 
+
+sys.path.insert(0, str(ROOT))
+from ml.scoring import add_trust  # noqa: E402
+
 CSV_PATH = ROOT / "data" / "processed" / "restaurants_clean.csv"
+CLUSTER_PATH = ROOT / "data" / "processed" / "restaurants_clusters.csv"   # from notebook 07
  
  
 def clean_value(v):
@@ -57,6 +61,9 @@ def build_doc(row):
         "timings": r.get("timings"),
         "address": r.get("address"),
         "payment_modes": r.get("payment_modes"),
+        "trust_rating": None if r.get("trust_rating") is None else round(r["trust_rating"], 3),
+        "is_hidden_gem": bool(r.get("is_hidden_gem")),
+        "cluster_name": r.get("cluster_name"),
         "has_rating": bool(r.get("has_rating")) if r.get("has_rating") is not None else r.get("rating") is not None,
     }
     return doc
@@ -68,6 +75,19 @@ def main():
  
     df = pd.read_csv(CSV_PATH)
     print(f"Read {len(df):,} rows x {df.shape[1]} columns")
+
+    # Phase 8: trust-adjusted rating + hidden gems
+    df = add_trust(df)
+    print(f"Trust rating for {df['trust_rating'].notna().sum():,} rated restaurants; "
+          f"{int(df['is_hidden_gem'].sum())} hidden gems")
+
+    # Phase 5 (notebook 07): cluster labels, if the file exists
+    if CLUSTER_PATH.exists():
+        df = df.merge(pd.read_csv(CLUSTER_PATH)[["url", "cluster_name"]], on="url", how="left")
+        print(f"Merged cluster labels for {df['cluster_name'].notna().sum():,} restaurants")
+    else:
+        df["cluster_name"] = None
+        print("No restaurants_clusters.csv found - run notebook 07 to add cluster labels")
  
     docs = [build_doc(row) for row in df.to_dict("records")]
  
@@ -75,7 +95,8 @@ def main():
     db.restaurants.drop()
     db.restaurants.insert_many(docs)
  
-    for field in ("locality", "rating", "cuisines", "establishment_type", "cost_capped", "votes"):
+    for field in ("locality", "rating", "cuisines", "establishment_type", "cost_capped", "votes",
+                  "trust_rating", "is_hidden_gem", "cluster_name"):
         db.restaurants.create_index(field)
  
     print(f"Inserted {db.restaurants.count_documents({}):,} documents into "
