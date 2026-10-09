@@ -144,8 +144,8 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 ## 11. Progress (update after each task)
 - [ ] Phase 0 Setup
 - [x] Phase 1 Cleaning (`ml/cleaning.py` + `notebooks/01_cleaning.ipynb` -> `data/processed/restaurants_clean.csv`, 12,134 x 116)
-- [ ] Phase 2 EDA
-- [ ] Phase 3 Statistics
+- [x] Phase 2 EDA (`02_eda.ipynb`)
+- [x] Phase 3 Statistics (`03_statistics.ipynb`)
 - [ ] Phase 4 Classification + Regression
 - [ ] Phase 5 Feature selection / Clustering / Apriori
 - [ ] Phase 6 MongoDB + API
@@ -154,9 +154,13 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - [ ] Phase 9 Chatbot
 - [ ] Phase 10 Report / PPT
 
-**Last completed:** Phase 0 setup, Phase 1 cleaning
-**Next task:** `02_eda.ipynb` (Phase 2)
-**Decisions / notes:** _(add here)_
+**Last completed:** Phases 0-3 (setup, cleaning, EDA, statistics)
+**Next task:** `04_classification.ipynb` (Phase 4)
+**Decisions / notes:**
+- Rating 0.0 = placeholder for no reviews (all have 0 votes) -> NaN. 7,669 rated restaurants.
+- Votes strongly tied to rating (Spearman ~0.73; <5 votes avg 3.04, 500+ votes avg 4.07). Define `popular` = votes >= 50 (3,012 rows) for robustness checks.
+- Stats finding: outdoor_seating / vegetarian_only look significant overall but NOT among popular restaurants (confounded by votes). table_booking_recommended and premium amenities stay significant. Type explains ~8% of rating variance (eta^2 0.076); locality vs rating tier Cramer's V ~0.19.
+- Modelling caution: votes is a very strong predictor but partly reflects popularity; compare models with and without votes.
 
 ## 12. Starter prompt for a new chat
 > I'm working on the PuneBite Analyzer mini-project (context above). Please continue from "Next task" in the Progress section. Give me complete, runnable code, explain it briefly in viva-friendly language, and tell me exactly what to update in PROJECT_CONTEXT.md when we finish.
