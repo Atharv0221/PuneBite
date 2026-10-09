@@ -147,21 +147,23 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - [x] Phase 1 Cleaning (`ml/cleaning.py` + `notebooks/01_cleaning.ipynb` -> `data/processed/restaurants_clean.csv`, 12,134 x 116)
 - [x] Phase 2 EDA (`02_eda.ipynb`)
 - [x] Phase 3 Statistics (`03_statistics.ipynb`)
-- [ ] Phase 4 Classification + Regression (classification DONE: `04_classification.ipynb`; regression `05` pending)
-- [ ] Phase 5 Feature selection / Clustering / Apriori
+- [x] Phase 4 Classification + Regression (`04_classification.ipynb`, `05_regression.ipynb`)
+- [ ] Phase 5 Feature selection / Clustering / Apriori (06 feature selection + PCA DONE; 07 clustering and 08 Apriori pending)
 - [ ] Phase 6 MongoDB + API
 - [ ] Phase 7 React dashboard
 - [ ] Phase 8 Hidden Gems
 - [ ] Phase 9 Chatbot
 - [ ] Phase 10 Report / PPT
 
-**Last completed:** Phases 0-3, plus `04_classification.ipynb`
-**Next task:** `05_regression.ipynb`
+**Last completed:** Phases 0-4, plus `06_feature_selection_pca.ipynb`
+**Next task:** `07_clustering.ipynb`, or Phase 6 (MongoDB + API) in parallel
 **Decisions / notes:**
 - Rating 0.0 = placeholder for no reviews (all have 0 votes) -> NaN. 7,669 rated restaurants.
 - Votes strongly tied to rating (Spearman ~0.73; <5 votes avg 3.04, 500+ votes avg 4.07). Define `popular` = votes >= 50 (3,012 rows) for robustness checks.
 - Stats finding: outdoor_seating / vegetarian_only look significant overall but NOT among popular restaurants (confounded by votes). table_booking_recommended and premium amenities stay significant. Type explains ~8% of rating variance (eta^2 0.076); locality vs rating tier Cramer's V ~0.19.
 - Classification (target rating >= 4.0, 11.2% positive): Random Forest best. Scenario A (with votes) test AUC ~0.94, F1 ~0.67. Scenario B (no votes, for Opening Advisor) AUC ~0.82, F1 ~0.50. Saved: `ml/models/high_rating_classifier.joblib` + `_meta.json` (Scenario B, includes feature spec and threshold ~0.5). The API must build inputs with `ml/features.py` `make_features(df, spec)`.
+- Regression (target rating): Scenario A R2 ~0.55, RMSE ~0.28; Scenario B (no votes) R2 ~0.28, RMSE ~0.36 (baseline 0.43). Regularisation made little difference (large n, few features); Lasso zeroed 27 of 95 encoded features. Saved: `ml/models/rating_regressor.joblib` + `_meta.json` (Scenario B, Polynomial deg2 + Ridge). Residuals show regression to the mean (over-predicts low, under-predicts high ratings).
+- Feature selection (06): 14 consensus features (price, n_amenities, n_cuisines, accepts_cards, table_booking_recommended, full_bar_available, brunch, valet_parking_available, live_music, smoking_are, cuisines desserts/continental/italian, type Quick Bites) saved to `ml/models/selected_features.json`. More features = higher AUC (0.74 @5, 0.77 @20, 0.825 @150), so selection is for interpretation, not accuracy. PCA: 24 comps = 90% of amenity variance; ~50 comps on all features matches raw AUC.
 - Modelling caution: votes is a very strong predictor but partly reflects popularity; compare models with and without votes.
 
 ## 12. Starter prompt for a new chat
