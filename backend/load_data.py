@@ -10,6 +10,7 @@ from pathlib import Path
 import pandas as pd
  
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from db import get_db, ROOT  # noqa: E402
 from ml.scoring import add_trust_scores  # noqa: E402
  
