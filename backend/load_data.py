@@ -11,7 +11,7 @@ import pandas as pd
  
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from db import get_db, ROOT  # noqa: E402
+from db import get_db, describe_target, ROOT  # noqa: E402
 from ml.scoring import add_trust_scores  # noqa: E402
  
 CSV_PATH = ROOT / "data" / "processed" / "restaurants_clean.csv"
@@ -94,7 +94,9 @@ def main():
  
     db = get_db()
     db.restaurants.drop()
-    db.restaurants.insert_many(docs)
+    print("Loading into:", describe_target())
+    for i in range(0, len(docs), 2000):          # batches: friendlier to a remote (Atlas) connection
+        db.restaurants.insert_many(docs[i:i + 2000])
  
     for field in (
         "locality",

@@ -247,3 +247,7 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 Attach: `PROJECT_CONTEXT.md`, `data/processed/restaurants_clean.csv`, `ml/cleaning.py`, `ml/features.py` (and `backend/app.py` if touching the API). Then send:
 
 > I'm continuing the PuneBite Analyzer mini-project (context file attached). Phases 0-4, 5a and 6-9 are finished and tested. Please do the next task in Section 13, starting with 13.1 `07_clustering.ipynb`. Follow Section 12 (same style as the finished notebooks), test the code on the attached cleaned CSV, and give me the notebook plus a short summary of the real results. Do one task at a time. When done, tell me exactly what to update in PROJECT_CONTEXT.md.
+
+
+## Database hosting
+- MongoDB runs on **MongoDB Atlas** (cloud) for online access; setup steps in `docs/ATLAS_SETUP.md`. The URI lives only in `.env` (`MONGO_URI`, see `.env.example`), never in Git. Local `mongod` still works by pointing `MONGO_URI` back at `mongodb://127.0.0.1:27017`.
