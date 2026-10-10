@@ -10,9 +10,12 @@ from pathlib import Path
 import pandas as pd
  
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from db import get_db, ROOT  # noqa: E402
+from ml.scoring import add_trust_scores  # noqa: E402
  
 CSV_PATH = ROOT / "data" / "processed" / "restaurants_clean.csv"
+CLUSTERS_PATH = ROOT / "data" / "processed" / "restaurants_clusters.csv"
  
  
 def clean_value(v):
@@ -43,6 +46,10 @@ def build_doc(row):
         "establishment_type": r.get("establishment_type"),
         "rating": r.get("rating"),
         "votes": r.get("votes"),
+        "trust_rating": r.get("trust_rating"),
+        "hidden_gem": bool(r.get("hidden_gem")) if r.get("hidden_gem") is not None else False,
+        "cluster": r.get("cluster"),
+        "cluster_name": r.get("cluster_name"),
         "cost_for_two": r.get("cost_for_two"),
         "cost_capped": r.get("cost_capped"),
         "cuisines": split_pipe(r.get("cuisines")),
@@ -68,14 +75,37 @@ def main():
  
     df = pd.read_csv(CSV_PATH)
     print(f"Read {len(df):,} rows x {df.shape[1]} columns")
- 
+
+    df = add_trust_scores(df)
+    if CLUSTERS_PATH.exists():
+        clusters = pd.read_csv(CLUSTERS_PATH)
+        df = df.merge(
+            clusters[["url", "cluster", "cluster_name"]],
+            on="url",
+            how="left",
+            validate="one_to_one",
+        )
+        print(f"Matched cluster labels for {df['cluster'].notna().sum():,} restaurants")
+    else:
+        df["cluster"] = pd.NA
+        df["cluster_name"] = pd.NA
+
     docs = [build_doc(row) for row in df.to_dict("records")]
  
     db = get_db()
     db.restaurants.drop()
     db.restaurants.insert_many(docs)
  
-    for field in ("locality", "rating", "cuisines", "establishment_type", "cost_capped", "votes"):
+    for field in (
+        "locality",
+        "rating",
+        "cuisines",
+        "establishment_type",
+        "cost_capped",
+        "votes",
+        "trust_rating",
+        "hidden_gem",
+    ):
         db.restaurants.create_index(field)
  
     print(f"Inserted {db.restaurants.count_documents({}):,} documents into "
@@ -87,4 +117,3 @@ def main():
 if __name__ == "__main__":
     main()
  
-

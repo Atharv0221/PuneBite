@@ -4,6 +4,7 @@ import Explorer from "./pages/Explorer.jsx";
 import Localities from "./pages/Localities.jsx";
 import Gems from "./pages/Gems.jsx";
 import Predict from "./pages/Predict.jsx";
+import Chat from "./pages/Chat.jsx";
 
 const PAGES = [
   ["Overview", Overview],
@@ -11,6 +12,7 @@ const PAGES = [
   ["Localities", Localities],
   ["Hidden gems", Gems],
   ["Rating predictor", Predict],
+  ["Chatbot", Chat],
 ];
 
 export default function App() {

@@ -21,6 +21,7 @@ for p in (str(HERE), str(ROOT)):
 
 from db import get_db  # noqa: E402
 from ml.features import make_features  # noqa: E402
+from chatbot import chat_reply, load_vocab  # noqa: E402
 
 MODEL_DIR = ROOT / "ml" / "models"
 app = Flask(__name__)
@@ -59,8 +60,7 @@ def r2(x):
 
 
 def with_trust(doc):
-    """Placeholder until Phase 8 defines the trust-adjusted rating."""
-    doc.setdefault("trust_rating", None)
+    """Expose the precomputed trust score loaded with each restaurant."""
     return doc
 
 
@@ -218,14 +218,15 @@ def locality_report(name):
 # ------------------------------------------------------------- hidden gems
 @app.get("/api/hidden-gems")
 def hidden_gems():
-    """PROVISIONAL (Phase 8 will replace this with the trust-adjusted score):
-    rating >= 4.0 but only 20-150 votes."""
-    q = {"rating": {"$gte": 4.0}, "votes": {"$gte": 20, "$lte": 150}}
+    """Return top-locality trust scorers with limited review visibility."""
+    q = {"hidden_gem": True, "votes": {"$gte": 20, "$lte": 200}}
     if request.args.get("locality"):
         q["locality"] = exact_ci(request.args["locality"])
     limit = min(max(to_int(request.args.get("limit"), 20), 1), 100)
-    docs = col().find(q, HIDE_ID).sort([("rating", -1), ("votes", -1)]).limit(limit)
-    return jsonify(provisional=True, items=[with_trust(d) for d in docs])
+    docs = col().find(q, HIDE_ID).sort(
+        [("trust_rating", -1), ("votes", 1)]
+    ).limit(limit)
+    return jsonify(provisional=False, items=[with_trust(d) for d in docs])
 
 
 # ---------------------------------------------------------------- overview
@@ -358,6 +359,27 @@ def predict():
         note="Model uses no vote information (new-restaurant scenario). "
              f"Test ROC-AUC {m['clf_meta']['test_roc_auc']:.2f}, rating RMSE {m['reg_meta']['test_rmse']:.2f}.",
     )
+
+
+# ----------------------------------------------------------------- chatbot
+_chat_cache = {}
+
+
+@app.post("/api/chat")
+def chat():
+    """Keyword chatbot (no AI model).  Body (JSON): {"message": "best cheap biryani in Kothrud"}
+    The locality / cuisine / amenity names are read from MongoDB once and cached; restart the
+    server after reloading the data."""
+    body = request.get_json(silent=True) or {}
+    message = str(body.get("message", "")).strip()[:300]
+    if not message:
+        return jsonify(error="'message' is required"), 400
+    try:
+        if "vocab" not in _chat_cache:
+            _chat_cache["vocab"] = load_vocab(col())
+        return jsonify(chat_reply(message, col(), _chat_cache["vocab"]))
+    except Exception as e:  # noqa: BLE001
+        return jsonify(error=f"Chatbot error: {e}"), 503
 
 
 if __name__ == "__main__":
