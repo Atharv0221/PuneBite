@@ -21,13 +21,14 @@ for p in (str(HERE), str(ROOT)):
 
 from db import get_db  # noqa: E402
 from ml.features import make_features  # noqa: E402
+from chatbot import chat_reply, load_vocab  # noqa: E402
 
 MODEL_DIR = ROOT / "ml" / "models"
 app = Flask(__name__)
 CORS(app)
 
 HIDE_ID = {"_id": 0}
-SORT_FIELDS = {"rating": "rating", "trust": "trust_rating", "votes": "votes", "cost": "cost_capped", "name": "name"}
+SORT_FIELDS = {"rating": "rating", "votes": "votes", "cost": "cost_capped", "name": "name"}
 
 
 # ----------------------------------------------------------------- helpers
@@ -59,8 +60,7 @@ def r2(x):
 
 
 def with_trust(doc):
-    """trust_rating is stored by backend/load_data.py (ml/scoring.py); keep the key present."""
-    doc.setdefault("trust_rating", None)
+    """Expose the precomputed trust score loaded with each restaurant."""
     return doc
 
 
@@ -197,8 +197,8 @@ def locality_report(name):
     for d in col().find({**q, "rating": {"$ne": None}}, {"rating": 1, "_id": 0}):
         hist[int(d["rating"] * 2) / 2] += 1
 
-    best = list(col().find({**q, "trust_rating": {"$ne": None}, "votes": {"$gte": 20}}, HIDE_ID)
-                .sort([("trust_rating", -1), ("votes", -1)]).limit(5))
+    best = list(col().find({**q, "rating": {"$ne": None}, "votes": {"$gte": 20}}, HIDE_ID)
+                .sort([("rating", -1), ("votes", -1)]).limit(5))
 
     return jsonify(
         name=name,
@@ -218,30 +218,15 @@ def locality_report(name):
 # ------------------------------------------------------------- hidden gems
 @app.get("/api/hidden-gems")
 def hidden_gems():
-    """Restaurants flagged by ml/scoring.py: top 15% trust-adjusted rating in their
-    locality, 20-200 votes, trust rating >= 3.7. Optional: ?locality=&limit="""
-    q = {"is_hidden_gem": True}
+    """Return top-locality trust scorers with limited review visibility."""
+    q = {"hidden_gem": True, "votes": {"$gte": 20, "$lte": 200}}
     if request.args.get("locality"):
         q["locality"] = exact_ci(request.args["locality"])
     limit = min(max(to_int(request.args.get("limit"), 20), 1), 100)
-    docs = col().find(q, HIDE_ID).sort([("trust_rating", -1), ("votes", -1)]).limit(limit)
-    return jsonify(rule="top 15% trust rating in locality, 20-200 votes, trust >= 3.7",
-                   items=[with_trust(d) for d in docs])
-
-
-# ---------------------------------------------------------------- clusters
-@app.get("/api/clusters")
-def clusters():
-    """Restaurant segments from notebook 07 (K-Means, k=5)."""
-    rows = col().aggregate([
-        {"$match": {"cluster_name": {"$ne": None}}},
-        {"$group": {"_id": "$cluster_name", "count": {"$sum": 1}, "avg_rating": {"$avg": "$rating"},
-                    "avg_votes": {"$avg": "$votes"}, "avg_cost": {"$avg": "$cost_capped"}}},
-        {"$sort": {"count": -1}},
-    ])
-    return jsonify([{"name": r["_id"], "count": r["count"], "avg_rating": r2(r["avg_rating"]),
-                     "avg_votes": None if r["avg_votes"] is None else round(r["avg_votes"]),
-                     "avg_cost": None if r["avg_cost"] is None else round(r["avg_cost"])} for r in rows])
+    docs = col().find(q, HIDE_ID).sort(
+        [("trust_rating", -1), ("votes", 1)]
+    ).limit(limit)
+    return jsonify(provisional=False, items=[with_trust(d) for d in docs])
 
 
 # ---------------------------------------------------------------- overview
@@ -374,6 +359,27 @@ def predict():
         note="Model uses no vote information (new-restaurant scenario). "
              f"Test ROC-AUC {m['clf_meta']['test_roc_auc']:.2f}, rating RMSE {m['reg_meta']['test_rmse']:.2f}.",
     )
+
+
+# ----------------------------------------------------------------- chatbot
+_chat_cache = {}
+
+
+@app.post("/api/chat")
+def chat():
+    """Keyword chatbot (no AI model).  Body (JSON): {"message": "best cheap biryani in Kothrud"}
+    The locality / cuisine / amenity names are read from MongoDB once and cached; restart the
+    server after reloading the data."""
+    body = request.get_json(silent=True) or {}
+    message = str(body.get("message", "")).strip()[:300]
+    if not message:
+        return jsonify(error="'message' is required"), 400
+    try:
+        if "vocab" not in _chat_cache:
+            _chat_cache["vocab"] = load_vocab(col())
+        return jsonify(chat_reply(message, col(), _chat_cache["vocab"]))
+    except Exception as e:  # noqa: BLE001
+        return jsonify(error=f"Chatbot error: {e}"), 503
 
 
 if __name__ == "__main__":

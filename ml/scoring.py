@@ -1,71 +1,65 @@
-"""
-scoring.py - trust-adjusted rating and "hidden gems" (Phase 8).
+"""Trust-adjusted restaurant scores and Hidden Gems flags."""
 
-Why: a 4.8 from 12 votes is much less reliable than a 4.5 from 1,500 votes.
-The trust-adjusted rating pulls restaurants with few votes towards the overall
-average (a Bayesian / IMDb-style weighted rating):
-
-    trust = v / (v + m) * R  +  m / (v + m) * C
-
-    R = the restaurant's own rating     v = its number of votes
-    C = mean rating of all rated restaurants (about 3.44)
-    m = votes needed before we trust the restaurant's own rating as much as
-        the prior (we use m = 50, the "popular" threshold from notebooks 02/03)
-
-With many votes trust -> R; with no votes trust -> C.
-
-Used by notebook 09, backend/load_data.py (stored in MongoDB) and the API.
-"""
 import numpy as np
 import pandas as pd
 
-DEFAULT_M = 50                   # prior strength, in votes
-GEM_MIN_VOTES = 20               # below this even a shrunk score is mostly noise
-GEM_MAX_VOTES = 200              # above this the place is already well known
-GEM_TOP_SHARE = 0.15             # must be in the top 15% of its locality ...
-GEM_MIN_LOCALITY = 10            # ... and the locality needs >= 10 rated places for that to mean anything
-GEM_MIN_TRUST = 3.7              # ... and be good in absolute terms (not just "best of a weak locality")
+
+DEFAULT_PRIOR_WEIGHT = 50
+DEFAULT_GEM_VOTE_MIN = 20
+DEFAULT_GEM_VOTE_MAX = 200
+DEFAULT_GEM_TOP_FRACTION = 0.15
 
 
-def global_mean(df):
-    """C: mean rating over rated restaurants."""
-    return float(df["rating"].dropna().mean())
+def trust_adjusted_rating(rating, votes, prior_mean, prior_weight=DEFAULT_PRIOR_WEIGHT):
+    """Shrink low-vote ratings toward the mean of all rated restaurants."""
+    if pd.isna(rating):
+        return np.nan
+    vote_count = max(float(votes), 0.0) if pd.notna(votes) else 0.0
+    if prior_weight <= 0:
+        raise ValueError("prior_weight must be greater than zero")
+    return (vote_count / (vote_count + prior_weight)) * float(rating) + (
+        prior_weight / (vote_count + prior_weight)
+    ) * float(prior_mean)
 
 
-def trust_rating(rating, votes, m=DEFAULT_M, c=None):
-    """Vectorised trust-adjusted rating. NaN where there is no rating."""
-    rating = pd.to_numeric(pd.Series(rating), errors="coerce")
-    votes = pd.to_numeric(pd.Series(votes), errors="coerce").fillna(0).clip(lower=0)
-    if c is None:
-        c = float(rating.dropna().mean())
-    out = votes / (votes + m) * rating + m / (votes + m) * c
-    return out.where(rating.notna())
+def add_trust_scores(
+    restaurants,
+    prior_weight=DEFAULT_PRIOR_WEIGHT,
+    gem_vote_min=DEFAULT_GEM_VOTE_MIN,
+    gem_vote_max=DEFAULT_GEM_VOTE_MAX,
+    gem_top_fraction=DEFAULT_GEM_TOP_FRACTION,
+):
+    """Return a copy with trust ratings and within-locality Hidden Gems flags.
 
+    Gems must have 20-200 votes and rank in the top 15% of rated restaurants
+    in their locality by trust-adjusted rating.
+    """
+    if prior_weight <= 0:
+        raise ValueError("prior_weight must be greater than zero")
+    if not 0 <= gem_top_fraction <= 1:
+        raise ValueError("gem_top_fraction must be between 0 and 1")
+    if gem_vote_min < 0 or gem_vote_max < gem_vote_min:
+        raise ValueError("gem vote bounds must satisfy 0 <= min <= max")
 
-def add_trust(df, m=DEFAULT_M):
-    """Return a copy of df with `trust_rating` and `is_hidden_gem` columns."""
-    d = df.copy()
-    c = global_mean(d)
-    d["trust_rating"] = trust_rating(d["rating"], d["votes"], m=m, c=c).values
-    d["is_hidden_gem"] = flag_hidden_gems(d)
-    return d
+    result = restaurants.copy()
+    ratings = pd.to_numeric(result["rating"], errors="coerce")
+    votes = pd.to_numeric(result["votes"], errors="coerce").fillna(0).clip(lower=0)
+    rated = ratings.notna()
+    prior_mean = ratings[rated].mean()
 
+    result["trust_rating"] = np.nan
+    result.loc[rated, "trust_rating"] = (
+        votes[rated] * ratings[rated] + prior_weight * prior_mean
+    ) / (votes[rated] + prior_weight)
+    result["hidden_gem"] = False
 
-def flag_hidden_gems(df, min_votes=GEM_MIN_VOTES, max_votes=GEM_MAX_VOTES,
-                     top_share=GEM_TOP_SHARE, min_locality=GEM_MIN_LOCALITY,
-                     min_trust=GEM_MIN_TRUST):
-    """Boolean Series (aligned with df): high trust within its locality, but few votes.
-
-    Needs a `trust_rating` column (call add_trust first, or add it yourself)."""
-    rated = df["trust_rating"].notna()
-    n_in_loc = df[rated].groupby("locality")["trust_rating"].transform("size")
-    pct = df[rated].groupby("locality")["trust_rating"].rank(pct=True, method="average")
-    gem = pd.Series(False, index=df.index)
-    ok = (
-        df.loc[rated, "votes"].between(min_votes, max_votes)
-        & (pct >= 1 - top_share)
-        & (n_in_loc >= min_locality)
-        & (df.loc[rated, "trust_rating"] >= min_trust)
+    rated_in_locality = rated & result["locality"].notna()
+    locality_percentile = result.loc[rated_in_locality].groupby("locality")[
+        "trust_rating"
+    ].rank(method="min", pct=True)
+    eligible = rated & votes.between(gem_vote_min, gem_vote_max)
+    result.loc[locality_percentile.index, "hidden_gem"] = (
+        eligible.loc[locality_percentile.index]
+        & (locality_percentile >= 1 - gem_top_fraction)
     )
-    gem.loc[ok.index] = ok
-    return gem
+    return result
