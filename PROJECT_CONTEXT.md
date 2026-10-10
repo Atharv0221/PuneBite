@@ -170,5 +170,8 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - Trust rating (Phase 8): `trust = v/(v+m)*R + m/(v+m)*C`, m=50, C=3.436. Hidden gem = top 15% trust in its locality (>= 10 rated places), 20-200 votes, trust >= 3.7 -> 231 gems in 61 localities. `GET /api/hidden-gems` now uses the stored `is_hidden_gem` flag; `trust_rating` is stored on every rated restaurant. Limitation: shrinking to the global mean raises very-low-vote low ratings (they average ~3.0), so use it for ranking the top, not for repairing weak ratings.
 - Modelling caution: votes is a very strong predictor but partly reflects popularity; compare models with and without votes.
 
+## 11b. Database hosting
+- MongoDB runs on **MongoDB Atlas** (cloud) for online access; setup steps in `docs/ATLAS_SETUP.md`. The URI lives only in `.env` (`MONGO_URI`), never in Git. Local `mongod` still works by pointing `MONGO_URI` back at `mongodb://127.0.0.1:27017`.
+
 ## 12. Starter prompt for a new chat
 > I'm working on the PuneBite Analyzer mini-project (context above). Please continue from "Next task" in the Progress section. Give me complete, runnable code, explain it briefly in viva-friendly language, and tell me exactly what to update in PROJECT_CONTEXT.md when we finish.

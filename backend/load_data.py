@@ -10,7 +10,7 @@ from pathlib import Path
 import pandas as pd
  
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from db import get_db, ROOT  # noqa: E402
+from db import get_db, describe_target, ROOT  # noqa: E402
 
 sys.path.insert(0, str(ROOT))
 from ml.scoring import add_trust  # noqa: E402
@@ -92,8 +92,10 @@ def main():
     docs = [build_doc(row) for row in df.to_dict("records")]
  
     db = get_db()
+    print("Loading into:", describe_target())
     db.restaurants.drop()
-    db.restaurants.insert_many(docs)
+    for i in range(0, len(docs), 2000):          # batches: friendlier to a remote (Atlas) connection
+        db.restaurants.insert_many(docs[i:i + 2000])
  
     for field in ("locality", "rating", "cuisines", "establishment_type", "cost_capped", "votes",
                   "trust_rating", "is_hidden_gem", "cluster_name"):
