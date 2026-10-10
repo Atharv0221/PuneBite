@@ -10,7 +10,7 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
 HERE = Path(__file__).resolve().parent
@@ -380,6 +380,25 @@ def chat():
         return jsonify(chat_reply(message, col(), _chat_cache["vocab"]))
     except Exception as e:  # noqa: BLE001
         return jsonify(error=f"Chatbot error: {e}"), 503
+
+
+# ------------------------------------------------- serve the React build
+# One service serves both /api/* and the website (no CORS or second host needed).
+# Build first:  cd frontend && npm install && npm run build   (creates frontend/dist)
+DIST = ROOT / "frontend" / "dist"
+
+
+@app.get("/", defaults={"path": ""})
+@app.get("/<path:path>")
+def spa(path):
+    if path.startswith("api/"):
+        return jsonify(error="Not found"), 404
+    if not DIST.exists():
+        return jsonify(error="Frontend not built. Run 'npm run build' in frontend/, "
+                             "or use the Vite dev server on port 5173."), 404
+    if path and (DIST / path).is_file():
+        return send_from_directory(DIST, path)
+    return send_from_directory(DIST, "index.html")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,17 @@
+# Render Blueprint: one web service serves the Flask API and the built React site.
+# MONGO_URI is secret: enter it in the Render dashboard (sync: false), never commit it.
+services:
+  - type: web
+    name: punebite
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt && cd frontend && npm install && npm run build
+    startCommand: gunicorn --chdir backend app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: DB_NAME
+        value: punebite
+      - key: MONGO_URI
+        sync: false
