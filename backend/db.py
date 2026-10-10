@@ -36,5 +36,5 @@ def get_db():
 
 def describe_target():
     """Host only (never the password) - safe to print."""
-    host = MONGO_URI.split("@")[-1].split("/")[0].split("?")[0]
+    host = MONGO_URI.split("://", 1)[-1].split("@")[-1].split("/")[0].split("?")[0]
     return f"{host} / db '{DB_NAME}'"
