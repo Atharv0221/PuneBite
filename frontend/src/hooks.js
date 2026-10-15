@@ -101,19 +101,16 @@ export function useScroll() {
   return s;
 }
 
-/** Which section id is currently in the middle of the screen. */
-export function useScrollSpy(ids) {
-  const [active, setActive] = useState(ids[0]);
+/** Tiny hash router: "#/gems" -> "/gems". Scrolls to the top on every page change. */
+export function useRoute() {
+  const read = () => (window.location.hash.replace(/^#/, "") || "/");
+  const [path, setPath] = useState(read);
   useEffect(() => {
-    if (!("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    ids.forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
-    return () => io.disconnect();
-  }, [ids]);
-  return active;
+    const onHash = () => { setPath(read()); window.scrollTo({ top: 0, behavior: "instant" }); };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+  return path;
 }
 
 /** 3D tilt + glare following the pointer. Spread the result on the element. */

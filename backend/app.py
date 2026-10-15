@@ -2,16 +2,21 @@
 
 Run from the project root:   python backend/app.py
 Then open:                   http://127.0.0.1:5000/api/health
+
+Every restaurant, locality, hidden gem, statistic and chatbot answer is read from MongoDB
+(local or Atlas) through this API. Only the Opening Advisor also uses the saved ML models.
 """
+import json
 import re
 import sys
-from collections import Counter
+import time
 from pathlib import Path
 
 import joblib
 import pandas as pd
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
+from werkzeug.exceptions import HTTPException
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -19,16 +24,23 @@ for p in (str(HERE), str(ROOT)):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from db import get_db  # noqa: E402
-from ml.features import make_features  # noqa: E402
+import stats  # noqa: E402
 from chatbot import chat_reply, load_vocab  # noqa: E402
+from db import database_label, get_db  # noqa: E402
+from ml.features import make_features  # noqa: E402
 
 MODEL_DIR = ROOT / "ml" / "models"
+DIST = ROOT / "frontend" / "dist"
 app = Flask(__name__)
 CORS(app)
 
 HIDE_ID = {"_id": 0}
-SORT_FIELDS = {"rating": "rating", "votes": "votes", "cost": "cost_capped", "name": "name"}
+SORT_FIELDS = {"rating": "rating", "trust": "trust_rating", "votes": "votes",
+               "cost": "cost_capped", "name": "name"}
+
+# Results from notebooks 04 and 05 for the model that is allowed to see vote counts
+# (the saved API models are the "no votes" versions, so only those metrics live in the *_meta.json files).
+MODEL_NOTES = {"auc_with_votes": 0.94, "r2_with_votes": 0.55}
 
 
 # ----------------------------------------------------------------- helpers
@@ -50,6 +62,15 @@ def to_int(v, default):
         return default
 
 
+def as_list(v):
+    """Accept ["a", "b"], "a" or nothing, and always return a list of strings."""
+    if v is None or v == "":
+        return []
+    if isinstance(v, str):
+        return [v]
+    return [str(x) for x in v]
+
+
 def exact_ci(text):
     """Case-insensitive exact-match regex (works on strings and on arrays)."""
     return {"$regex": f"^{re.escape(text.strip())}$", "$options": "i"}
@@ -59,19 +80,45 @@ def r2(x):
     return None if x is None else round(x, 2)
 
 
-def with_trust(doc):
-    """Expose the precomputed trust score loaded with each restaurant."""
-    return doc
+_cache = {}
+CACHE_SECONDS = 300
+
+
+def cached(key, build, ttl=CACHE_SECONDS):
+    """Keep slow whole-collection statistics for a few minutes so every page view does not
+    re-read the database (matters on the free Atlas tier). Restart the server or wait
+    five minutes after reloading the data."""
+    hit = _cache.get(key)
+    now = time.time()
+    if hit and now - hit[0] < ttl:
+        return hit[1]
+    value = build()
+    _cache[key] = (now, value)
+    return value
+
+
+# ------------------------------------------------------------------ errors
+@app.errorhandler(Exception)
+def on_error(e):
+    """Always answer /api/* requests with JSON, never an HTML error page."""
+    api_call = request.path.startswith("/api/")
+    if isinstance(e, HTTPException):
+        return (jsonify(error=e.description), e.code) if api_call else e
+    app.logger.exception("Unhandled error")
+    if type(e).__module__.startswith("pymongo"):
+        return jsonify(error="Database unavailable. Check MONGO_URI and the Atlas network access list.",
+                       detail=type(e).__name__), 503
+    return jsonify(error="Server error", detail=type(e).__name__), 500
 
 
 # ------------------------------------------------------------------ health
 @app.get("/api/health")
 def health():
     try:
-        n = col().count_documents({})
-        return jsonify(status="ok", restaurants=n)
+        return jsonify(status="ok", restaurants=col().count_documents({}), database=database_label())
     except Exception as e:  # noqa: BLE001
-        return jsonify(status="error", detail=str(e)), 503
+        app.logger.exception("Health check failed")
+        return jsonify(status="error", detail=f"{type(e).__name__}: database unreachable"), 503
 
 
 # ------------------------------------------------------------- restaurants
@@ -87,6 +134,8 @@ def restaurants():
         q["establishment_type"] = exact_ci(a["type"])
     if a.get("q"):
         q["name"] = {"$regex": re.escape(a["q"].strip()), "$options": "i"}
+    if str(a.get("gem", "")).lower() in ("1", "true", "yes"):
+        q["hidden_gem"] = True
 
     min_rating = to_float(a.get("min_rating"))
     if min_rating is not None:
@@ -110,7 +159,7 @@ def restaurants():
     total = col().count_documents(q)
     cur = col().find(q, HIDE_ID).sort(sort).skip((page - 1) * per_page).limit(per_page)
     return jsonify(
-        items=[with_trust(d) for d in cur],
+        items=list(cur),
         page=page,
         per_page=per_page,
         total=total,
@@ -119,44 +168,71 @@ def restaurants():
 
 
 # -------------------------------------------------------------- localities
-@app.get("/api/localities")
-def localities():
-    min_count = to_int(request.args.get("min_count"), 1)
-    stats = list(col().aggregate([
+def build_locality_table(min_count, min_rated):
+    c = col()
+    groups = list(c.aggregate([
         {"$group": {
             "_id": "$locality",
             "count": {"$sum": 1},
             "rated_count": {"$sum": {"$cond": [{"$ne": ["$rating", None]}, 1, 0]}},
+            "high_rated": {"$sum": {"$cond": [{"$gte": ["$rating", 4.0]}, 1, 0]}},
+            "gems": {"$sum": {"$cond": ["$hidden_gem", 1, 0]}},
             "avg_rating": {"$avg": "$rating"},
             "avg_cost": {"$avg": "$cost_capped"},
         }},
-        {"$match": {"count": {"$gte": min_count}}},
+        {"$match": {"count": {"$gte": min_count}, "rated_count": {"$gte": min_rated}}},
         {"$sort": {"count": -1}},
     ]))
-    names = [s["_id"] for s in stats]
+    groups = [g for g in groups if g["_id"]]
+    names = [g["_id"] for g in groups]
 
-    top = {}
-    for row in col().aggregate([
+    top_cuisines = {}
+    for row in c.aggregate([
         {"$match": {"locality": {"$in": names}}},
         {"$unwind": "$cuisines"},
         {"$group": {"_id": {"l": "$locality", "c": "$cuisines"}, "n": {"$sum": 1}}},
         {"$sort": {"n": -1}},
     ]):
-        lst = top.setdefault(row["_id"]["l"], [])
+        lst = top_cuisines.setdefault(row["_id"]["l"], [])
         if len(lst) < 3:
             lst.append(row["_id"]["c"])
 
-    return jsonify([
+    top_type = {}
+    for row in c.aggregate([
+        {"$match": {"locality": {"$in": names}, "establishment_type": {"$ne": None}}},
+        {"$group": {"_id": {"l": "$locality", "t": "$establishment_type"}, "n": {"$sum": 1}}},
+        {"$sort": {"n": -1}},
+    ]):
+        top_type.setdefault(row["_id"]["l"], row["_id"]["t"])
+
+    medians = stats.median_by(
+        c.find({"locality": {"$in": names}}, {"locality": 1, "cost_capped": 1, "_id": 0}),
+        "locality", "cost_capped")
+
+    return [
         {
-            "name": s["_id"],
-            "count": s["count"],
-            "rated_count": s["rated_count"],
-            "avg_rating": r2(s["avg_rating"]),
-            "avg_cost": None if s["avg_cost"] is None else round(s["avg_cost"]),
-            "top_cuisines": top.get(s["_id"], []),
+            "name": g["_id"],
+            "count": g["count"],
+            "rated_count": g["rated_count"],
+            "avg_rating": r2(g["avg_rating"]),
+            "avg_cost": None if g["avg_cost"] is None else round(g["avg_cost"]),
+            "median_cost": None if g["_id"] not in medians else round(medians[g["_id"]]),
+            "high_rated_count": g["high_rated"],
+            "pct_high": round(g["high_rated"] / g["rated_count"] * 100, 1) if g["rated_count"] else None,
+            "gems": g["gems"],
+            "top_cuisines": top_cuisines.get(g["_id"], []),
+            "top_type": top_type.get(g["_id"]),
         }
-        for s in stats if s["_id"]
-    ])
+        for g in groups
+    ]
+
+
+@app.get("/api/localities")
+def localities():
+    min_count = to_int(request.args.get("min_count"), 1)
+    min_rated = to_int(request.args.get("min_rated"), 1)
+    return jsonify(cached(("localities", min_count, min_rated),
+                          lambda: build_locality_table(min_count, min_rated)))
 
 
 @app.get("/api/localities/<path:name>")
@@ -193,10 +269,7 @@ def locality_report(name):
             {"$sort": {"n": -1}},
         ])
     ]
-    hist = Counter()
-    for d in col().find({**q, "rating": {"$ne": None}}, {"rating": 1, "_id": 0}):
-        hist[int(d["rating"] * 2) / 2] += 1
-
+    rated = [d["rating"] for d in col().find({**q, "rating": {"$ne": None}}, {"rating": 1, "_id": 0})]
     best = list(col().find({**q, "rating": {"$ne": None}, "votes": {"$gte": 20}}, HIDE_ID)
                 .sort([("rating", -1), ("votes", -1)]).limit(5))
 
@@ -210,39 +283,41 @@ def locality_report(name):
         high_rated_share=r2(summary["high_rated"] / summary["rated_count"]) if summary["rated_count"] else None,
         top_cuisines=cuisines,
         types=types,
-        rating_distribution=[{"bin": f"{k:.1f}-{k + 0.5:.1f}", "count": v} for k, v in sorted(hist.items())],
-        best_restaurants=[with_trust(d) for d in best],
+        rating_distribution=stats.rating_histogram(rated),
+        best_restaurants=best,
     )
 
 
 # ------------------------------------------------------------- hidden gems
 @app.get("/api/hidden-gems")
 def hidden_gems():
-    """Return top-locality trust scorers with limited review visibility."""
-    q = {"hidden_gem": True, "votes": {"$gte": 20, "$lte": 200}}
+    """Hidden gems as defined in ml/scoring.py: rated 3.8+, clearly better than restaurants with
+    a similar number of reviews (peer_z >= 1.5) and between 20 and 300 reviews.
+    The flag, score and 'beats X%' value were computed once by load_data.py."""
+    q = {"hidden_gem": True}
     if request.args.get("locality"):
         q["locality"] = exact_ci(request.args["locality"])
-    limit = min(max(to_int(request.args.get("limit"), 20), 1), 100)
-    docs = col().find(q, HIDE_ID).sort(
-        [("trust_rating", -1), ("votes", 1)]
-    ).limit(limit)
-    return jsonify(provisional=False, items=[with_trust(d) for d in docs])
+    limit = min(max(to_int(request.args.get("limit"), 20), 1), 500)
+    docs = list(col().find(q, HIDE_ID).sort([("gem_score", -1), ("votes", 1)]).limit(limit))
+    return jsonify(items=docs, total=col().count_documents(q))
 
 
 # ---------------------------------------------------------------- overview
-@app.get("/api/stats/overview")
-def overview():
-    total = col().count_documents({})
-    rated = col().count_documents({"rating": {"$ne": None}})
-    high = col().count_documents({"rating": {"$gte": 4.0}})
-    mean = list(col().aggregate([
-        {"$group": {"_id": None, "r": {"$avg": "$rating"}, "c": {"$avg": "$cost_capped"}}}]))[0]
+def build_overview():
+    c = col()
+    total = c.count_documents({})
+    if total == 0:
+        return {"total_restaurants": 0, "rated_restaurants": 0, "localities": 0, "gems": 0,
+                "rating_distribution": [], "votes_curve": [], "top_cuisines": [], "types": [], "price_bands": []}
 
-    hist = Counter()
-    for d in col().find({"rating": {"$ne": None}}, {"rating": 1, "_id": 0}):
-        hist[int(d["rating"] * 2) / 2] += 1
+    rated = c.count_documents({"rating": {"$ne": None}})
+    high = c.count_documents({"rating": {"$gte": 4.0}})
+    mean = next(iter(c.aggregate([
+        {"$group": {"_id": None, "r": {"$avg": "$rating"}, "c": {"$avg": "$cost_capped"}}}])), {})
 
-    bands = list(col().aggregate([
+    rated_rows = list(c.find({"rating": {"$ne": None}}, {"rating": 1, "votes": 1, "_id": 0}))
+
+    bands = list(c.aggregate([
         {"$match": {"rating": {"$ne": None}, "cost_capped": {"$ne": None}}},
         {"$bucket": {"groupBy": "$cost_capped", "boundaries": [0, 200, 400, 700, 1000, 10**9],
                      "default": "other",
@@ -250,46 +325,81 @@ def overview():
     ]))
     labels = {0: "Under 200", 200: "200-399", 400: "400-699", 700: "700-999", 1000: "1000+"}
 
-    return jsonify(
-        total_restaurants=total,
-        rated_restaurants=rated,
-        high_rated_restaurants=high,
-        high_rated_share=r2(high / rated) if rated else None,
-        avg_rating=r2(mean["r"]),
-        avg_cost=None if mean["c"] is None else round(mean["c"]),
-        localities=len([x for x in col().distinct("locality") if x]),
-        rating_distribution=[{"bin": f"{k:.1f}-{k + 0.5:.1f}", "count": v} for k, v in sorted(hist.items())],
-        top_cuisines=[
+    return {
+        "total_restaurants": total,
+        "rated_restaurants": rated,
+        "high_rated_restaurants": high,
+        "high_rated_share": r2(high / rated) if rated else None,
+        "avg_rating": r2(mean.get("r")),
+        "avg_cost": None if mean.get("c") is None else round(mean["c"]),
+        "localities": len([x for x in c.distinct("locality") if x]),
+        "gems": c.count_documents({"hidden_gem": True}),
+        "rating_distribution": stats.rating_histogram(r["rating"] for r in rated_rows),
+        "votes_curve": stats.votes_curve(rated_rows),
+        "top_cuisines": [
             {"cuisine": r["_id"], "count": r["n"], "avg_rating": r2(r["avg"])}
-            for r in col().aggregate([
+            for r in c.aggregate([
                 {"$unwind": "$cuisines"},
                 {"$group": {"_id": "$cuisines", "n": {"$sum": 1}, "avg": {"$avg": "$rating"}}},
-                {"$sort": {"n": -1}}, {"$limit": 10}])
+                {"$sort": {"n": -1}}, {"$limit": 14}])
         ],
-        types=[
-            {"type": r["_id"], "count": r["n"], "avg_rating": r2(r["avg"])}
-            for r in col().aggregate([
+        "types": [
+            {"type": r["_id"] or "Other", "count": r["n"], "avg_rating": r2(r["avg"])}
+            for r in c.aggregate([
                 {"$group": {"_id": "$establishment_type", "n": {"$sum": 1}, "avg": {"$avg": "$rating"}}},
                 {"$sort": {"n": -1}}])
         ],
-        price_bands=[
+        "price_bands": [
             {"band": labels.get(b["_id"], "Other"), "count": b["count"], "avg_rating": r2(b["avg_rating"])}
             for b in bands if b["_id"] != "other"
         ],
-    )
+    }
+
+
+@app.get("/api/stats/overview")
+def overview():
+    return jsonify(cached("overview", build_overview))
+
+
+# ---------------------------------------------------------------- insights
+def build_insights():
+    rows = list(col().find({"rating": {"$ne": None}},
+                           {"rating": 1, "votes": 1, "amenities": 1, "locality": 1, "_id": 0}))
+    out = stats.insight_figures(rows)
+    try:
+        meta = get_meta()
+        auc_new, r2_new = meta["clf"]["test_roc_auc"], meta["reg"]["test_r2"]
+    except (OSError, KeyError, ValueError):
+        auc_new, r2_new = 0.82, 0.28
+    out["auc"] = {"withVotes": MODEL_NOTES["auc_with_votes"], "noVotes": round(auc_new, 2)}
+    out["r2"] = {"withVotes": MODEL_NOTES["r2_with_votes"], "noVotes": round(r2_new, 2)}
+    return out
+
+
+@app.get("/api/stats/insights")
+def insights():
+    """Numbers behind the 'Four things we learned' cards: computed live from MongoDB,
+    plus the model scores that were saved next to the models."""
+    return jsonify(cached("insights", build_insights))
 
 
 # ----------------------------------------------------------------- predict
 _models = {}
+_meta = {}
+
+
+def get_meta():
+    """Model metadata (feature lists, scores). Small JSON files, so no need to load the models."""
+    if not _meta:
+        _meta["clf"] = json.loads((MODEL_DIR / "high_rating_classifier_meta.json").read_text(encoding="utf-8"))
+        _meta["reg"] = json.loads((MODEL_DIR / "rating_regressor_meta.json").read_text(encoding="utf-8"))
+    return _meta
 
 
 def get_models():
     if not _models:
         _models["clf"] = joblib.load(MODEL_DIR / "high_rating_classifier.joblib")
         _models["reg"] = joblib.load(MODEL_DIR / "rating_regressor.joblib")
-        import json
-        _models["clf_meta"] = json.loads((MODEL_DIR / "high_rating_classifier_meta.json").read_text(encoding="utf-8"))
-        _models["reg_meta"] = json.loads((MODEL_DIR / "rating_regressor_meta.json").read_text(encoding="utf-8"))
     return _models
 
 
@@ -300,8 +410,8 @@ def norm(name):
 
 @app.get("/api/meta/options")
 def options():
-    """Valid values for the prediction form dropdowns."""
-    spec = get_models()["clf_meta"]["feature_spec"]
+    """Valid values for the prediction form and the explorer dropdowns."""
+    spec = get_meta()["clf"]["feature_spec"]
     return jsonify(
         amenities=spec["amenity_keep"],
         cuisines=spec["top_cuisines"],
@@ -310,54 +420,89 @@ def options():
     )
 
 
-@app.post("/api/predict")
-def predict():
-    """Body (JSON): cost (required), type, locality, cuisines[], amenities[],
-    accepts_cards (bool), accepts_digital (bool).
-    Uses the 'no votes' models, because a new restaurant has no votes yet."""
-    body = request.get_json(silent=True) or {}
-    cost = to_float(body.get("cost"))
-    if cost is None or cost <= 0:
-        return jsonify(error="'cost' (cost for two, a positive number) is required"), 400
-
-    try:
-        m = get_models()
-    except Exception as e:  # noqa: BLE001
-        return jsonify(error=f"Could not load models: {e}"), 503
-
-    spec = m["clf_meta"]["feature_spec"]
-    cuisines = body.get("cuisines") or []
-    if isinstance(cuisines, str):
-        cuisines = [cuisines]
-    amenities = {norm(a) for a in (body.get("amenities") or [])}
-
+def feature_row(spec, cost, cuisines, amenities, locality, ptype, cards, digital):
+    """One restaurant described the way the models expect (before make_features)."""
     row = {
         "cost_capped": cost,
         "n_cuisines": len(cuisines),
         "n_amenities": len(amenities),
-        "accepts_cards": int(bool(body.get("accepts_cards", False))),
-        "accepts_digital": int(bool(body.get("accepts_digital", False))),
+        "accepts_cards": int(cards),
+        "accepts_digital": int(digital),
         "cuisines": "|".join(cuisines),
-        "locality": body.get("locality") or "Other",
-        "primary_type": body.get("type") or "Other",
+        "locality": locality or "Other",
+        "primary_type": ptype or "Other",
     }
     for a in spec["amenity_keep"]:
         row[a] = int(a in amenities)
+    return row
 
-    X, _ = make_features(pd.DataFrame([row]), spec, with_votes=False)
 
-    proba = float(m["clf"].predict_proba(X)[0, 1])
-    threshold = m["clf_meta"]["threshold"]
-    rating = float(m["reg"].predict(X)[0])
+@app.post("/api/predict")
+def predict():
+    """Body (JSON): cost (required), type, locality, cuisines[], amenities[],
+    accepts_cards (bool), accepts_digital (bool).
+    Uses the 'no votes' models, because a new restaurant has no votes yet.
+
+    The answer also lists `contributions`: for every choice the person made we re-run the
+    real model without it. value = (probability with it) - (probability without it), so a
+    positive number means that choice helps. This is a what-if explanation, not a stand-alone effect."""
+    body = request.get_json(silent=True) or {}
+    cost = to_float(body.get("cost", body.get("cost_capped")))
+    if cost is None or cost <= 0:
+        return jsonify(error="'cost' (cost for two, a positive number) is required"), 400
+
+    try:
+        m, meta = get_models(), get_meta()
+    except Exception:  # noqa: BLE001
+        app.logger.exception("Could not load the saved models")
+        return jsonify(error="Could not load the saved models."), 503
+
+    spec = meta["clf"]["feature_spec"]
+    cuisines = list(dict.fromkeys(as_list(body.get("cuisines"))))
+    amenities = {norm(a) for a in as_list(body.get("amenities"))}
+    locality = body.get("locality") or "Other"
+    ptype = body.get("type") or body.get("primary_type") or "Other"
+    cards = bool(body.get("accepts_cards", False))
+    digital = bool(body.get("accepts_digital", False))
+
+    def row(**changes):
+        args = {"cost": cost, "cuisines": cuisines, "amenities": amenities, "locality": locality,
+                "ptype": ptype, "cards": cards, "digital": digital, **changes}
+        return feature_row(spec, **args)
+
+    variants = [(None, None, row())]                                  # first row = the real question
+    for a in sorted(amenities & set(spec["amenity_keep"])):
+        variants.append(("amenity", a, row(amenities=amenities - {a})))
+    for c in cuisines:
+        if c in spec["top_cuisines"]:
+            variants.append(("cuisine", c, row(cuisines=[x for x in cuisines if x != c])))
+    if ptype in spec["valid_types"]:
+        variants.append(("type", ptype, row(ptype="Other")))
+    if locality in spec["top_localities"]:
+        variants.append(("locality", locality, row(locality="Other")))
+    if cards or digital:
+        variants.append(("cards", "cards", row(cards=False, digital=False)))
+
+    X, _ = make_features(pd.DataFrame([v[2] for v in variants]), spec, with_votes=False)
+    probas = m["clf"].predict_proba(X)[:, 1]
+    proba = float(probas[0])
+    rating = float(m["reg"].predict(X.iloc[[0]])[0])
+    threshold = meta["clf"]["threshold"]
+
+    contributions = sorted(
+        ({"kind": kind, "name": name, "value": round(proba - float(p), 4)}
+         for (kind, name, _), p in zip(variants[1:], probas[1:])),
+        key=lambda x: -x["value"])
 
     return jsonify(
         high_rated_probability=round(proba, 3),
         predicted_high_rated=proba >= threshold,
         decision_threshold=round(threshold, 3),
         predicted_rating=round(min(max(rating, 0), 5), 2),
+        contributions=contributions,
         unrecognised_amenities=sorted(a for a in amenities if a not in spec["amenity_keep"]),
         note="Model uses no vote information (new-restaurant scenario). "
-             f"Test ROC-AUC {m['clf_meta']['test_roc_auc']:.2f}, rating RMSE {m['reg_meta']['test_rmse']:.2f}.",
+             f"Test ROC-AUC {meta['clf']['test_roc_auc']:.2f}, rating RMSE {meta['reg']['test_rmse']:.2f}.",
     )
 
 
@@ -374,20 +519,14 @@ def chat():
     message = str(body.get("message", "")).strip()[:300]
     if not message:
         return jsonify(error="'message' is required"), 400
-    try:
-        if "vocab" not in _chat_cache:
-            _chat_cache["vocab"] = load_vocab(col())
-        return jsonify(chat_reply(message, col(), _chat_cache["vocab"]))
-    except Exception as e:  # noqa: BLE001
-        return jsonify(error=f"Chatbot error: {e}"), 503
+    if "vocab" not in _chat_cache:
+        _chat_cache["vocab"] = load_vocab(col())
+    return jsonify(chat_reply(message, col(), _chat_cache["vocab"]))
 
 
 # ------------------------------------------------- serve the React build
 # One service serves both /api/* and the website (no CORS or second host needed).
 # Build first:  cd frontend && npm install && npm run build   (creates frontend/dist)
-DIST = ROOT / "frontend" / "dist"
-
-
 @app.get("/", defaults={"path": ""})
 @app.get("/<path:path>")
 def spa(path):
@@ -398,7 +537,7 @@ def spa(path):
                              "or use the Vite dev server on port 5173."), 404
     if path and (DIST / path).is_file():
         return send_from_directory(DIST, path)
-    return send_from_directory(DIST, "index.html")
+    return send_from_directory(DIST, "index.html")   # every page route (/gems, /chat ...) is handled by React
 
 
 if __name__ == "__main__":

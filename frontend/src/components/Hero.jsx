@@ -28,8 +28,8 @@ export default function Hero({ overview, gems, insights }) {
             to show what really drives a great rating &mdash; and to uncover the places hiding in plain sight.
           </p>
           <div className="cta fade-up" style={{ "--i": 3 }}>
-            <a className="btn primary" href="#gems"><Icon name="gem" size={18} /> Discover hidden gems</a>
-            <a className="btn ghost" href="#localities">Explore localities <Icon name="arrow" size={18} /></a>
+            <a className="btn primary" href="#/gems"><Icon name="gem" size={18} /> Discover hidden gems</a>
+            <a className="btn ghost" href="#/localities">Explore localities <Icon name="arrow" size={18} /></a>
           </div>
           <dl className="hero-stats fade-up" style={{ "--i": 4 }}>
             <div><dt><CountUp to={overview.rated} /></dt><dd>rated restaurants</dd></div>
@@ -57,7 +57,7 @@ export default function Hero({ overview, gems, insights }) {
           </div>
         </div>
       </div>
-      <a className="scroll-cue" href="#overview" aria-label="Scroll down"><span /></a>
+      <a className="scroll-cue" href="#overview" aria-label="Scroll down" onClick={(e) => { e.preventDefault(); document.getElementById("overview")?.scrollIntoView({ behavior: "smooth" }); }}><span /></a>
     </section>
   );
 }

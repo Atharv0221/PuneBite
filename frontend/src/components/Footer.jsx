@@ -6,7 +6,7 @@ export default function Footer() {
       <Skyline />
       <div className="container foot-grid">
         <div>
-          <a className="brand" href="#top"><Logo /> <span>Pune<b>Bite</b></span></a>
+          <a className="brand" href="#/"><Logo /> <span>Pune<b>Bite</b></span></a>
           <p className="muted">A data science and machine learning mini-project analysing restaurant ratings across Pune.</p>
         </div>
         <div>
