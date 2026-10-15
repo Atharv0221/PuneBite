@@ -3,11 +3,10 @@
 > **How to use:** Paste this whole file at the start of every new Claude chat (yours or your friend's).
 > After finishing any task, update the **Progress** section and commit it to GitHub.
 >
-> **HANDOFF STATUS (read first):** Phases 0-4, 5a, 6, 7, 8 and 9 are finished (cleaning, EDA, statistics, classification,
-> regression, feature selection + PCA, MongoDB + Flask API, React dashboard, trust rating / hidden gems, keyword chatbot).
-> **Still open:** notebooks `07_clustering` and `08_association_rules` (Phase 5b/5c, Section 13.1-13.2) are NOT in the
-> repo yet, and Phase 10 (report, PPT, viva) has not started. Work one task at a time, test code on the real data, and keep
-> the style of Section 12.
+> **HANDOFF STATUS (read first):** Phases 0-5a are finished and tested on the real data (cleaning, EDA, statistics,
+> classification, regression, feature selection + PCA). The previous Claude account reached its limit.
+> The next Claude chat continues from **Section 13 (task specs)**. Work one task at a time, test code on the real data, and
+> keep the same style as the finished notebooks (see Section 12).
 
 ## 1. Project summary
 - **Course:** ITE01301 Data Science & Machine Learning, TY B.Tech IT (2024 Pattern), PES's Modern College of Engineering
@@ -16,8 +15,8 @@
 - **GitHub repo:** https://github.com/Atharv0221/PuneBite (public, default branch `master`)
 - **Team:** 2 students. Person A = Data/ML (done through Phase 5a). Person B (friend) = continues with Phase 5b onward, then Backend/Frontend/DB.
 - **Deadline:** _(fill in)_
-- **Chatbot (query-based, NOT LLM):** YES, built (Phase 9, `backend/chatbot.py`)
-- **Open items:** deadline not yet filled in; notebooks 07 (clustering) and 08 (Apriori) missing; report/PPT/viva prep; verify what `spam_review_count` means (Kaggle dataset page) before using it; not yet confirmed that the React page and `npm run build` work in a browser (chatbot page was only backend-tested)
+- **Chatbot (optional, query-based, NOT LLM):** _(yes / no — still undecided)_
+- **Open items:** deadline not yet filled in; chatbot decision; verify what `spam_review_count` means (Kaggle dataset page) before using it
 
 ## 2. Tech stack (restricted)
 - Python: pandas, numpy, scikit-learn, mlxtend, scipy, statsmodels, matplotlib, seaborn
@@ -90,21 +89,15 @@ punebite-analyzer/
 ├── ml/
 │   ├── cleaning.py          # reusable cleaning functions
 │   ├── features.py          # builds model inputs (used by notebooks AND the API)
-│   ├── scoring.py           # trust-adjusted rating, hidden gems (confirm this file exists in the repo)
+│   ├── scoring.py           # trust-adjusted rating, hidden gems
 │   └── models/              # saved .joblib models
 ├── backend/
 │   ├── app.py
 │   ├── db.py                # MongoDB connection
 │   ├── load_data.py         # CSV -> MongoDB
-│   ├── chatbot.py           # rule-based chatbot (parse_message, build_query, chat_reply)
 │   └── requirements.txt
-├── tests/
-│   └── test_chatbot.py      # 23 unit tests, no database needed
-├── frontend/                # React app (Vite)
+├── frontend/                # React app
 │   └── src/
-│       ├── App.jsx
-│       ├── styles.css
-│       └── pages/Chat.jsx   # chatbot page
 ├── report/
 └── docs/
 ```
@@ -162,15 +155,15 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - [x] Phase 2 EDA (`02_eda.ipynb`)
 - [x] Phase 3 Statistics (`03_statistics.ipynb`)
 - [x] Phase 4 Classification + Regression (`04_classification.ipynb`, `05_regression.ipynb`)
-- [ ] Phase 5 Feature selection / Clustering / Apriori (06 feature selection + PCA DONE; **07 clustering and 08 Apriori still pending**)
-- [x] Phase 6 MongoDB + API (`backend/db.py`, `load_data.py`, `app.py`; 12,134 documents in db `punebite`, collection `restaurants`)
-- [x] Phase 7 React dashboard (Vite + React; pages incl. Chatbot)
-- [x] Phase 8 Trust rating + Hidden gems (`trust_rating` and `hidden_gem` fields loaded into MongoDB)
-- [x] Phase 9 Chatbot (rule-based, `backend/chatbot.py`, `/api/chat`, `frontend/src/pages/Chat.jsx`, `tests/test_chatbot.py`)
-- [ ] Phase 10 Report / PPT / viva
+- [ ] Phase 5 Feature selection / Clustering / Apriori (06 feature selection + PCA DONE; 07 clustering and 08 Apriori pending)
+- [ ] Phase 6 MongoDB + API
+- [ ] Phase 7 React dashboard
+- [x] Phase 8 Hidden Gems (`09_hidden_gems.ipynb`; API wiring from section 10 still to paste into backend)
+- [ ] Phase 9 Chatbot
+- [ ] Phase 10 Report / PPT
 
-**Last completed:** Phase 9 (keyword chatbot) on top of Phases 6-8 and 0-5a
-**Next task:** 13.1 `07_clustering.ipynb`, then 13.2 `08_association_rules.ipynb` (if cluster labels are made, re-run `load_data.py` to merge them), then Phase 10 (13.7). Also add a README with run instructions.
+**Last completed:** Phases 0-4 and 5a (`06_feature_selection_pca.ipynb`)
+**Next task:** 13.1 `07_clustering.ipynb`, then 13.2 `08_association_rules.ipynb`. Phase 6 (MongoDB + API, 13.3) can run in parallel because the cleaned CSV and both saved models exist.
 **Decisions / notes:**
 - Rating 0.0 = placeholder for no reviews (all have 0 votes) -> NaN. 7,669 rated restaurants.
 - Votes strongly tied to rating (Spearman ~0.73; <5 votes avg 3.04, 500+ votes avg 4.07). Define `popular` = votes >= 50 (3,012 rows) for robustness checks.
@@ -179,12 +172,6 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - Regression (target rating): Scenario A R2 ~0.55, RMSE ~0.28; Scenario B (no votes) R2 ~0.28, RMSE ~0.36 (baseline 0.43). Regularisation made little difference (large n, few features); Lasso zeroed 27 of 95 encoded features. Saved: `ml/models/rating_regressor.joblib` + `_meta.json` (Scenario B, Polynomial deg2 + Ridge). Residuals show regression to the mean (over-predicts low, under-predicts high ratings).
 - Feature selection (06): 14 consensus features (price, n_amenities, n_cuisines, accepts_cards, table_booking_recommended, full_bar_available, brunch, valet_parking_available, live_music, smoking_are, cuisines desserts/continental/italian, type Quick Bites) saved to `ml/models/selected_features.json`. More features = higher AUC (0.74 @5, 0.77 @20, 0.825 @150), so selection is for interpretation, not accuracy. PCA: 24 comps = 90% of amenity variance; ~50 comps on all features matches raw AUC.
 - Modelling caution: votes is a very strong predictor but partly reflects popularity; compare models with and without votes.
-
-- **Backend / API (Phase 6):** Flask app with endpoints for restaurants, localities, stats, `GET /api/meta/options` (valid cuisine, locality and amenity names), `POST /api/predict` and `POST /api/chat`. `load_data.py` splits cuisines/amenities into arrays and nests `star_pct`; `.env` holds `MONGO_URI` and `DB_NAME=punebite` (never commit it). Restart Flask after reloading data: it reads locality and cuisine names once at startup.
-- **Predict endpoint:** uses Scenario B models (no votes). Decision threshold **0.523** (from `high_rating_classifier_meta.json`). Response fields: `high_rated_probability`, `predicted_high_rated`, `decision_threshold`, `predicted_rating`, `unrecognised_amenities`, `note`. Test from PowerShell with `Invoke-RestMethod` and `ConvertTo-Json`, not `curl.exe` with escaped quotes (PowerShell mangles the JSON).
-- **Chatbot (Phase 9):** `parse_message()` extracts locality, cuisine, price, rating, veg, amenities and type with fixed rules and fixes small typos ("biriyani", "Hinjewadi"). `build_query()` makes the MongoDB query, `chat_reply()` ranks by `trust_rating` and, if nothing matches, drops filters one at a time and says which (never veg or locality). The reply shows "what I understood" chips. "Cheap" = up to Rs 300, "expensive" = Rs 600+ (constants in `chatbot.py`). Unknown prices are excluded from "under Rs X". Limits: no opening-hours filter, no "near me", and some localities (e.g. Koregaon Park) have no hidden gems under the gem rule. Tested on 12,134 restaurants (about 40 questions, 23 unit tests). Run tests: `python -m unittest tests.test_chatbot -v`.
-- **Hidden gems / trust rating:** the chatbot and API depend on `trust_rating` and `hidden_gem` existing in MongoDB, so `load_data.py` must be the fixed version and data reloaded.
-
 
 ## 12. How the finished notebooks were built (keep this style)
 - Each notebook starts with a markdown cell: objective, input, output, syllabus link. Ends with a "Summary and findings" cell with real numbers.
@@ -196,7 +183,7 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - Metrics for the imbalanced target: F1, precision, recall, ROC-AUC, PR-AUC; never accuracy alone.
 
 ## 13. Task specs for the next Claude chat (do in this order; one at a time)
-### 13.1 `notebooks/07_clustering.ipynb` (Phase 5b, syllabus Unit VI) — PENDING
+### 13.1 `notebooks/07_clustering.ipynb` (Phase 5b, syllabus Unit VI)
 - Data: `restaurants_clean.csv`, rated restaurants with votes > 0.
 - K-Means features (standardise): `rating`, `log1p(votes)`, `log(cost_capped)`, `polarization_pct`, `n_amenities`. Choose k with elbow + silhouette (k = 2..10), expected 4-5.
 - Profile each cluster (size, means, top types, cuisines, localities) and give each a business name (for example: budget high-volume, premium, hidden gems = high rating but few votes, new/unproven, polarising).
@@ -205,27 +192,29 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - **No latitude/longitude exists**, so no map-based clustering.
 - Save `data/processed/restaurants_clusters.csv` with `url`, `cluster`, `cluster_name` (for the API/dashboard).
 
-### 13.2 `notebooks/08_association_rules.ipynb` (Phase 5c, Unit VI, Lab 8) — PENDING
+### 13.2 `notebooks/08_association_rules.ipynb` (Phase 5c, Unit VI, Lab 8)
 - Transactions: (a) cuisines per restaurant (all ~12k restaurants), (b) amenities + restaurant type per restaurant.
 - `mlxtend`: `TransactionEncoder`, `apriori(min_support ~0.01-0.02)`, compare with `fpgrowth` (runtime and same itemsets); `association_rules(metric="lift", min_threshold=1.2)`; also filter confidence >= 0.5.
 - Explain support, confidence, lift in plain language; top rules by lift with plain-English interpretation; scatter plot support vs confidence coloured by lift.
 - Convert frozensets to strings before saving `data/processed/association_rules.csv`.
 
-### 13.3 Phase 6: MongoDB + Flask API (`backend/`) — DONE
+### 13.3 Phase 6: MongoDB + Flask API (`backend/`)
 - `backend/load_data.py`: read `restaurants_clean.csv`; split `cuisines` and `amenities` on `|` into arrays; build `star_pct` object; NaN -> null; merge cluster labels (13.1) and later `trust_rating`; insert into db `punebite`, collection `restaurants`; indexes on locality, rating, cost_capped, cuisines. Build a `localities` collection (count, average rating of rated restaurants, median price, top cuisines).
 - `backend/app.py` (Flask + flask-cors, `.env` with `MONGO_URI`, default `mongodb://127.0.0.1:27017`): endpoints in Section 9.
 - `POST /api/predict`: build a one-row DataFrame with `locality`, `primary_type`, `cuisines` (pipe string), `cost_capped`, `n_cuisines`, `n_amenities`, `accepts_cards`, `accepts_digital` and 0/1 amenity columns; call `features.make_features(df, meta["feature_spec"], with_votes=False)`; classifier -> `predict_proba[:,1]` compared with `meta["threshold"]`; regressor -> predicted rating. Models: `ml/models/high_rating_classifier.joblib`, `rating_regressor.joblib` (plus `_meta.json`). Use the same scikit-learn version as training (`pip freeze > backend/requirements.txt`).
 - Test endpoints with Thunder Client.
 
-### 13.4 Phase 7: React dashboard (`frontend/`, Vite + React + plain CSS) — DONE
+### 13.4 Phase 7: React dashboard (`frontend/`, Vite + React + plain CSS)
 - Pages: Overview (KPIs and charts), Locality explorer (report card), Restaurant explorer (filters + table), Hidden Gems, Opening Advisor (form -> `/api/predict`), optional chatbot panel.
 - Use recharts (or chart.js) for charts; dev proxy to the Flask API.
 
-### 13.5 Phase 8: trust-adjusted rating and Hidden Gems (`ml/scoring.py`) — DONE
-- `trust_rating = (v/(v+m))*R + (m/(v+m))*C` with R = rating, v = votes, m = 50 (the "popular" threshold), C = mean rated rating (about 3.44). Justify m with notebook 02 section 7 (ratings with few votes are unstable).
-- Hidden gem = high trust_rating within its locality (for example top 15%) but low visibility (for example 20-200 votes). Sanity-check with examples, add to MongoDB and the API.
+### 13.5 Phase 8: trust-adjusted rating and Hidden Gems (DONE: `ml/scoring.py` + `notebooks/09_hidden_gems.ipynb`)
+- **Design changed from the first plan.** Zomato's displayed rating is already damped for low-vote restaurants (about 3.0 at 2-4 votes, about 4.2 at 1000+, fitted default 3.04 and half-way point about 65 votes), so heavy Bayesian shrinkage would hide the gems. Instead: `trust_rating` (light, m = 20, sorting only) and `peer_z` (z-score of rating inside fixed vote bands).
+- Hidden gem = rating >= 3.8 AND peer_z >= 1.5 AND 20 <= votes <= 300 (114 gems). `beats_percent(z)` converts z to the friendly "beats X% of similar restaurants".
+- Output: `data/processed/restaurants_scored.csv`. Loader/API snippets are in notebook section 10 (`GET /api/hidden-gems`).
+- React dashboard (`frontend/`, redesigned) already shows gems and expects `name, locality, rating, votes, cost, type, cuisines[], beats, url`.
 
-### 13.6 Phase 9: query-based chatbot (not LLM) — DONE
+### 13.6 Phase 9 (optional): query-based chatbot (not LLM)
 - Rule-based parser: cuisine, locality (fuzzy match with `difflib`), "under Rs X", minimum rating, restaurant type, amenities ("outdoor seating"), "hidden gems". Build a MongoDB query, return top 5 by `trust_rating`; friendly fallback with example questions. Explain in the viva why it is rule-based (reliable, explainable, no API cost).
 
 ### 13.7 Phase 10: report, PPT, viva
@@ -233,21 +222,15 @@ Phase 6-7 can start in parallel once Phase 1 produces the clean CSV.
 - Likely viva topics: class imbalance and why accuracy fails; the votes confound (outdoor seating effect disappeared once votes >= 50); data leakage (star percentages, selection inside CV); why Random Forest; regression to the mean; why feature selection did not raise accuracy; why no map (no lat/long).
 
 ## 14. Environment notes (Windows, PowerShell)
-- **Team setup:** Atharv (Data/ML) pushes to `ml-work` and merges to `master`. The app side (backend, frontend, chatbot) is on branch `app-work`; the friend's project folder is `D:\Codes\Project\PuneBite`. To get new files: `git checkout master`, `git pull origin master`, `git checkout app-work`, `git merge master`. Database: MongoDB Atlas (free M0) or local; use a letters-and-numbers password so the URI doesn't break.
-- Older note below (Atharv's machine):
 - Project folder: `A:\DSML\PuneBite`. MongoDB server was extracted from a zip (no Windows service), so start it by hand and keep the window open:
   `& "A:\DSML\mongodb-win32-x86_64-windows-9.0.2\bin\mongod.exe" --dbpath "A:\DSML\mongo-data"`
   (or a `start-mongo.bat` with the same line but without the leading `&`). Compass connects to `mongodb://127.0.0.1:27017`.
 - Activate the environment: `.venv\Scripts\activate`. If scripts are blocked: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
 - In PowerShell a quoted path needs `&` in front of it to run.
-- Libraries: pandas numpy scikit-learn scipy statsmodels mlxtend matplotlib seaborn jupyter ipykernel flask flask-cors python-dotenv pymongo joblib (+ dnspython for Atlas `mongodb+srv://`). Frontend: Node.js, then `npm install` and `npm run dev` in `frontend/`.
-- Files in the repo now: `ml/cleaning.py`, `ml/features.py`, notebooks `01`-`06`, `ml/models/*.joblib`, `*_meta.json` and `selected_features.json`, `data/processed/restaurants_clean.csv`, plus `backend/` (db, load_data, app, chatbot), `tests/test_chatbot.py` and the React `frontend/`.
+- Libraries installed: pandas numpy scikit-learn scipy statsmodels mlxtend matplotlib seaborn jupyter ipykernel flask pymongo joblib. Still to install when needed: `flask-cors`, `python-dotenv`, Node.js packages for React.
+- Files the previous chat produced (all should be in the repo): `ml/cleaning.py`, `ml/features.py`, notebooks `01`-`06`, `ml/models/*.joblib` and `*_meta.json`, `data/processed/restaurants_clean.csv`.
 
 ## 15. Starter prompt for the next Claude chat
-Attach: `PROJECT_CONTEXT.md`, `data/processed/restaurants_clean.csv`, `ml/cleaning.py`, `ml/features.py` (and `backend/app.py` if touching the API). Then send:
+Attach these files to the first message: `PROJECT_CONTEXT.md`, `data/processed/restaurants_clean.csv`, `ml/cleaning.py`, `ml/features.py` (and the `_meta.json` files if working on the API). Then send:
 
-> I'm continuing the PuneBite Analyzer mini-project (context file attached). Phases 0-4, 5a and 6-9 are finished and tested. Please do the next task in Section 13, starting with 13.1 `07_clustering.ipynb`. Follow Section 12 (same style as the finished notebooks), test the code on the attached cleaned CSV, and give me the notebook plus a short summary of the real results. Do one task at a time. When done, tell me exactly what to update in PROJECT_CONTEXT.md.
-
-
-## Database hosting
-- MongoDB runs on **MongoDB Atlas** (cloud) for online access; setup steps in `docs/ATLAS_SETUP.md`. The URI lives only in `.env` (`MONGO_URI`, see `.env.example`), never in Git. Local `mongod` still works by pointing `MONGO_URI` back at `mongodb://127.0.0.1:27017`.
+> I'm continuing the PuneBite Analyzer mini-project (context file attached). Phases 0-5a are finished and tested. Please do the next task in Section 13 of the file, starting with 13.1 `07_clustering.ipynb`. Follow Section 12 (same style as the finished notebooks), test the code on the attached cleaned CSV, and give me the notebook plus a short summary of the real results. Do one task at a time. When done, tell me exactly what to update in PROJECT_CONTEXT.md.
