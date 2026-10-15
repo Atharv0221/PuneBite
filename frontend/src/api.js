@@ -159,3 +159,17 @@ export async function predict(f) {
   } catch (e) { /* fall through to demo */ }
   return demoPredict(f);
 }
+
+/** Keyword chatbot: POST /api/chat. Unlike the charts there is no offline fallback, because the
+ *  answers come straight from the MongoDB data. */
+export async function chat(message) {
+  try {
+    return await request(
+      "/api/chat",
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message }) },
+      15000
+    );
+  } catch (e) {
+    throw new Error("The chatbot needs the Flask API (and MongoDB) to be running. Start it with: python backend/app.py");
+  }
+}

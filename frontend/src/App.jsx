@@ -8,6 +8,7 @@ import Localities from "./components/Localities.jsx";
 import Gems from "./components/Gems.jsx";
 import Advisor from "./components/Advisor.jsx";
 import Insights from "./components/Insights.jsx";
+import Chat from "./components/Chat.jsx";
 import Footer from "./components/Footer.jsx";
 
 // One page per route (hash based, so it also works on any static host).
@@ -24,6 +25,7 @@ const PAGES = {
   "/gems": (d) => <Gems gems={d.gems} />,
   "/advisor": (d) => <Advisor overview={d.overview} />,
   "/insights": (d) => <Insights insights={d.insights} votesCurve={d.votesCurve} overview={d.overview} />,
+  "/chat": () => <Chat />,
 };
 
 export default function App() {

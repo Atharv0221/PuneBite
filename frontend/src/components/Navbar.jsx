@@ -8,6 +8,7 @@ export const NAV = [
   ["/gems", "Hidden Gems"],
   ["/advisor", "Opening Advisor"],
   ["/insights", "Insights"],
+  ["/chat", "Chatbot"],
 ];
 
 export default function Navbar({ theme, toggleTheme, source, active, scrolled, progress }) {
