@@ -366,3 +366,9 @@ select:focus { border-color: var(--brand); box-shadow: 0 0 0 4px color-mix(in sr
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; } .fade-up { opacity: 1; }
 }
+
+/* ===== Multi-page layout ===== */
+.page { animation: pageIn .45s var(--ease) both; min-height: 70vh; }
+.page-inner > .section:first-child { padding-top: calc(120px + env(safe-area-inset-top, 0px)); }
+@keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .page { animation: none; } }

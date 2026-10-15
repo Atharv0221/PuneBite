@@ -3,11 +3,11 @@ import { Icon } from "../ui.jsx";
 import { Logo } from "./Art.jsx";
 
 export const NAV = [
-  ["overview", "Overview"],
-  ["localities", "Localities"],
-  ["gems", "Hidden Gems"],
-  ["advisor", "Opening Advisor"],
-  ["insights", "Insights"],
+  ["/", "Home"],
+  ["/localities", "Localities"],
+  ["/gems", "Hidden Gems"],
+  ["/advisor", "Opening Advisor"],
+  ["/insights", "Insights"],
 ];
 
 export default function Navbar({ theme, toggleTheme, source, active, scrolled, progress }) {
@@ -16,7 +16,7 @@ export default function Navbar({ theme, toggleTheme, source, active, scrolled, p
     <header className={`nav ${scrolled ? "scrolled" : ""}`}>
       <div className="progress" style={{ transform: `scaleX(${progress})` }} />
       <div className="container nav-inner">
-        <a className="brand" href="#top" aria-label="PuneBite home">
+        <a className="brand" href="#/" aria-label="PuneBite home">
           <Logo /> <span>Pune<b>Bite</b></span>
         </a>
 
