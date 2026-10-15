@@ -28,7 +28,7 @@ POPULAR_MIN_VOTES = 100
 PROJECTION = {
     "_id": 0, "name": 1, "url": 1, "locality": 1, "establishment_type": 1,
     "rating": 1, "trust_rating": 1, "votes": 1, "cost_for_two": 1,
-    "cuisines": 1, "hidden_gem": 1, "cluster_name": 1,
+    "cuisines": 1, "hidden_gem": 1, "cluster_name": 1, "beats": 1, "cost_capped": 1,
 }
 
 # ----------------------------------------------------------------- word lists
@@ -577,7 +577,8 @@ def chat_reply(message, coll, vocab):
             total = coll.count_documents(query)
 
     if not total:
-        hint = ("Hidden gems are the top 15% of a locality with 20-200 votes, so some areas have none. "
+        hint = ("Hidden gems are rated 3.8+, clearly beat restaurants with a similar number of reviews "
+                "and have 20-300 reviews, so some areas have none. "
                 if f["gem"] else "")
         return {**base, "reply": f"I couldn't find any {describe(f)}.{typo} {hint}Try a different "
                                  "locality or cuisine, or ask for something broader." + notes}
