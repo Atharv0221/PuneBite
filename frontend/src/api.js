@@ -4,8 +4,16 @@ import { demoModel } from "./data/demoModel.js";
 
 // Set VITE_API_URL in frontend/.env (for example VITE_API_URL=http://127.0.0.1:5000).
 // An empty string turns the network off completely (demo mode).
-const BASE = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:5000";
+// Same-origin by default: in production Flask serves both the site and /api,
+// and in dev the Vite proxy forwards /api to Flask. Set VITE_API_URL only if the
+// API lives on a different host. Set VITE_API_URL=off to force demo mode.
+const RAW = import.meta.env.VITE_API_URL;
+const DISABLED = RAW === "off";
+const BASE = DISABLED ? "" : (RAW ?? "");
 
+async function request(path, options = {}, timeout = 2500) {
+  if (DISABLED) throw new Error("API disabled");
+  // ...rest unchanged
 async function request(path, options = {}, timeout = 2500) {
   if (!BASE) throw new Error("API disabled");
   const ctrl = new AbortController();
