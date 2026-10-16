@@ -14,8 +14,6 @@ const BASE = DISABLED ? "" : (RAW ?? "");
 async function request(path, options = {}, timeout = 2500) {
   if (DISABLED) throw new Error("API disabled");
   // ...rest unchanged
-async function request(path, options = {}, timeout = 2500) {
-  if (!BASE) throw new Error("API disabled");
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeout);
   try {
@@ -158,8 +156,7 @@ export async function predict(f) {
       },
       3000
     );
-    const p = pick(res, ["probability", "probability_high", "proba", "prob_high"], null);
-    const r = pick(res, ["predicted_rating", "rating"], null);
+    const p = pick(res, ["high_rated_probability", "probability", "probability_high", "proba", "prob_high"], null);    const r = pick(res, ["predicted_rating", "rating"], null);
     if (p !== null) {
       const local = demoPredict(f); // reuse local explanation of what helps/hurts
       return { ...local, probability: Number(p), rating: r !== null ? Number(r) : local.rating, source: "live", modelNote: "Live model from the PuneBite API" };
